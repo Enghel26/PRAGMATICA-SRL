@@ -1,38 +1,30 @@
-// ---
-const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont')
-const smallMenu = document.querySelector('.header__sm-menu')
-const headerHamMenuBtn = document.querySelector('.header__main-ham-menu')
-const headerHamMenuCloseBtn = document.querySelector(
-  '.header__main-ham-menu-close'
-)
-const headerSmallMenuLinks = document.querySelectorAll('.header__sm-menu-link')
+/* Main JS */
 
-hamMenuBtn.addEventListener('click', () => {
-  if (smallMenu.classList.contains('header__sm-menu--active')) {
-    smallMenu.classList.remove('header__sm-menu--active')
-  } else {
-    smallMenu.classList.add('header__sm-menu--active')
-  }
-  if (headerHamMenuBtn.classList.contains('d-none')) {
-    headerHamMenuBtn.classList.remove('d-none')
-    headerHamMenuCloseBtn.classList.add('d-none')
-  } else {
-    headerHamMenuBtn.classList.add('d-none')
-    headerHamMenuCloseBtn.classList.remove('d-none')
-  }
-})
+const hamMenu = document.querySelector('.header__ham-menu');
+const smMenu = document.querySelector('.header__sm-menu');
+const hamMenuIcon = document.querySelector('.header__ham-menu-icon');
+const hamMenuClose = document.querySelector('.header__ham-menu-close');
 
-for (let i = 0; i < headerSmallMenuLinks.length; i++) {
-  headerSmallMenuLinks[i].addEventListener('click', () => {
-    smallMenu.classList.remove('header__sm-menu--active')
-    headerHamMenuBtn.classList.remove('d-none')
-    headerHamMenuCloseBtn.classList.add('d-none')
-  })
+if (hamMenu) {
+  hamMenu.addEventListener('click', () => {
+    if (smMenu.classList.contains('active')) {
+      smMenu.classList.remove('active');
+      hamMenuIcon.classList.remove('d-none');
+      hamMenuClose.classList.add('d-none');
+    } else {
+      smMenu.classList.add('active');
+      hamMenuIcon.classList.add('d-none');
+      hamMenuClose.classList.remove('d-none');
+    }
+  });
+
+  // Close menu when clicking a link
+  const smLinks = document.querySelectorAll('.header__sm-menu-link a');
+  smLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      smMenu.classList.remove('active');
+      hamMenuIcon.classList.remove('d-none');
+      hamMenuClose.classList.add('d-none');
+    });
+  });
 }
-
-// ---
-const headerLogoConatiner = document.querySelector('.header__logo-container')
-
-headerLogoConatiner.addEventListener('click', () => {
-  location.href = 'index.html'
-})

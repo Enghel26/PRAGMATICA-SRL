@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Pragmática S.R.L.</title>
+  <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__content">
+      <div class="header__logo-container">
+        <a href="index.html" class="header__logo-img-cont">
+          <img src="assets/png/PragmaticaSRLProfilePic.png" alt="Pragmática Logo" class="header__logo-img" />
+        </a>
+      </div>
+      <nav class="header__main">
+        <ul class="header__links">
+          <li><a href="index.html" class="header__link">Inicio</a></li>
+          <li><a href="Empresa.html" class="header__link">Empresa</a></li>
+          <li><a href="Socios.html" class="header__link">Socios</a></li>
+          <li><a href="Soluciones.html" class="header__link">Servicios</a></li>
+          <li><a href="Contacto.html" class="header__link">Contactos</a></li>
+        </ul>
+        <div class="header__ham-menu">
+          <img src="./assets/svg/ham-menu.svg" alt="Menu" class="header__ham-menu-icon" />
+          <img src="./assets/svg/ham-menu-close.svg" alt="Close" class="header__ham-menu-close d-none" />
+        </div>
+      </nav>
+    </div>
+    <div class="header__sm-menu">
+      <div class="header__sm-menu-content">
+        <ul class="header__sm-menu-links">
+          <li class="header__sm-menu-link"><a href="index.html">Inicio</a></li>
+          <li class="header__sm-menu-link"><a href="Empresa.html">Empresa</a></li>
+          <li class="header__sm-menu-link"><a href="Socios.html">Socios</a></li>
+          <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios</a></li>
+          <li class="header__sm-menu-link"><a href="Contacto.html">Contactos</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 10rem;">
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <!-- Contact Info -->
+          <div>
+            <h1 class="heading-lg mb-md">Contáctanos</h1>
+            <p class="text-light mb-lg">Estamos listos para atender tus necesidades tecnológicas. Escríbenos o llámanos.
+            </p>
+
+            <div class="d-flex align-center mb-md">
+              <div class="card__icon mb-sm" style="margin-right: 1.5rem; margin-bottom: 0;"><i class="fa fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="heading-md" style="margin:0; font-size: 1.8rem;">Teléfono</h4>
+                <p class="text-light">+1 849 936 7087</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-center mb-md">
+              <div class="card__icon mb-sm" style="margin-right: 1.5rem; margin-bottom: 0;"><i
+                  class="fa fa-envelope"></i></div>
+              <div>
+                <h4 class="heading-md" style="margin:0; font-size: 1.8rem;">Email</h4>
+                <p class="text-light">ventas@pragmatica.com.do</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-center">
+              <div class="card__icon mb-sm" style="margin-right: 1.5rem; margin-bottom: 0;"><i
+                  class="fa fa-map-marker"></i></div>
+              <div>
+                <h4 class="heading-md" style="margin:0; font-size: 1.8rem;">Dirección</h4>
+                <p class="text-light">Calle Julio Genaro Campillo Perez, Edif 5, 3er Nivel, Santo Domingo Este.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div>
+            <div class="card">
+              <h3 class="heading-md mb-md">Envíanos un mensaje</h3>
+              <form id="contact-form">
+                <div class="mb-sm">
+                  <label for="nombre" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" required
+                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: var(--radius-sm);">
+                </div>
+                <div class="mb-sm">
+                  <label for="email" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
+                  <input type="email" id="email" name="email" required
+                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: var(--radius-sm);">
+                </div>
+                <div class="mb-md">
+                  <label for="mensaje" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" rows="5" required
+                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: var(--radius-sm);"></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary" style="width: 100%;">Enviar Mensaje</button>
+                <div id="form-message" class="mt-sm text-center"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h4 class="heading-md mb-sm">Pragmática S.R.L.</h4>
+          <p class="text-light">Transformamos tu futuro con soluciones tecnológicas de vanguardia.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100072446439044" target="_blank"
+              class="footer__social-link"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="footer__social-link"><i class="fa fa-twitter"></i></a>
+            <a href="https://wa.link/34dc9a" target="_blank" class="footer__social-link"><i
+                class="fa fa-whatsapp"></i></a>
+            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-link"><i
+                class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="heading-md mb-sm">Enlaces</h4>
+          <ul>
+            <li><a href="Empresa.html">Sobre Nosotros</a></li>
+            <li><a href="Soluciones.html">Nuestros Servicios</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+            <li><a href="Socios.html">Nuestros Socios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="heading-md mb-sm">Ubicación</h4>
+          <p class="text-light">Calle Julio Genaro Campillo Perez, Edif 5, 3er Nivel, Santo Domingo Este.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">&copy; <span id="year">2024</span> Pragmática S.R.L.</div>
+    </div>
+  </footer>
+
+  <div class="Pbx-Netelip">
+    <a href="https://pragmaticado.netelip.com/do/" target="_blank">
+      <div class="btn-netelip"></div>
+    </a>
+  </div>
+
+  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Init EmailJS (Placeholder)
+    // emailjs.init("YOUR_USER_ID");
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      // Placeholder logic
+      document.getElementById("form-message").textContent = "Gracias por su mensaje. Nos pondremos en contacto pronto.";
+      document.getElementById("form-message").style.color = "var(--primary-blue)";
+      this.reset();
+    });
+  </script>
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/67747ce1af5bfec1dbe554dd/1igfgfjtt';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+</body>
+
+</html>
