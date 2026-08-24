@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Socios | Pragmática S.R.L.</title>
+  <meta name="description"
+    content="Conoce a nuestros socios y aliados estratégicos (Fortinet, Microsoft, Kaspersky) y las empresas líderes que confían en Pragmática S.R.L." />
+  <title>Socios y Clientes | Pragmática S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,126 +14,452 @@
 </head>
 
 <body>
+  <!-- Transparent Floating Header (Full Width) -->
   <header class="header">
-    <div class="container header__content">
+    <div class="header__content">
       <div class="header__logo-container">
-        <a href="index.html" class="header__logo-img-cont">
-          <img src="assets/png/PragmaticaSRLProfilePic.png" alt="Pragmática Logo" class="header__logo-img" />
+        <a href="index.html" class="header__logo-img-cont" aria-label="Pragmática Logo">
+          <img src="logo/Logo.png" alt="Pragmática Logo" class="header__logo-img" />
         </a>
       </div>
-      <nav class="header__main">
+
+      <!-- Desktop Nav (Centered) -->
+      <nav class="header__nav">
         <ul class="header__links">
           <li><a href="index.html" class="header__link">Inicio</a></li>
           <li><a href="Empresa.html" class="header__link">Empresa</a></li>
-          <li><a href="Socios.html" class="header__link">Socios</a></li>
+          <li><a href="Socios.html" class="header__link active">Socios</a></li>
           <li><a href="Soluciones.html" class="header__link">Servicios</a></li>
           <li><a href="Contacto.html" class="header__link">Contactos</a></li>
         </ul>
-        <div class="header__ham-menu">
-          <img src="./assets/svg/ham-menu.svg" alt="Menu" class="header__ham-menu-icon" />
-          <img src="./assets/svg/ham-menu-close.svg" alt="Close" class="header__ham-menu-close d-none" />
-        </div>
       </nav>
+
+      <!-- Right Actions (Social Icons) -->
+      <div class="header__actions">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon" aria-label="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"
+          aria-label="LinkedIn">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"
+          aria-label="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="header__ham-menu" aria-label="Menú">
+        <div class="header__ham-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
+
+    <!-- Mobile Dropdown -->
     <div class="header__sm-menu">
-      <div class="header__sm-menu-content">
-        <ul class="header__sm-menu-links">
-          <li class="header__sm-menu-link"><a href="index.html">Inicio</a></li>
-          <li class="header__sm-menu-link"><a href="Empresa.html">Empresa</a></li>
-          <li class="header__sm-menu-link"><a href="Socios.html">Socios</a></li>
-          <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios</a></li>
-          <li class="header__sm-menu-link"><a href="Contacto.html">Contactos</a></li>
-        </ul>
+      <ul class="header__sm-menu-links">
+        <li class="header__sm-menu-link"><a href="index.html">Inicio <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Empresa.html">Empresa <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Socios.html" class="active">Socios <i
+              class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios <i class="fa fa-chevron-right"></i></a>
+        </li>
+        <li class="header__sm-menu-link"><a href="Contacto.html">Contactos <i class="fa fa-chevron-right"></i></a></li>
+      </ul>
+      <div class="header__sm-socials">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon"><i
+            class="fa fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"><i
+            class="fa fa-linkedin"></i></a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"><i
+            class="fa fa-instagram"></i></a>
       </div>
     </div>
   </header>
 
-  <main style="padding-top: 10rem;">
+  <main>
+    <!-- Custom Page Header with Encabezados Background Image -->
+    <section class="page-hero" style="background-image: url('assets/Encabezados/Socios.jpg'); background-position: center 35%;">
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content reveal">
+        <h1 class="heading-xl">Socios & Clientes</h1>
+        <p class="subtitle">
+          Trabajamos de la mano con los mejores proveedores tecnológicos globales y empresas que respaldan nuestra trayectoria.
+        </p>
+      </div>
+    </section>
+
+    <!-- Strategic Suppliers Section (Professional Cards) -->
     <section class="section">
       <div class="container">
-        <div class="text-center mb-xl">
-          <h1 class="heading-lg">Nuestros Socios</h1>
-          <p class="text-light">Trabajamos con los mejores del sector</p>
+        <div class="text-center mb-xl reveal">
+          <h2 class="heading-lg heading-center">Nuestros Proveedores Estratégicos</h2>
+          <p class="subtitle">Proveedores y partners tecnológicos de primer nivel para brindar soluciones robustas, escalables y certificadas.</p>
         </div>
 
-        <!-- Grid Layout for Partners -->
-        <div class="grid grid-3" style="text-align: center;">
-          <div class="card d-flex align-center justify-center p-md">
-            <img src="CLIENTES/CAMIONERO.jpg" alt="Socio" style="max-height: 100px;">
+        <div class="partner-grid-pro">
+          <!-- Fortinet -->
+          <div class="partner-card-pro reveal">
+            <span class="partner-card-pro__badge">Ciberseguridad Líder</span>
+            <div class="partner-card-pro__logo-wrap">
+              <img src="assets/aliados/FTNT_BIG.png" alt="Fortinet" class="partner-card-pro__logo">
+            </div>
+            <h3 class="partner-card-pro__title">Fortinet</h3>
+            <p class="partner-card-pro__desc">
+              Líder global en ciberseguridad avanzada y soluciones NGFW integradas para protección perimetral.
+            </p>
+            <div class="partner-card-pro__features">
+              <div><i class="fa fa-check-circle"></i> Firewalls FortiGate NGFW</div>
+              <div><i class="fa fa-check-circle"></i> Seguridad Perimetral & SD-WAN</div>
+              <div><i class="fa fa-check-circle"></i> Detección y Mitigación EDR</div>
+            </div>
+            <div class="partner-card-pro__status">Partner Autorizado</div>
           </div>
-          <div class="card d-flex align-center justify-center p-md">
-            <img src="CLIENTES/HERNANDEZ.png" alt="Socio" style="max-height: 100px;">
+
+          <!-- Microsoft -->
+          <div class="partner-card-pro reveal delay-1">
+            <span class="partner-card-pro__badge">Cloud & Productividad</span>
+            <div class="partner-card-pro__logo-wrap">
+              <img src="assets/aliados/microsoft.jpeg" alt="Microsoft" class="partner-card-pro__logo">
+            </div>
+            <h3 class="partner-card-pro__title">Microsoft</h3>
+            <p class="partner-card-pro__desc">
+              Ecosistema global en productividad, nube corporativa, servidores y software empresarial.
+            </p>
+            <div class="partner-card-pro__features">
+              <div><i class="fa fa-check-circle"></i> Soluciones Microsoft 365</div>
+              <div><i class="fa fa-check-circle"></i> Nube Corporativa Azure</div>
+              <div><i class="fa fa-check-circle"></i> Licenciamiento Windows Server</div>
+            </div>
+            <div class="partner-card-pro__status">Cloud Partner Certificado</div>
           </div>
-          <div class="card d-flex align-center justify-center p-md">
-            <img src="CLIENTES/ComprasConsulting.jpg" alt="Socio" style="max-height: 100px;">
+
+          <!-- SonicWall -->
+          <div class="partner-card-pro reveal delay-2">
+            <span class="partner-card-pro__badge">Seguridad de Redes</span>
+            <div class="partner-card-pro__logo-wrap">
+              <img src="assets/aliados/sonicwall.svg" alt="SonicWall" class="partner-card-pro__logo">
+            </div>
+            <h3 class="partner-card-pro__title">SonicWall</h3>
+            <p class="partner-card-pro__desc">
+              Next-Gen Firewalls de alto desempeño, seguridad perimetral y prevención avanzada contra ciberamenazas.
+            </p>
+            <div class="partner-card-pro__features">
+              <div><i class="fa fa-check-circle"></i> Firewalls NGFW SonicWall</div>
+              <div><i class="fa fa-check-circle"></i> Prevención de Intrusiones IPS</div>
+              <div><i class="fa fa-check-circle"></i> VPN Segura & Gestión Cloud</div>
+            </div>
+            <div class="partner-card-pro__status">Partner Certificado</div>
           </div>
-          <div class="card d-flex align-center justify-center p-md">
-            <img src="CLIENTES/YAMELIS.jpg" alt="Socio" style="max-height: 100px;">
+
+          <!-- Kaspersky -->
+          <div class="partner-card-pro reveal delay-3">
+            <span class="partner-card-pro__badge">Endpoint Security</span>
+            <div class="partner-card-pro__logo-wrap">
+              <img src="assets/aliados/kaspersky-logotype-green.png" alt="Kaspersky" class="partner-card-pro__logo">
+            </div>
+            <h3 class="partner-card-pro__title">Kaspersky</h3>
+            <p class="partner-card-pro__desc">
+              Protección de endpoints, ciberinteligencia y seguridad multipremiada contra malware y ransomware.
+            </p>
+            <div class="partner-card-pro__features">
+              <div><i class="fa fa-check-circle"></i> Endpoint Security for Business</div>
+              <div><i class="fa fa-check-circle"></i> Protección Antiransomware</div>
+              <div><i class="fa fa-check-circle"></i> Consola Central de Políticas</div>
+            </div>
+            <div class="partner-card-pro__status">Partner Especialista</div>
           </div>
-          <div class="card d-flex align-center justify-center p-md">
-            <img src="CLIENTES/insurance.jpg" alt="Socio" style="max-height: 100px;">
+
+          <!-- Netelip -->
+          <div class="partner-card-pro reveal delay-4">
+            <span class="partner-card-pro__badge">Comunicaciones IP</span>
+            <div class="partner-card-pro__logo-wrap">
+              <img src="assets/aliados/OIP.png" alt="Netelip" class="partner-card-pro__logo">
+            </div>
+            <h3 class="partner-card-pro__title">Netelip</h3>
+            <p class="partner-card-pro__desc">
+              Comunicaciones unificadas, telefonía IP y centrales virtuales en la nube para empresas modernas.
+            </p>
+            <div class="partner-card-pro__features">
+              <div><i class="fa fa-check-circle"></i> Centralitas Virtuales IP</div>
+              <div><i class="fa fa-check-circle"></i> Troncales SIP & Telefonía Cloud</div>
+              <div><i class="fa fa-check-circle"></i> Integración con CRM y Call Center</div>
+            </div>
+            <div class="partner-card-pro__status">Proveedor Homologado</div>
           </div>
-          <div class="card d-flex align-center justify-center p-md">
-            <img src="CLIENTES/Logo Idecom.jpg" alt="Socio" style="max-height: 100px;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Client Showcase Grid with Sector Filter -->
+    <section class="section section--slate">
+      <div class="container">
+        <div class="text-center mb-xl reveal">
+          <h2 class="heading-lg heading-center">Nuestros Clientes</h2>
+          <p class="subtitle">Organizaciones e instituciones que han depositado su confianza en nuestra experiencia y soporte.</p>
+        </div>
+
+        <!-- Sector Filter Tabs -->
+        <div class="service-filter-bar reveal" style="margin-bottom: 4rem;">
+          <button type="button" class="filter-btn client-filter-btn active" data-filter="all">
+            <i class="fa fa-th-large"></i> Todos los Sectores
+          </button>
+          <button type="button" class="filter-btn client-filter-btn" data-filter="logistica">
+            <i class="fa fa-truck"></i> Transporte & Logística
+          </button>
+          <button type="button" class="filter-btn client-filter-btn" data-filter="comercio">
+            <i class="fa fa-briefcase"></i> Comercio & Consultoría
+          </button>
+          <button type="button" class="filter-btn client-filter-btn" data-filter="finanzas">
+            <i class="fa fa-shield"></i> Seguros & Finanzas
+          </button>
+          <button type="button" class="filter-btn client-filter-btn" data-filter="institucional">
+            <i class="fa fa-building-o"></i> Institucional & Telecom
+          </button>
+        </div>
+
+        <!-- Clients Pro Grid -->
+        <div class="client-grid-pro">
+          <!-- Camionero -->
+          <div class="client-card-pro reveal" data-sector="logistica">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/CAMIONERO.png" alt="Camionero" class="logo-compact">
+            </div>
+          </div>
+
+          <!-- CDC -->
+          <div class="client-card-pro reveal delay-1" data-sector="logistica">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/CDC.png" alt="CDC" class="logo-compact">
+            </div>
+          </div>
+
+          <!-- ComprasConsulting -->
+          <div class="client-card-pro reveal delay-2" data-sector="comercio">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/ComprasConsulting.jpg" alt="ComprasConsulting" class="logo-wide">
+            </div>
+          </div>
+
+          <!-- Hernandez -->
+          <div class="client-card-pro reveal delay-3" data-sector="comercio">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/HERNANDEZ.png" alt="Hernandez" class="logo-wide">
+            </div>
+          </div>
+
+          <!-- Yamelis -->
+          <div class="client-card-pro reveal" data-sector="comercio">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/YAMELIS.jpg" alt="Yamelis" class="logo-wide">
+            </div>
+          </div>
+
+          <!-- Insurance -->
+          <div class="client-card-pro reveal delay-1" data-sector="finanzas">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/insurance.jpg" alt="Insurance" class="logo-compact">
+            </div>
+          </div>
+
+          <!-- Idecoop -->
+          <div class="client-card-pro reveal delay-2" data-sector="institucional">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/idcoop.png" alt="Idecoop" class="logo-wide">
+            </div>
+          </div>
+
+          <!-- Idecom -->
+          <div class="client-card-pro reveal delay-3" data-sector="institucional">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/Logo Idecom.jpg" alt="Idecom" class="logo-wide">
+            </div>
+          </div>
+
+          <!-- AllWeTalk -->
+          <div class="client-card-pro reveal" data-sector="institucional">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/ALLWETALK.jpeg" alt="AllWeTalk" class="logo-compact">
+            </div>
+          </div>
+
+          <!-- ICM -->
+          <div class="client-card-pro reveal delay-1" data-sector="institucional">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/ICM.jpeg" alt="ICM" class="logo-compact">
+            </div>
+          </div>
+
+          <!-- DataHope -->
+          <div class="client-card-pro reveal delay-2" data-sector="institucional">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/DataHope.jpeg" alt="DataHope" class="logo-compact">
+            </div>
+          </div>
+
+          <!-- Tu Empresa Aquí -->
+          <a href="Contacto.html" class="client-card-pro reveal delay-3" style="background-color: var(--primary-light); border: 2px dashed var(--primary-blue); text-decoration: none; cursor: pointer;">
+            <div class="client-card-pro__logo-wrap" style="flex-direction: column; height: auto;">
+              <i class="fa fa-plus-circle text-primary" style="font-size: 3.4rem; margin-bottom: 0.6rem;"></i>
+              <span style="font-weight: 800; color: var(--primary-dark); font-size: 1.6rem;">Tu Empresa Aquí</span>
+              <span style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 600; margin-top: 0.4rem;">Comienza tu proyecto <i class="fa fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Pillars Section -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-xl reveal">
+          <h2 class="heading-lg heading-center">¿Por Qué Confiar en Pragmática?</h2>
+          <p class="subtitle">Pilares sólidos que fundamentan cada una de nuestras relaciones de negocio.</p>
+        </div>
+
+        <div class="trust-pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="trust-pillar-card reveal">
+            <div class="trust-pillar-icon"><i class="fa fa-certificate"></i></div>
+            <h3 class="trust-pillar-title">Certificación Oficial</h3>
+            <p class="trust-pillar-desc">
+              Ingenieros capacitados y avalados directamente por fabricantes internacionales de primer orden como Fortinet y Microsoft.
+            </p>
+            <div class="trust-pillar-metric"><i class="fa fa-check-circle"></i> Respaldo Directo de Marca</div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="trust-pillar-card reveal delay-1">
+            <div class="trust-pillar-icon"><i class="fa fa-bolt"></i></div>
+            <h3 class="trust-pillar-title">Soporte & Respuesta Oportuna</h3>
+            <p class="trust-pillar-desc">
+              Atención proactiva y acompañamiento técnico continuo para asegurar que tu infraestructura opere sin fallas ni interrupciones.
+            </p>
+            <div class="trust-pillar-metric"><i class="fa fa-check-circle"></i> Disponibilidad Garantizada</div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="trust-pillar-card reveal delay-2">
+            <div class="trust-pillar-icon"><i class="fa fa-handshake-o"></i></div>
+            <h3 class="trust-pillar-title">Alianzas de Largo Plazo</h3>
+            <p class="trust-pillar-desc">
+              Más de 5 años construyendo relaciones duraderas basadas en transparencia, ética profesional y resultados tangibles.
+            </p>
+            <div class="trust-pillar-metric"><i class="fa fa-check-circle"></i> +5 Años de Trayectoria</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="padding-bottom: 8rem; background-color: var(--bg-slate);">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="text-center" style="position: relative; z-index: 2;">
+            <h2 class="heading-lg text-white mb-md">¿Quieres Formar Parte de Nuestra Red de Éxito?</h2>
+            <p class="subtitle text-light mb-lg">
+              Descubre cómo podemos potenciar, proteger y optimizar la infraestructura tecnológica de tu empresa.
+            </p>
+            <div class="d-flex justify-center gap-md flex-wrap">
+              <a href="https://wa.me/18499367087?text=Hola,%20nos%20gustar%C3%ADa%20colaborar%20con%20Pragm%C3%A1tica" target="_blank" class="btn btn--glow">
+                <i class="fa fa-whatsapp"></i> Hablar por WhatsApp
+              </a>
+              <a href="Contacto.html" class="btn btn--glass">
+                <i class="fa fa-envelope-o"></i> Contáctanos Hoy
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div>
-          <h4 class="heading-md mb-sm">Pragmática S.R.L.</h4>
-          <p class="text-light">Transformamos tu futuro con soluciones tecnológicas de vanguardia.</p>
+          <img src="logo/Logo.png" alt="Pragmática Logo" style="max-height: 4.8rem; filter: brightness(0) invert(1);" />
+          <p class="footer__brand-desc">
+            Transformamos tu futuro con soluciones tecnológicas de vanguardia.
+          </p>
           <div class="footer__socials">
-            <a href="#" class="footer__social-link"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100072446439044" target="_blank"
-              class="footer__social-link"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="footer__social-link"><i class="fa fa-twitter"></i></a>
-            <a href="https://wa.link/34dc9a" target="_blank" class="footer__social-link"><i
+            <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="footer__social-btn"><i
+                class="fa fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank" class="footer__social-btn"><i
+                class="fa fa-facebook"></i></a>
+            <a href="https://wa.me/18499367087" target="_blank" class="footer__social-btn"><i
                 class="fa fa-whatsapp"></i></a>
-            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-link"><i
+            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-btn"><i
                 class="fa fa-instagram"></i></a>
           </div>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Enlaces</h4>
-          <ul>
-            <li><a href="Empresa.html">Sobre Nosotros</a></li>
-            <li><a href="Soluciones.html">Nuestros Servicios</a></li>
-            <li><a href="Contacto.html">Contáctanos</a></li>
-            <li><a href="Socios.html">Nuestros Socios</a></li>
+          <h4 class="footer__heading">Navegación</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Inicio</a></li>
+            <li><a href="Empresa.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Sobre
+                Nosotros</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios</a>
+            </li>
+            <li><a href="Socios.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Socios y
+                Clientes</a></li>
+            <li><a href="Contacto.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Contáctanos</a>
+            </li>
           </ul>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Ubicación</h4>
-          <p class="text-light">Calle Julio Genaro Campillo Perez, Edif 5, 3er Nivel, Santo Domingo Este.</p>
+          <h4 class="footer__heading">Servicios</h4>
+          <ul class="footer__links">
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Desarrollo de Software</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i>
+                Ciberseguridad</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios
+                Gestionados</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Licenciamiento
+                TI</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Venta de
+                Equipos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Contacto</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="https://maps.google.com/?q=C.+Interior+A+3,+Santo+Domingo+Este" target="_blank" rel="noopener noreferrer" class="footer__link">
+                <i class="fa fa-map-marker text-cyan"></i> Plaza AR, C. Interior A 3, Santo Domingo Este.
+              </a>
+            </li>
+            <li>
+              <a href="tel:+18499367087" class="footer__link">
+                <i class="fa fa-phone text-cyan"></i> +1 (849) 936-7087
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ventas@pragmatica.com.do" class="footer__link">
+                <i class="fa fa-envelope text-cyan"></i> ventas@pragmatica.com.do
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="footer__bottom">&copy; <span id="year">2024</span> Pragmática S.R.L.</div>
+
+      <div class="footer__bottom">
+        <div>&copy; <span id="year">2026</span> <strong>Pragmática S.R.L.</strong> Todos los derechos reservados.</div>
+      </div>
     </div>
   </footer>
 
-  <div class="Pbx-Netelip">
-    <a href="https://pragmaticado.netelip.com/do/" target="_blank">
-      <div class="btn-netelip"></div>
-    </a>
-  </div>
-
-  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/67747ce1af5bfec1dbe554dd/1igfgfjtt';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
+  <button class="scroll-to-top" aria-label="Volver arriba">
+    <i class="fa fa-chevron-up"></i>
+  </button>
 </body>
 
 </html>

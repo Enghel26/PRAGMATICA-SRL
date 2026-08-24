@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Servicios | Pragmática S.R.L.</title>
+  <meta name="description"
+    content="Portafolio de servicios y soluciones tecnológicas de Pragmática S.R.L.: Ciberseguridad, Desarrollo de Software, Servicios Gestionados, Licenciamiento, Venta de Hardware y Gestión de Proyectos." />
+  <title>Servicios & Soluciones | Pragmática S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,97 +14,410 @@
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Transparent Floating Header (Full Width) -->
   <header class="header">
-    <div class="container header__content">
+    <div class="header__content">
       <div class="header__logo-container">
-        <a href="index.html" class="header__logo-img-cont">
-          <img src="assets/png/PragmaticaSRLProfilePic.png" alt="Pragmática Logo" class="header__logo-img" />
+        <a href="index.html" class="header__logo-img-cont" aria-label="Pragmática Logo">
+          <img src="logo/Logo.png" alt="Pragmática Logo" class="header__logo-img" />
         </a>
       </div>
-      <nav class="header__main">
+
+      <!-- Desktop Nav (Centered) -->
+      <nav class="header__nav">
         <ul class="header__links">
           <li><a href="index.html" class="header__link">Inicio</a></li>
           <li><a href="Empresa.html" class="header__link">Empresa</a></li>
           <li><a href="Socios.html" class="header__link">Socios</a></li>
-          <li><a href="Soluciones.html" class="header__link">Servicios</a></li>
+          <li><a href="Soluciones.html" class="header__link active">Servicios</a></li>
           <li><a href="Contacto.html" class="header__link">Contactos</a></li>
         </ul>
-        <div class="header__ham-menu">
-          <img src="./assets/svg/ham-menu.svg" alt="Menu" class="header__ham-menu-icon" />
-          <img src="./assets/svg/ham-menu-close.svg" alt="Close" class="header__ham-menu-close d-none" />
-        </div>
       </nav>
+
+      <!-- Right Actions (Social Icons) -->
+      <div class="header__actions">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon" aria-label="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"
+          aria-label="LinkedIn">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"
+          aria-label="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="header__ham-menu" aria-label="Menú">
+        <div class="header__ham-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
+
+    <!-- Mobile Dropdown -->
     <div class="header__sm-menu">
-      <div class="header__sm-menu-content">
-        <ul class="header__sm-menu-links">
-          <li class="header__sm-menu-link"><a href="index.html">Inicio</a></li>
-          <li class="header__sm-menu-link"><a href="Empresa.html">Empresa</a></li>
-          <li class="header__sm-menu-link"><a href="Socios.html">Socios</a></li>
-          <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios</a></li>
-          <li class="header__sm-menu-link"><a href="Contacto.html">Contactos</a></li>
-        </ul>
+      <ul class="header__sm-menu-links">
+        <li class="header__sm-menu-link"><a href="index.html">Inicio <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Empresa.html">Empresa <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Socios.html">Socios <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Soluciones.html" class="active">Servicios <i
+              class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Contacto.html">Contactos <i class="fa fa-chevron-right"></i></a></li>
+      </ul>
+      <div class="header__sm-socials">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon"><i
+            class="fa fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"><i
+            class="fa fa-linkedin"></i></a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"><i
+            class="fa fa-instagram"></i></a>
       </div>
     </div>
   </header>
 
-  <main style="padding-top: 10rem;">
+  <main>
+    <!-- Custom Page Header with Encabezados Background Image -->
+    <section class="page-hero" style="background-image: url('assets/Encabezados/Servicios.jpg'); background-position: center 40%;">
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content reveal">
+        <h1 class="heading-xl">Nuestros Servicios</h1>
+        <p class="subtitle">
+          Soluciones tecnológicas integrales de desarrollo, ciberseguridad e infraestructura para potenciar tu empresa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Services Section -->
     <section class="section">
       <div class="container">
-        <div class="text-center mb-xl">
-          <h1 class="heading-lg">Nuestros Servicios</h1>
-          <p class="text-light">Soluciones integrales para la transformación digital de tu negocio.</p>
+        
+        <!-- Category Filter Tabs -->
+        <div class="service-filter-bar reveal">
+          <button type="button" class="filter-btn active" data-filter="all">
+            <i class="fa fa-th-large"></i> Todos los Servicios
+          </button>
+          <button type="button" class="filter-btn" data-filter="dev">
+            <i class="fa fa-code"></i> Desarrollo & Cloud
+          </button>
+          <button type="button" class="filter-btn" data-filter="security">
+            <i class="fa fa-shield"></i> Ciberseguridad
+          </button>
+          <button type="button" class="filter-btn" data-filter="infra">
+            <i class="fa fa-server"></i> Infraestructura & Soporte
+          </button>
+          <button type="button" class="filter-btn" data-filter="hardware">
+            <i class="fa fa-laptop"></i> Hardware & Licencias
+          </button>
         </div>
 
-        <!-- Service 1 -->
-        <div class="row-item">
-          <div class="row-item__img">
-            <img src="assets/jpeg/Gestion-de-Proyectos.jpg" alt="Gestión de Proyectos">
+        <!-- Modern Services Grid (3x2) -->
+        <div class="grid grid-3">
+
+          <!-- Card 1: Desarrollo de Software -->
+          <div class="service-card-modern reveal" data-category="dev">
+            <div class="service-card-modern__img-wrap">
+              <img src="assets/jpeg/desarrollo-software.jpg" alt="Desarrollo de Software" class="service-card-modern__img">
+              <span class="service-card-modern__badge">Desarrollo & Cloud</span>
+            </div>
+            <div class="service-card-modern__body">
+              <div class="service-card-modern__icon-badge">
+                <i class="fa fa-code"></i>
+              </div>
+              <h3 class="service-card-modern__title">Desarrollo de Software</h3>
+              <p class="service-card-modern__desc">
+                Diseño y construcción de software a la medida, aplicaciones web, móviles y plataformas empresariales escalables con arquitectura moderna.
+              </p>
+              <div class="service-card-modern__features">
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Aplicaciones Web, Móviles y APIs REST</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Arquitecturas Cloud & Microservicios</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Automatización e Integración Empresarial</span>
+                </div>
+              </div>
+              <div class="service-card-modern__footer">
+                <a href="Contacto.html" class="btn btn--primary btn--sm" style="flex-grow: 1;">Solicitar Cotización</a>
+                <a href="https://wa.me/18499367087?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20Desarrollo%20de%20Software" target="_blank" class="btn btn--glass btn--sm" aria-label="Consultar por WhatsApp" style="color: var(--primary-blue); border-color: #cbd5e1;">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="row-item__content">
-            <h2 class="heading-md">Gestión y Conducción de Proyectos</h2>
-            <p class="text-light">
-              El éxito de cualquier proyecto tecnológico depende de una gestión eficaz. Nos encargamos de liderar cada
-              fase, desde la definición de requisitos hasta la implementación final, asegurando que los entregables
-              agreguen valor y estén alineados con los objetivos estratégicos de su empresa.
+
+          <!-- Card 2: Ciberseguridad -->
+          <div class="service-card-modern reveal delay-1" data-category="security">
+            <div class="service-card-modern__img-wrap">
+              <img src="assets/jpeg/mano-tocando-tablet.jpg" alt="Ciberseguridad Integral" class="service-card-modern__img">
+              <span class="service-card-modern__badge">Seguridad Crítica</span>
+            </div>
+            <div class="service-card-modern__body">
+              <div class="service-card-modern__icon-badge">
+                <i class="fa fa-shield"></i>
+              </div>
+              <h3 class="service-card-modern__title">Ciberseguridad Integral</h3>
+              <p class="service-card-modern__desc">
+                Protección perimetral avanzada, firewalls de nueva generación (NGFW), mitigación de ransomware y defensas en profundidad para tus activos.
+              </p>
+              <div class="service-card-modern__features">
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Firewalls Fortinet & Análisis NGFW</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Protección Endpoint & Antiransomware EDR</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Auditorías y Análisis de Vulnerabilidades</span>
+                </div>
+              </div>
+              <div class="service-card-modern__footer">
+                <a href="Contacto.html" class="btn btn--primary btn--sm" style="flex-grow: 1;">Solicitar Cotización</a>
+                <a href="https://wa.me/18499367087?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20Ciberseguridad" target="_blank" class="btn btn--glass btn--sm" aria-label="Consultar por WhatsApp" style="color: var(--primary-blue); border-color: #cbd5e1;">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Servicios Gestionados TI -->
+          <div class="service-card-modern reveal delay-2" data-category="infra">
+            <div class="service-card-modern__img-wrap">
+              <img src="assets/jpeg/ServicioGestionado.jpg" alt="Servicios Gestionados IT" class="service-card-modern__img">
+              <span class="service-card-modern__badge">Soporte & Continuidad</span>
+            </div>
+            <div class="service-card-modern__body">
+              <div class="service-card-modern__icon-badge">
+                <i class="fa fa-server"></i>
+              </div>
+              <h3 class="service-card-modern__title">Servicios Gestionados TI</h3>
+              <p class="service-card-modern__desc">
+                Administración proactiva de tu infraestructura, soporte preventivo de redes, servidores y asistencia técnica para asegurar continuidad.
+              </p>
+              <div class="service-card-modern__features">
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Monitoreo Proactivo de Redes y Servidores</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Mesa de Ayuda & Soporte Especializado</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Planes de Contingencia y Recuperación</span>
+                </div>
+              </div>
+              <div class="service-card-modern__footer">
+                <a href="Contacto.html" class="btn btn--primary btn--sm" style="flex-grow: 1;">Solicitar Cotización</a>
+                <a href="https://wa.me/18499367087?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20Servicios%20Gestionados%20TI" target="_blank" class="btn btn--glass btn--sm" aria-label="Consultar por WhatsApp" style="color: var(--primary-blue); border-color: #cbd5e1;">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Licenciamiento de Software -->
+          <div class="service-card-modern reveal" data-category="hardware">
+            <div class="service-card-modern__img-wrap">
+              <img src="assets/jpeg/licensamiento.jpg" alt="Licenciamiento de Software" class="service-card-modern__img">
+              <span class="service-card-modern__badge">Software Corporativo</span>
+            </div>
+            <div class="service-card-modern__body">
+              <div class="service-card-modern__icon-badge">
+                <i class="fa fa-certificate"></i>
+              </div>
+              <h3 class="service-card-modern__title">Licenciamiento de Software</h3>
+              <p class="service-card-modern__desc">
+                Consultoría, adquisición y gestión integral de licencias empresariales bajo esquemas óptimos para maximizar la productividad y cumplimiento.
+              </p>
+              <div class="service-card-modern__features">
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Microsoft 365, Azure Cloud & Windows Server</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Suites de Seguridad Fortinet & Antivirus</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Optimización y Auditoría de Costos de Licencias</span>
+                </div>
+              </div>
+              <div class="service-card-modern__footer">
+                <a href="Contacto.html" class="btn btn--primary btn--sm" style="flex-grow: 1;">Solicitar Cotización</a>
+                <a href="https://wa.me/18499367087?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20Licenciamiento%20de%20Software" target="_blank" class="btn btn--glass btn--sm" aria-label="Consultar por WhatsApp" style="color: var(--primary-blue); border-color: #cbd5e1;">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Suministro y Venta de Equipos -->
+          <div class="service-card-modern reveal delay-1" data-category="hardware">
+            <div class="service-card-modern__img-wrap">
+              <img src="assets/jpeg/ventadequipos.jpg" alt="Suministro y Venta de Equipos" class="service-card-modern__img">
+              <span class="service-card-modern__badge">Hardware & Redes</span>
+            </div>
+            <div class="service-card-modern__body">
+              <div class="service-card-modern__icon-badge">
+                <i class="fa fa-laptop"></i>
+              </div>
+              <h3 class="service-card-modern__title">Suministro de Equipos</h3>
+              <p class="service-card-modern__desc">
+                Distribución de hardware de marcas líderes: servidores empresariales, almacenamiento, switches, laptops y estaciones de trabajo de alto rendimiento.
+              </p>
+              <div class="service-card-modern__features">
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Servidores & Almacenamiento Dell / HP</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Laptops y Estaciones de Trabajo Profesionales</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Switches, Routers y Access Points Cisco / Ubiquiti</span>
+                </div>
+              </div>
+              <div class="service-card-modern__footer">
+                <a href="Contacto.html" class="btn btn--primary btn--sm" style="flex-grow: 1;">Solicitar Cotización</a>
+                <a href="https://wa.me/18499367087?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20Suministro%20de%20Equipos" target="_blank" class="btn btn--glass btn--sm" aria-label="Consultar por WhatsApp" style="color: var(--primary-blue); border-color: #cbd5e1;">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Gestión y Conducción de Proyectos -->
+          <div class="service-card-modern reveal delay-2" data-category="infra">
+            <div class="service-card-modern__img-wrap">
+              <img src="assets/jpeg/Gestion-de-Proyectos.jpg" alt="Gestión de Proyectos TI" class="service-card-modern__img">
+              <span class="service-card-modern__badge">Gestión Estratégica</span>
+            </div>
+            <div class="service-card-modern__body">
+              <div class="service-card-modern__icon-badge">
+                <i class="fa fa-tasks"></i>
+              </div>
+              <h3 class="service-card-modern__title">Gestión de Proyectos TI</h3>
+              <p class="service-card-modern__desc">
+                Planificación, liderazgo y ejecución de proyectos tecnológicos estratégicos, garantizando cumplimiento de cronogramas, calidad y presupuestos.
+              </p>
+              <div class="service-card-modern__features">
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Dirección bajo Estándares PMI / Agile</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Migraciones Cloud e Integraciones Complejas</span>
+                </div>
+                <div class="service-feature-pill">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Control de Calidad y Mitigación de Riesgos</span>
+                </div>
+              </div>
+              <div class="service-card-modern__footer">
+                <a href="Contacto.html" class="btn btn--primary btn--sm" style="flex-grow: 1;">Solicitar Cotización</a>
+                <a href="https://wa.me/18499367087?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20Gesti%C3%B3n%20de%20Proyectos" target="_blank" class="btn btn--glass btn--sm" aria-label="Consultar por WhatsApp" style="color: var(--primary-blue); border-color: #cbd5e1;">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Process Section -->
+    <section class="section" style="background-color: var(--bg-slate); padding: 9rem 0;">
+      <div class="container">
+        <div class="text-center mb-xl reveal">
+          <h2 class="heading-lg heading-center">Nuestro Proceso de Excelencia</h2>
+          <p class="subtitle">
+            Un método riguroso, ágil y transparente diseñado para garantizar el éxito de cada solución implementada.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <!-- Step 1 -->
+          <div class="process-card reveal">
+            <div class="process-number">01</div>
+            <div class="process-icon"><i class="fa fa-search"></i></div>
+            <h3 class="process-title">Diagnóstico & Análisis</h3>
+            <p class="process-desc">
+              Evaluamos a fondo el estado actual de tu infraestructura y los requerimientos específicos de tu negocio.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-card reveal delay-1">
+            <div class="process-number">02</div>
+            <div class="process-icon"><i class="fa fa-sliders"></i></div>
+            <h3 class="process-title">Diseño de Arquitectura</h3>
+            <p class="process-desc">
+              Diseñamos la solución tecnológica a la medida, optimizando costos, rendimiento y escalabilidad futura.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-card reveal delay-2">
+            <div class="process-number">03</div>
+            <div class="process-icon"><i class="fa fa-rocket"></i></div>
+            <h3 class="process-title">Implementación Ágil</h3>
+            <p class="process-desc">
+              Despliegue y configuración rigurosa con las mejores prácticas del mercado, minimizando tiempos de inactividad.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-card reveal delay-3">
+            <div class="process-number">04</div>
+            <div class="process-icon"><i class="fa fa-headphones"></i></div>
+            <h3 class="process-title">Soporte Continuo</h3>
+            <p class="process-desc">
+              Acompañamiento post-implementación, mantenimiento preventivo y soporte técnico de respuesta oportuna.
             </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Service 2 -->
-        <div class="row-item">
-          <div class="row-item__img">
-            <img src="assets/jpeg/mano-tocando-tablet.jpg" alt="Ciberseguridad">
-          </div>
-          <div class="row-item__content">
-            <h2 class="heading-md">Ciberseguridad</h2>
-            <p class="text-light">
-              En el mundo digital actual, proteger la información es crucial. Ofrecemos soluciones de ciberseguridad de
-              vanguardia, respaldadas por los principales proveedores, para garantizar la integridad y confidencialidad
-              de tus datos frente a cualquier amenaza.
+    <!-- CTA Section -->
+    <section class="section" style="padding-bottom: 8rem;">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="text-center" style="position: relative; z-index: 2;">
+            <h2 class="heading-lg text-white mb-md">¿Listo para Impulsar la Tecnología de tu Negocio?</h2>
+            <p class="subtitle text-light mb-lg">
+              Agenda una consulta con nuestros especialistas para diseñar una propuesta a la medida de tus objetivos.
             </p>
+            <div class="d-flex justify-center gap-md flex-wrap">
+              <a href="https://wa.me/18499367087?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20propuesta%20de%20servicios" target="_blank" class="btn btn--glow">
+                <i class="fa fa-whatsapp"></i> Hablar por WhatsApp
+              </a>
+              <a href="Contacto.html" class="btn btn--glass">
+                <i class="fa fa-envelope-o"></i> Solicitar Consulta
+              </a>
+            </div>
           </div>
         </div>
-
-        <!-- Service 3 -->
-        <div class="row-item">
-          <div class="row-item__img">
-            <img src="assets/jpeg/Gestion-de-Infraestructura.jpg" alt="Outsourcing">
-          </div>
-          <div class="row-item__content">
-            <h2 class="heading-md">Outsourcing Tecnológico</h2>
-            <p class="text-light">
-              Delegue sus necesidades tecnológicas en expertos. Gestionamos todas las áreas tecnológicas de su
-              organización, desde el soporte hasta la administración de servidores, permitiéndole enfocarse en el
-              crecimiento de su negocio.
-            </p>
-          </div>
-        </div>
-
-
-
-
+      </div>
     </section>
   </main>
 
@@ -111,55 +426,83 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <h4 class="heading-md mb-sm">Pragmática S.R.L.</h4>
-          <p class="text-light">Transformamos tu futuro con soluciones tecnológicas de vanguardia.</p>
+          <img src="logo/Logo.png" alt="Pragmática Logo" style="max-height: 4.8rem; filter: brightness(0) invert(1);" />
+          <p class="footer__brand-desc">
+            Transformamos tu futuro con soluciones tecnológicas de vanguardia.
+          </p>
           <div class="footer__socials">
-            <a href="#" class="footer__social-link"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100072446439044" target="_blank"
-              class="footer__social-link"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="footer__social-link"><i class="fa fa-twitter"></i></a>
-            <a href="https://wa.link/34dc9a" target="_blank" class="footer__social-link"><i
+            <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="footer__social-btn"><i
+                class="fa fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank" class="footer__social-btn"><i
+                class="fa fa-facebook"></i></a>
+            <a href="https://wa.me/18499367087" target="_blank" class="footer__social-btn"><i
                 class="fa fa-whatsapp"></i></a>
-            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-link"><i
+            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-btn"><i
                 class="fa fa-instagram"></i></a>
           </div>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Enlaces</h4>
-          <ul>
-            <li><a href="Empresa.html">Sobre Nosotros</a></li>
-            <li><a href="Soluciones.html">Nuestros Servicios</a></li>
-            <li><a href="Contacto.html">Contáctanos</a></li>
-            <li><a href="Socios.html">Nuestros Socios</a></li>
+          <h4 class="footer__heading">Navegación</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Inicio</a></li>
+            <li><a href="Empresa.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Sobre
+                Nosotros</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios</a>
+            </li>
+            <li><a href="Socios.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Socios y
+                Clientes</a></li>
+            <li><a href="Contacto.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Contáctanos</a>
+            </li>
           </ul>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Ubicación</h4>
-          <p class="text-light">Calle Julio Genaro Campillo Perez, Edif 5, 3er Nivel, Santo Domingo Este.</p>
+          <h4 class="footer__heading">Servicios</h4>
+          <ul class="footer__links">
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Desarrollo de Software</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i>
+                Ciberseguridad</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios
+                Gestionados</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Licenciamiento
+                TI</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Venta de
+                Equipos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Contacto</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="https://maps.google.com/?q=C.+Interior+A+3,+Santo+Domingo+Este" target="_blank" rel="noopener noreferrer" class="footer__link">
+                <i class="fa fa-map-marker text-cyan"></i> Plaza AR, C. Interior A 3, Santo Domingo Este.
+              </a>
+            </li>
+            <li>
+              <a href="tel:+18499367087" class="footer__link">
+                <i class="fa fa-phone text-cyan"></i> +1 (849) 936-7087
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ventas@pragmatica.com.do" class="footer__link">
+                <i class="fa fa-envelope text-cyan"></i> ventas@pragmatica.com.do
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="footer__bottom">&copy; <span id="year">2024</span> Pragmática S.R.L.</div>
+
+      <div class="footer__bottom">
+        <div>&copy; <span id="year">2026</span> <strong>Pragmática S.R.L.</strong> Todos los derechos reservados.</div>
+      </div>
     </div>
   </footer>
 
-  <div class="Pbx-Netelip">
-    <a href="https://pragmaticado.netelip.com/do/" target="_blank">
-      <div class="btn-netelip"></div>
-    </a>
-  </div>
-
-  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/67747ce1af5bfec1dbe554dd/1igfgfjtt';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
+  <button class="scroll-to-top" aria-label="Volver arriba">
+    <i class="fa fa-chevron-up"></i>
+  </button>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sobre Nosotros - Pragmática S.R.L. Pasión por la tecnología, ciberseguridad e innovación." />
   <title>Nosotros | Pragmática S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
   <link rel="stylesheet" href="css/style.css" />
@@ -12,141 +13,248 @@
 </head>
 
 <body>
+  <!-- Transparent Floating Header (Full Width) -->
   <header class="header">
-    <div class="container header__content">
+    <div class="header__content">
       <div class="header__logo-container">
-        <a href="index.html" class="header__logo-img-cont">
-          <img src="assets/png/PragmaticaSRLProfilePic.png" alt="Pragmática Logo" class="header__logo-img" />
+        <a href="index.html" class="header__logo-img-cont" aria-label="Pragmática Logo">
+          <img src="logo/Logo.png" alt="Pragmática Logo" class="header__logo-img" />
         </a>
       </div>
-      <nav class="header__main">
+
+      <!-- Desktop Nav (Centered) -->
+      <nav class="header__nav">
         <ul class="header__links">
           <li><a href="index.html" class="header__link">Inicio</a></li>
-          <li><a href="Empresa.html" class="header__link">Empresa</a></li>
+          <li><a href="Empresa.html" class="header__link active">Empresa</a></li>
           <li><a href="Socios.html" class="header__link">Socios</a></li>
           <li><a href="Soluciones.html" class="header__link">Servicios</a></li>
           <li><a href="Contacto.html" class="header__link">Contactos</a></li>
         </ul>
-        <div class="header__ham-menu">
-          <img src="./assets/svg/ham-menu.svg" alt="Menu" class="header__ham-menu-icon" />
-          <img src="./assets/svg/ham-menu-close.svg" alt="Close" class="header__ham-menu-close d-none" />
-        </div>
       </nav>
+
+      <!-- Right Actions (Social Icons) -->
+      <div class="header__actions">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon" aria-label="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"
+          aria-label="LinkedIn">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"
+          aria-label="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="header__ham-menu" aria-label="Menú">
+        <div class="header__ham-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
+
+    <!-- Mobile Dropdown -->
     <div class="header__sm-menu">
-      <div class="header__sm-menu-content">
-        <ul class="header__sm-menu-links">
-          <li class="header__sm-menu-link"><a href="index.html">Inicio</a></li>
-          <li class="header__sm-menu-link"><a href="Empresa.html">Empresa</a></li>
-          <li class="header__sm-menu-link"><a href="Socios.html">Socios</a></li>
-          <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios</a></li>
-          <li class="header__sm-menu-link"><a href="Contacto.html">Contactos</a></li>
-        </ul>
+      <ul class="header__sm-menu-links">
+        <li class="header__sm-menu-link"><a href="index.html">Inicio <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Empresa.html" class="active">Empresa <i
+              class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Socios.html">Socios <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios <i class="fa fa-chevron-right"></i></a>
+        </li>
+        <li class="header__sm-menu-link"><a href="Contacto.html">Contactos <i class="fa fa-chevron-right"></i></a></li>
+      </ul>
+      <div class="header__sm-socials">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon"><i
+            class="fa fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"><i
+            class="fa fa-linkedin"></i></a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"><i
+            class="fa fa-instagram"></i></a>
       </div>
     </div>
   </header>
 
-  <main style="padding-top: 10rem;">
+  <main>
+    <!-- Custom Page Header with Encabezados Background Image -->
+    <section class="page-hero" style="background-image: url('assets/Encabezados/Empresa.jpg'); background-position: center 25%;">
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content reveal">
+        <h1 class="heading-xl">Quiénes Somos</h1>
+        <p class="subtitle">
+          Pasión por la tecnología, soluciones robustas y compromiso incondicional con nuestros clientes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Trayectoria -->
     <section class="section">
       <div class="container">
-        <div class="text-center mb-xl">
-          <h1 class="heading-lg">Nosotros</h1>
-          <p class="text-light">Pasión por la tecnología y el servicio.</p>
-        </div>
-
-        <div class="grid grid-2" style="align-items: center;">
-          <div>
-            <h2 class="heading-md mb-md">Nuestra Trayectoria</h2>
-            <p class="mb-md text-light">
+        <div class="grid grid-2" style="align-items: center; gap: 5rem;">
+          <div class="reveal-left">
+            <h2 class="heading-lg heading-left">Transformando Desafíos en Éxitos Digitales</h2>
+            <p class="mb-md text-muted" style="font-size: 1.65rem; line-height: 1.7;">
               Somos una empresa que nace a través de la alianza de un comprometido equipo de profesionales, quienes
               buscan escuchar y dar respuesta a las necesidades y demandantes soluciones tecnológicas que hoy por hoy se
               convierten en los principales retos de las empresas.
             </p>
-            <p class="mb-md text-light">
-              Contamos con más de 20 años de experiencia en el sector TIC. Nuestro equipo de profesionales altamente
+            <p class="mb-lg text-muted" style="font-size: 1.65rem; line-height: 1.7;">
+              Contamos con más de 5 años de experiencia en el sector TIC. Nuestro equipo de profesionales altamente
               calificado está listo para ofrecerle soluciones integradas que consoliden sus recursos tecnológicos en una
-              única plataforma.
+              única plataforma segura.
             </p>
-            <a href="Contacto.html" class="btn btn--primary">Contáctanos</a>
+            <a href="Contacto.html" class="btn btn--primary">Contáctanos Hoy</a>
           </div>
-          <div>
-            <img src="assets/jpeg/vision.jpg" alt="Visión"
-              style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          <div class="reveal-right">
+            <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl);">
+              <img src="assets/jpeg/empresario-inicia-sesion-su-tableta.jpg" alt="Innovación Tecnológica"
+                style="width: 100%; height: 38rem; object-fit: cover;">
+            </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Gallery Section (preserved concept from original Nosotros.html generally) -->
-    <section class="section bg-light">
+    <!-- Visual Showcase / Galería de Conceptos -->
+    <section class="section section--slate">
       <div class="container">
-        <h2 class="heading-md text-center mb-lg">Galería</h2>
+        <div class="text-center mb-xl reveal">
+          <h2 class="heading-lg heading-center">Ecosistema Tecnológico</h2>
+        </div>
+
         <div class="grid grid-3">
-          <div class="card p-0" style="overflow: hidden;"><img src="assets/jpeg/mision.jpg" alt="Mision"
-              style="width:100%; height: 200px; object-fit: cover;"></div>
-          <div class="card p-0" style="overflow: hidden;"><img src="assets/jpeg/valores.jpg" alt="Valores"
-              style="width:100%; height: 200px; object-fit: cover;"></div>
-          <div class="card p-0" style="overflow: hidden;"><img src="assets/jpeg/vision.jpg" alt="Vision"
-              style="width:100%; height: 200px; object-fit: cover;"></div>
+          <div class="card reveal delay-1" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0;">
+            <img src="assets/jpeg/mano-tocando-tablet.jpg" alt="Ciberseguridad" style="width: 100%; height: 22rem; object-fit: cover;">
+            <div style="padding: 2rem;">
+              <h3 class="heading-sm" style="color: var(--primary-dark);">Seguridad & Monitoreo</h3>
+              <p class="text-muted" style="font-size: 1.45rem;">Protección y control en tiempo real de recursos críticos.</p>
+            </div>
+          </div>
+
+          <div class="card reveal delay-2" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0;">
+            <img src="assets/jpeg/ServicioGestionado.jpg" alt="Servicios Gestionados" style="width: 100%; height: 22rem; object-fit: cover;">
+            <div style="padding: 2rem;">
+              <h3 class="heading-sm" style="color: var(--primary-dark);">Gestión de Infraestructura</h3>
+              <p class="text-muted" style="font-size: 1.45rem;">Soporte preventivo y alta disponibilidad de servidores.</p>
+            </div>
+          </div>
+
+          <div class="card reveal delay-3" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0;">
+            <img src="assets/jpeg/Gestion-de-Proyectos.jpg" alt="Gestión de Proyectos" style="width: 100%; height: 22rem; object-fit: cover;">
+            <div style="padding: 2rem;">
+              <h3 class="heading-sm" style="color: var(--primary-dark);">Liderazgo & Consultoría</h3>
+              <p class="text-muted" style="font-size: 1.45rem;">Ejecución estratégica de proyectos tecnológicos de alto impacto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="padding-bottom: 8rem;">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="text-center" style="position: relative; z-index: 2;">
+            <h2 class="heading-lg text-white mb-md">Llevemos Tu Negocio al Siguiente Nivel</h2>
+            <p class="subtitle text-light mb-lg">
+              Contacta con nuestro equipo para diseñar la arquitectura IT que tu empresa necesita.
+            </p>
+            <a href="Contacto.html" class="btn btn--glow">
+              Comenzar Ahora <i class="fa fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div>
-          <h4 class="heading-md mb-sm">Pragmática S.R.L.</h4>
-          <p class="text-light">Transformamos tu futuro con soluciones tecnológicas de vanguardia.</p>
+          <img src="logo/Logo.png" alt="Pragmática Logo" style="max-height: 4.8rem; filter: brightness(0) invert(1);" />
+          <p class="footer__brand-desc">
+            Transformamos tu futuro con soluciones tecnológicas de vanguardia.
+          </p>
           <div class="footer__socials">
-            <a href="#" class="footer__social-link"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100072446439044" target="_blank"
-              class="footer__social-link"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="footer__social-link"><i class="fa fa-twitter"></i></a>
-            <a href="https://wa.link/34dc9a" target="_blank" class="footer__social-link"><i
+            <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="footer__social-btn"><i
+                class="fa fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank" class="footer__social-btn"><i
+                class="fa fa-facebook"></i></a>
+            <a href="https://wa.me/18499367087" target="_blank" class="footer__social-btn"><i
                 class="fa fa-whatsapp"></i></a>
-            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-link"><i
+            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-btn"><i
                 class="fa fa-instagram"></i></a>
           </div>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Enlaces</h4>
-          <ul>
-            <li><a href="Empresa.html">Sobre Nosotros</a></li>
-            <li><a href="Soluciones.html">Nuestros Servicios</a></li>
-            <li><a href="Contacto.html">Contáctanos</a></li>
-            <li><a href="Socios.html">Nuestros Socios</a></li>
+          <h4 class="footer__heading">Navegación</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Inicio</a></li>
+            <li><a href="Empresa.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Sobre
+                Nosotros</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios</a>
+            </li>
+            <li><a href="Socios.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Socios y
+                Clientes</a></li>
+            <li><a href="Contacto.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Contáctanos</a>
+            </li>
           </ul>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Ubicación</h4>
-          <p class="text-light">Calle Julio Genaro Campillo Perez, Edif 5, 3er Nivel, Santo Domingo Este.</p>
+          <h4 class="footer__heading">Servicios</h4>
+          <ul class="footer__links">
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Desarrollo de Software</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i>
+                Ciberseguridad</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios
+                Gestionados</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Licenciamiento
+                TI</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Venta de
+                Equipos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Contacto</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="https://maps.google.com/?q=C.+Interior+A+3,+Santo+Domingo+Este" target="_blank" rel="noopener noreferrer" class="footer__link">
+                <i class="fa fa-map-marker text-cyan"></i> Plaza AR, C. Interior A 3, Santo Domingo Este.
+              </a>
+            </li>
+            <li>
+              <a href="tel:+18499367087" class="footer__link">
+                <i class="fa fa-phone text-cyan"></i> +1 (849) 936-7087
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ventas@pragmatica.com.do" class="footer__link">
+                <i class="fa fa-envelope text-cyan"></i> ventas@pragmatica.com.do
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="footer__bottom">&copy; <span id="year">2024</span> Pragmática S.R.L.</div>
+
+      <div class="footer__bottom">
+        <div>&copy; <span id="year">2026</span> <strong>Pragmática S.R.L.</strong> Todos los derechos reservados.</div>
+      </div>
     </div>
   </footer>
 
-  <div class="Pbx-Netelip">
-    <a href="https://pragmaticado.netelip.com/do/" target="_blank">
-      <div class="btn-netelip"></div>
-    </a>
-  </div>
-
-  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/67747ce1af5bfec1dbe554dd/1igfgfjtt';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
+  <button class="scroll-to-top" aria-label="Volver arriba">
+    <i class="fa fa-chevron-up"></i>
+  </button>
 </body>
 
 </html>

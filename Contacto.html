@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Ponte en contacto con Pragmática S.R.L. Solicita cotizaciones para desarrollo de software, ciberseguridad o soporte de infraestructura." />
   <title>Contacto | Pragmática S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
   <link rel="stylesheet" href="css/style.css" />
@@ -12,172 +14,290 @@
 </head>
 
 <body>
+  <!-- Transparent Floating Header (Full Width) -->
   <header class="header">
-    <div class="container header__content">
+    <div class="header__content">
       <div class="header__logo-container">
-        <a href="index.html" class="header__logo-img-cont">
-          <img src="assets/png/PragmaticaSRLProfilePic.png" alt="Pragmática Logo" class="header__logo-img" />
+        <a href="index.html" class="header__logo-img-cont" aria-label="Pragmática Logo">
+          <img src="logo/Logo.png" alt="Pragmática Logo" class="header__logo-img" />
         </a>
       </div>
-      <nav class="header__main">
+
+      <!-- Desktop Nav (Centered) -->
+      <nav class="header__nav">
         <ul class="header__links">
           <li><a href="index.html" class="header__link">Inicio</a></li>
           <li><a href="Empresa.html" class="header__link">Empresa</a></li>
           <li><a href="Socios.html" class="header__link">Socios</a></li>
           <li><a href="Soluciones.html" class="header__link">Servicios</a></li>
-          <li><a href="Contacto.html" class="header__link">Contactos</a></li>
+          <li><a href="Contacto.html" class="header__link active">Contactos</a></li>
         </ul>
-        <div class="header__ham-menu">
-          <img src="./assets/svg/ham-menu.svg" alt="Menu" class="header__ham-menu-icon" />
-          <img src="./assets/svg/ham-menu-close.svg" alt="Close" class="header__ham-menu-close d-none" />
-        </div>
       </nav>
+
+      <!-- Right Actions (Social Icons) -->
+      <div class="header__actions">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon" aria-label="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"
+          aria-label="LinkedIn">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"
+          aria-label="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="header__ham-menu" aria-label="Menú">
+        <div class="header__ham-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
+
+    <!-- Mobile Dropdown -->
     <div class="header__sm-menu">
-      <div class="header__sm-menu-content">
-        <ul class="header__sm-menu-links">
-          <li class="header__sm-menu-link"><a href="index.html">Inicio</a></li>
-          <li class="header__sm-menu-link"><a href="Empresa.html">Empresa</a></li>
-          <li class="header__sm-menu-link"><a href="Socios.html">Socios</a></li>
-          <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios</a></li>
-          <li class="header__sm-menu-link"><a href="Contacto.html">Contactos</a></li>
-        </ul>
+      <ul class="header__sm-menu-links">
+        <li class="header__sm-menu-link"><a href="index.html">Inicio <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Empresa.html">Empresa <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Socios.html">Socios <i class="fa fa-chevron-right"></i></a></li>
+        <li class="header__sm-menu-link"><a href="Soluciones.html">Servicios <i class="fa fa-chevron-right"></i></a>
+        </li>
+        <li class="header__sm-menu-link"><a href="Contacto.html" class="active">Contactos <i
+              class="fa fa-chevron-right"></i></a></li>
+      </ul>
+      <div class="header__sm-socials">
+        <a href="https://wa.me/18499367087" target="_blank" class="header__social-icon"><i
+            class="fa fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="header__social-icon"><i
+            class="fa fa-linkedin"></i></a>
+        <a href="https://instagram.com/pragmaticasrl" target="_blank" class="header__social-icon"><i
+            class="fa fa-instagram"></i></a>
       </div>
     </div>
   </header>
 
-  <main style="padding-top: 10rem;">
+  <main>
+    <!-- Custom Page Header with Encabezados Background Image -->
+    <section class="page-hero" style="background-image: url('assets/Encabezados/Contacto.jpg'); background-position: center 45%;">
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content reveal">
+        <h1 class="heading-xl">Contáctanos</h1>
+        <p class="subtitle">
+          Estamos listos para atender tus requerimientos tecnológicos y ofrecerte la mejor solución personalizada.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
     <section class="section">
       <div class="container">
-        <div class="grid grid-2">
-          <!-- Contact Info -->
-          <div>
-            <h1 class="heading-lg mb-md">Contáctanos</h1>
-            <p class="text-light mb-lg">Estamos listos para atender tus necesidades tecnológicas. Escríbenos o llámanos.
+        <div class="grid grid-2" style="gap: 5rem; align-items: start;">
+
+          <!-- Info Col -->
+          <div class="reveal-left">
+            <h2 class="heading-lg heading-left">Hablemos de tu Próximo Proyecto</h2>
+            <p class="text-muted mb-lg" style="font-size: 1.65rem; line-height: 1.7;">
+              Ponte en contacto con nuestro equipo de especialistas. Te brindamos asesoría técnica, cotizaciones
+              inmediatas y atención personalizada.
             </p>
 
-            <div class="d-flex align-center mb-md">
-              <div class="card__icon mb-sm" style="margin-right: 1.5rem; margin-bottom: 0;"><i class="fa fa-phone"></i>
-              </div>
+            <!-- Phone Card -->
+            <a href="tel:+18499367087" class="contact-card">
+              <div class="contact-card__icon"><i class="fa fa-phone"></i></div>
               <div>
-                <h4 class="heading-md" style="margin:0; font-size: 1.8rem;">Teléfono</h4>
-                <p class="text-light">+1 849 936 7087</p>
+                <h3 class="heading-sm" style="color: var(--primary-dark); margin-bottom: 0.3rem;">Teléfono Directo</h3>
+                <p class="text-primary" style="font-weight: 700; font-size: 1.6rem;">+1 (849) 936-7087</p>
+                <p class="text-muted" style="font-size: 1.35rem;">Lunes a Viernes de 8:00 AM a 6:00 PM</p>
               </div>
-            </div>
+            </a>
 
-            <div class="d-flex align-center mb-md">
-              <div class="card__icon mb-sm" style="margin-right: 1.5rem; margin-bottom: 0;"><i
-                  class="fa fa-envelope"></i></div>
+            <!-- WhatsApp Card -->
+            <a href="https://wa.me/18499367087" target="_blank" class="contact-card">
+              <div class="contact-card__icon" style="background-color: rgba(37, 211, 102, 0.15); color: #25d366;"><i class="fa fa-whatsapp"></i></div>
               <div>
-                <h4 class="heading-md" style="margin:0; font-size: 1.8rem;">Email</h4>
-                <p class="text-light">ventas@pragmatica.com.do</p>
+                <h3 class="heading-sm" style="color: var(--primary-dark); margin-bottom: 0.3rem;">WhatsApp Corporativo</h3>
+                <p style="color: #25d366; font-weight: 700; font-size: 1.6rem;">Chatear en Tiempo Real</p>
+                <p class="text-muted" style="font-size: 1.35rem;">Respuesta ágil de un consultor</p>
               </div>
-            </div>
+            </a>
 
-            <div class="d-flex align-center">
-              <div class="card__icon mb-sm" style="margin-right: 1.5rem; margin-bottom: 0;"><i
-                  class="fa fa-map-marker"></i></div>
+            <!-- Email Card -->
+            <a href="mailto:ventas@pragmatica.com.do" class="contact-card">
+              <div class="contact-card__icon"><i class="fa fa-envelope"></i></div>
               <div>
-                <h4 class="heading-md" style="margin:0; font-size: 1.8rem;">Dirección</h4>
-                <p class="text-light">Calle Julio Genaro Campillo Perez, Edif 5, 3er Nivel, Santo Domingo Este.</p>
+                <h3 class="heading-sm" style="color: var(--primary-dark); margin-bottom: 0.3rem;">Correo Electrónico</h3>
+                <p class="text-primary" style="font-weight: 700; font-size: 1.6rem;">ventas@pragmatica.com.do</p>
+                <p class="text-muted" style="font-size: 1.35rem;">Para propuestas, RFPs y requerimientos</p>
               </div>
-            </div>
+            </a>
+
+            <!-- Location Card (Clickable to Google Maps) -->
+            <a href="https://maps.google.com/?q=C.+Interior+A+3,+Santo+Domingo+Este" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card__icon"><i class="fa fa-map-marker"></i></div>
+              <div>
+                <h3 class="heading-sm" style="color: var(--primary-dark); margin-bottom: 0.3rem;">Oficina Principal</h3>
+                <p class="text-muted" style="font-size: 1.5rem; line-height: 1.5;">
+                  Plaza AR, C. Interior A 3, Santo Domingo Este, República Dominicana.
+                </p>
+                <p class="text-primary" style="font-size: 1.35rem; font-weight: 700; margin-top: 0.5rem;">
+                  <i class="fa fa-map-o"></i> Ver ubicación en Google Maps
+                </p>
+              </div>
+            </a>
           </div>
 
-          <!-- Form -->
-          <div>
-            <div class="card">
-              <h3 class="heading-md mb-md">Envíanos un mensaje</h3>
+          <!-- Form Col -->
+          <div class="reveal-right">
+            <div style="background-color: var(--bg-white); border-radius: var(--radius-xl); padding: 4rem 3.5rem; box-shadow: var(--shadow-md); border: 1px solid #e2e8f0;">
+              <h3 class="heading-md" style="color: var(--primary-dark); margin-bottom: 2rem;">Envíanos un Mensaje</h3>
+
               <form id="contact-form">
-                <div class="mb-sm">
-                  <label for="nombre" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Nombre</label>
-                  <input type="text" id="nombre" name="nombre" required
-                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: var(--radius-sm);">
+                <div class="form-group">
+                  <label for="nombre" class="form-label">Nombre Completo *</label>
+                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
                 </div>
-                <div class="mb-sm">
-                  <label for="email" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
-                  <input type="email" id="email" name="email" required
-                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: var(--radius-sm);">
+
+                <div class="grid grid-2" style="gap: 1.5rem;">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Correo Corporativo *</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@empresa.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej. +1 809 000 0000">
+                  </div>
                 </div>
-                <div class="mb-md">
-                  <label for="mensaje" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Mensaje</label>
-                  <textarea id="mensaje" name="mensaje" rows="5" required
-                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: var(--radius-sm);"></textarea>
+
+                <div class="form-group">
+                  <label for="servicio" class="form-label">Servicio de Interés</label>
+                  <select id="servicio" name="servicio" class="form-control" style="cursor: pointer;">
+                    <option value="Desarrollo de Software">Desarrollo de Software & Aplicaciones</option>
+                    <option value="Ciberseguridad">Ciberseguridad & Firewalls</option>
+                    <option value="Servicios Gestionados">Servicios Gestionados IT</option>
+                    <option value="Licenciamiento">Licenciamiento de Software (Microsoft / Fortinet / Kaspersky)</option>
+                    <option value="Venta de Equipos">Venta y Suministro de Equipos</option>
+                    <option value="Gestion de Proyectos">Gestión y Consultoría de Proyectos</option>
+                    <option value="Otro">Otro requerimiento</option>
+                  </select>
                 </div>
-                <button type="submit" class="btn btn--primary" style="width: 100%;">Enviar Mensaje</button>
-                <div id="form-message" class="mt-sm text-center"></div>
+
+                <div class="form-group">
+                  <label for="mensaje" class="form-label">Mensaje o Requerimiento *</label>
+                  <textarea id="mensaje" name="mensaje" class="form-control" rows="5" placeholder="Cuéntanos sobre las necesidades tecnológicas de tu empresa..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary" style="width: 100%;">
+                  <span>Enviar Mensaje</span> <i class="fa fa-paper-plane"></i>
+                </button>
+
+                <div id="form-message" style="margin-top: 1.5rem; text-align: center; font-weight: 600; font-size: 1.5rem; min-height: 2.4rem;"></div>
               </form>
             </div>
           </div>
+
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div>
-          <h4 class="heading-md mb-sm">Pragmática S.R.L.</h4>
-          <p class="text-light">Transformamos tu futuro con soluciones tecnológicas de vanguardia.</p>
+          <img src="logo/Logo.png" alt="Pragmática Logo" style="max-height: 4.8rem; filter: brightness(0) invert(1);" />
+          <p class="footer__brand-desc">
+            Transformamos tu futuro con soluciones tecnológicas de vanguardia.
+          </p>
           <div class="footer__socials">
-            <a href="#" class="footer__social-link"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100072446439044" target="_blank"
-              class="footer__social-link"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="footer__social-link"><i class="fa fa-twitter"></i></a>
-            <a href="https://wa.link/34dc9a" target="_blank" class="footer__social-link"><i
+            <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="footer__social-btn"><i
+                class="fa fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank" class="footer__social-btn"><i
+                class="fa fa-facebook"></i></a>
+            <a href="https://wa.me/18499367087" target="_blank" class="footer__social-btn"><i
                 class="fa fa-whatsapp"></i></a>
-            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-link"><i
+            <a href="https://instagram.com/pragmaticasrl" target="_blank" class="footer__social-btn"><i
                 class="fa fa-instagram"></i></a>
           </div>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Enlaces</h4>
-          <ul>
-            <li><a href="Empresa.html">Sobre Nosotros</a></li>
-            <li><a href="Soluciones.html">Nuestros Servicios</a></li>
-            <li><a href="Contacto.html">Contáctanos</a></li>
-            <li><a href="Socios.html">Nuestros Socios</a></li>
+          <h4 class="footer__heading">Navegación</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Inicio</a></li>
+            <li><a href="Empresa.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Sobre
+                Nosotros</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios</a>
+            </li>
+            <li><a href="Socios.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Socios y
+                Clientes</a></li>
+            <li><a href="Contacto.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Contáctanos</a>
+            </li>
           </ul>
         </div>
+
         <div>
-          <h4 class="heading-md mb-sm">Ubicación</h4>
-          <p class="text-light">Calle Julio Genaro Campillo Perez, Edif 5, 3er Nivel, Santo Domingo Este.</p>
+          <h4 class="footer__heading">Servicios</h4>
+          <ul class="footer__links">
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Desarrollo de Software</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i>
+                Ciberseguridad</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Servicios
+                Gestionados</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Licenciamiento
+                TI</a></li>
+            <li><a href="Soluciones.html" class="footer__link"><i class="fa fa-angle-right text-cyan"></i> Venta de
+                Equipos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Contacto</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="https://maps.google.com/?q=C.+Interior+A+3,+Santo+Domingo+Este" target="_blank" rel="noopener noreferrer" class="footer__link">
+                <i class="fa fa-map-marker text-cyan"></i> Plaza AR, C. Interior A 3, Santo Domingo Este.
+              </a>
+            </li>
+            <li>
+              <a href="tel:+18499367087" class="footer__link">
+                <i class="fa fa-phone text-cyan"></i> +1 (849) 936-7087
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ventas@pragmatica.com.do" class="footer__link">
+                <i class="fa fa-envelope text-cyan"></i> ventas@pragmatica.com.do
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="footer__bottom">&copy; <span id="year">2024</span> Pragmática S.R.L.</div>
+
+      <div class="footer__bottom">
+        <div>&copy; <span id="year">2026</span> <strong>Pragmática S.R.L.</strong> Todos los derechos reservados.</div>
+      </div>
     </div>
   </footer>
 
-  <div class="Pbx-Netelip">
-    <a href="https://pragmaticado.netelip.com/do/" target="_blank">
-      <div class="btn-netelip"></div>
-    </a>
-  </div>
+  <button class="scroll-to-top" aria-label="Volver arriba">
+    <i class="fa fa-chevron-up"></i>
+  </button>
 
-  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    // Init EmailJS (Placeholder)
-    // emailjs.init("YOUR_USER_ID");
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
+    document.getElementById("contact-form")?.addEventListener("submit", function (event) {
       event.preventDefault();
-      // Placeholder logic
-      document.getElementById("form-message").textContent = "Gracias por su mensaje. Nos pondremos en contacto pronto.";
-      document.getElementById("form-message").style.color = "var(--primary-blue)";
+      const msg = document.getElementById("form-message");
+      if (msg) {
+        msg.textContent = "¡Gracias por contactarnos! Tu mensaje ha sido recibido. Nos comunicaremos contigo en breve.";
+        msg.style.color = "#10b981";
+      }
       this.reset();
     });
-  </script>
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/67747ce1af5bfec1dbe554dd/1igfgfjtt';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
   </script>
 </body>
 
