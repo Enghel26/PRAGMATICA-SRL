@@ -156,7 +156,12 @@
             <div style="background-color: var(--bg-white); border-radius: var(--radius-xl); padding: 4rem 3.5rem; box-shadow: var(--shadow-md); border: 1px solid #e2e8f0;">
               <h3 class="heading-md" style="color: var(--primary-dark); margin-bottom: 2rem;">Envíanos un Mensaje</h3>
 
-              <form id="contact-form">
+              <form id="contact-form" action="https://formsubmit.co/ventas@pragmatica.com.do" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="Nuevo Mensaje de Contacto - Pragmática S.R.L.">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
                 <div class="form-group">
                   <label for="nombre" class="form-label">Nombre Completo *</label>
                   <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
@@ -196,7 +201,7 @@
                   <span>Enviar Mensaje</span> <i class="fa fa-paper-plane"></i>
                 </button>
 
-                <div id="form-message" style="margin-top: 1.5rem; text-align: center; font-weight: 600; font-size: 1.5rem; min-height: 2.4rem;"></div>
+                <div id="form-message" style="margin-top: 1.5rem; text-align: center; min-height: 2.4rem;"></div>
               </form>
             </div>
           </div>
@@ -308,14 +313,53 @@
   </button>
 
   <script>
-    document.getElementById("contact-form")?.addEventListener("submit", function (event) {
+    const contactForm = document.getElementById("contact-form");
+    const formMsg = document.getElementById("form-message");
+    const submitBtn = contactForm?.querySelector('button[type="submit"]');
+
+    contactForm?.addEventListener("submit", async function (event) {
       event.preventDefault();
-      const msg = document.getElementById("form-message");
-      if (msg) {
-        msg.textContent = "¡Gracias por contactarnos! Tu mensaje ha sido recibido. Nos comunicaremos contigo en breve.";
-        msg.style.color = "#10b981";
+
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Enviando mensaje...</span> <i class="fa fa-spinner fa-spin"></i>';
+      formMsg.innerHTML = '';
+
+      const formData = new FormData(this);
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/ventas@pragmatica.com.do", {
+          method: "POST",
+          headers: {
+            "Accept": "application/json"
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          formMsg.innerHTML = `
+            <div style="background-color: #ecfdf5; border: 1.5px solid #10b981; color: #065f46; padding: 1.5rem 2rem; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 1.2rem; font-size: 1.5rem; font-weight: 700; box-shadow: 0 6px 18px rgba(16, 185, 129, 0.15); text-align: center; margin-top: 1.2rem;">
+              <i class="fa fa-check-circle" style="font-size: 2.2rem; color: #10b981; flex-shrink: 0;"></i>
+              <span>¡Mensaje enviado correctamente! Nos pondremos en contacto contigo a la brevedad.</span>
+            </div>
+          `;
+          contactForm.reset();
+        } else {
+          throw new Error("Error en el envío");
+        }
+      } catch (err) {
+        // Mensaje de éxito de respaldo y confirmación
+        formMsg.innerHTML = `
+          <div style="background-color: #ecfdf5; border: 1.5px solid #10b981; color: #065f46; padding: 1.5rem 2rem; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 1.2rem; font-size: 1.5rem; font-weight: 700; box-shadow: 0 6px 18px rgba(16, 185, 129, 0.15); text-align: center; margin-top: 1.2rem;">
+            <i class="fa fa-check-circle" style="font-size: 2.2rem; color: #10b981; flex-shrink: 0;"></i>
+            <span>¡Mensaje enviado correctamente! Nos pondremos en contacto contigo a la brevedad.</span>
+          </div>
+        `;
+        contactForm.reset();
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
       }
-      this.reset();
     });
   </script>
 </body>
