@@ -1837,6 +1837,17 @@ button {
   transition: transform var(--transition-normal), filter var(--transition-normal);
 }
 
+/* Fine-tune sizing to balance optical weights across aspect ratios */
+.client-card-pro img.logo-compact {
+  max-height: 9.5rem;
+  max-width: 82%;
+}
+
+.client-card-pro img.logo-wide {
+  max-height: 7.2rem;
+  max-width: 92%;
+}
+
 .client-card-pro:hover img {
   transform: scale(1.08);
 }
