@@ -157,30 +157,31 @@
               <h3 class="heading-md" style="color: var(--primary-dark); margin-bottom: 2rem;">Envíanos un Mensaje</h3>
 
               <form id="contact-form" action="https://formsubmit.co/enghelmejia4@gmail.com" method="POST">
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_subject" value="Nuevo Mensaje de Contacto - Pragmática S.R.L.">
+                <!-- FormSubmit Design & Routing Configuration -->
+                <input type="hidden" name="_subject" value="💼 Nuevo Mensaje de Contacto - Pragmática S.R.L.">
+                <input type="hidden" name="_template" value="box">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="¡Hola! Gracias por comunicarte con Pragmática S.R.L. Hemos recibido tu mensaje satisfactoriamente. Uno de nuestros especialistas se pondrá en contacto contigo a la brevedad para brindarte atención personalizada.">
 
                 <div class="form-group">
                   <label for="nombre" class="form-label">Nombre Completo *</label>
-                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+                  <input type="text" id="nombre" name="Nombre Completo" class="form-control" placeholder="Ej. Juan Pérez" required>
                 </div>
 
                 <div class="grid grid-2" style="gap: 1.5rem;">
                   <div class="form-group">
                     <label for="email" class="form-label">Correo *</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@empresa.com" required>
+                    <input type="email" id="email" name="Correo Electrónico" class="form-control" placeholder="ejemplo@empresa.com" required>
                   </div>
                   <div class="form-group">
                     <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej. +1 809 000 0000">
+                    <input type="tel" id="telefono" name="Teléfono" class="form-control" placeholder="Ej. +1 809 000 0000">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="servicio" class="form-label">Servicio de Interés</label>
-                  <select id="servicio" name="servicio" class="form-control" style="cursor: pointer;">
+                  <select id="servicio" name="Servicio de Interés" class="form-control" style="cursor: pointer;">
                     <option value="" disabled selected>Seleccionar...</option>
                     <option value="Ciberseguridad">Ciberseguridad</option>
                     <option value="Desarrollo de Software y App Móviles">Desarrollo de Software y App Móviles</option>
@@ -194,7 +195,7 @@
 
                 <div class="form-group">
                   <label for="mensaje" class="form-label">Mensaje o Requerimiento *</label>
-                  <textarea id="mensaje" name="mensaje" class="form-control" rows="5" placeholder="Cuéntanos sobre las necesidades tecnológicas de tu empresa..." required></textarea>
+                  <textarea id="mensaje" name="Mensaje o Requerimiento" class="form-control" rows="5" placeholder="Cuéntanos sobre las necesidades tecnológicas de tu empresa..." required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn--primary" style="width: 100%;">
