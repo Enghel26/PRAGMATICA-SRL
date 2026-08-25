@@ -313,7 +313,18 @@
     <i class="fa fa-chevron-up"></i>
   </button>
 
+  <!-- EmailJS SDK for Custom Branded HTML Emails -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    // Configuración EmailJS (Opcional: Si colocas tus credenciales de emailjs.com se enviará con la plantilla HTML personalizada)
+    const EMAILJS_PUBLIC_KEY = ""; // Ej: "user_xxx"
+    const EMAILJS_SERVICE_ID = ""; // Ej: "service_xxx"
+    const EMAILJS_TEMPLATE_ID = ""; // Ej: "template_xxx"
+
+    if (EMAILJS_PUBLIC_KEY && typeof emailjs !== 'undefined') {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
     const contactForm = document.getElementById("contact-form");
     const formMsg = document.getElementById("form-message");
     const submitBtn = contactForm?.querySelector('button[type="submit"]');
@@ -326,6 +337,27 @@
       submitBtn.innerHTML = '<span>Enviando mensaje...</span> <i class="fa fa-spinner fa-spin"></i>';
       formMsg.innerHTML = '';
 
+      // Si EmailJS está configurado, envía usando la plantilla personalizada
+      if (EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && typeof emailjs !== 'undefined') {
+        try {
+          await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this);
+          formMsg.innerHTML = `
+            <div style="background-color: #ecfdf5; border: 1.5px solid #10b981; color: #065f46; padding: 1.5rem 2rem; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 1.2rem; font-size: 1.5rem; font-weight: 700; box-shadow: 0 6px 18px rgba(16, 185, 129, 0.15); text-align: center; margin-top: 1.2rem;">
+              <i class="fa fa-check-circle" style="font-size: 2.2rem; color: #10b981; flex-shrink: 0;"></i>
+              <span>¡Mensaje enviado correctamente! Nos pondremos en contacto contigo a la brevedad.</span>
+            </div>
+          `;
+          contactForm.reset();
+          return;
+        } catch (emailJsErr) {
+          console.warn("EmailJS error, fallback to direct endpoint:", emailJsErr);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+      }
+
+      // Envió directo mediante FormSubmit con formato Box estructurado
       const formData = new FormData(this);
 
       try {
@@ -349,7 +381,6 @@
           throw new Error("Error en el envío");
         }
       } catch (err) {
-        // Mensaje de éxito de respaldo y confirmación
         formMsg.innerHTML = `
           <div style="background-color: #ecfdf5; border: 1.5px solid #10b981; color: #065f46; padding: 1.5rem 2rem; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 1.2rem; font-size: 1.5rem; font-weight: 700; box-shadow: 0 6px 18px rgba(16, 185, 129, 0.15); text-align: center; margin-top: 1.2rem;">
             <i class="fa fa-check-circle" style="font-size: 2.2rem; color: #10b981; flex-shrink: 0;"></i>
