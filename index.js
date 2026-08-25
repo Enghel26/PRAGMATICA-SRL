@@ -227,6 +227,19 @@ function initCounters() {
   const counters = document.querySelectorAll('.stat-number');
   if (!counters.length) return;
 
+  // Calculate dynamic trajectory years from October 7, 2021
+  const foundationYear = 2021;
+  const currentYear = new Date().getFullYear();
+  const calculatedYears = Math.max(1, currentYear - foundationYear);
+
+  counters.forEach((el) => {
+    const parentCard = el.closest('.stat-card') || el.parentElement;
+    const label = parentCard?.querySelector('.stat-label')?.textContent || '';
+    if (label.toLowerCase().includes('trayectoria') || label.toLowerCase().includes('experiencia')) {
+      el.setAttribute('data-target', calculatedYears.toString());
+    }
+  });
+
   const countUp = (el) => {
     const target = parseInt(el.getAttribute('data-target'), 10) || 0;
     const prefix = el.getAttribute('data-prefix') || '';
