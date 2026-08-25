@@ -1458,9 +1458,9 @@ button {
   background-color: var(--bg-white);
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-xl);
-  padding: 1.6rem 2.8rem;
-  height: 11.5rem;
-  width: 24rem;
+  padding: 1.8rem 3.2rem;
+  height: 11rem;
+  width: 23.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1471,7 +1471,7 @@ button {
 }
 
 .client-logo-card img {
-  max-height: 7.5rem;
+  max-height: 7.2rem;
   max-width: 86%;
   width: auto;
   height: auto;
@@ -1479,16 +1479,6 @@ button {
   mix-blend-mode: multiply;
   filter: grayscale(35%) opacity(0.9);
   transition: all var(--transition-normal);
-}
-
-.client-logo-card img.logo-compact {
-  max-height: 8.8rem;
-  max-width: 82%;
-}
-
-.client-logo-card img.logo-wide {
-  max-height: 6.4rem;
-  max-width: 92%;
 }
 
 .client-logo-card:hover {
@@ -1845,17 +1835,6 @@ button {
   object-fit: contain;
   mix-blend-mode: multiply;
   transition: transform var(--transition-normal), filter var(--transition-normal);
-}
-
-/* Fine-tune sizing to balance optical weights across aspect ratios */
-.client-card-pro img.logo-compact {
-  max-height: 9.5rem;
-  max-width: 82%;
-}
-
-.client-card-pro img.logo-wide {
-  max-height: 7.2rem;
-  max-width: 92%;
 }
 
 .client-card-pro:hover img {
