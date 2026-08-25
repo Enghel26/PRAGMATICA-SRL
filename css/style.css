@@ -1556,19 +1556,18 @@ button {
 }
 
 /* ==========================================================================
-   10. STRATEGIC ALLIES GRID (MODERN RESPONSIVE SHOWCASE)
+   10. STRATEGIC PROVIDERS GRID (5-PROVIDER MODERN HOMEPAGE SHOWCASE)
    ========================================================================== */
 .providers-grid-home {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  gap: 2.8rem;
-  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.2rem;
 }
 
 .provider-card-home {
   background-color: var(--bg-white);
   border-radius: var(--radius-xl);
-  padding: 3.5rem 2.8rem 3rem;
+  padding: 3rem 2rem 2.4rem;
   border: 1px solid #e2e8f0;
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -1604,72 +1603,50 @@ button {
 
 .provider-card-home__badge {
   display: inline-block;
-  padding: 0.45rem 1.4rem;
-  font-size: 1.15rem;
+  padding: 0.35rem 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   border-radius: var(--radius-full);
   background-color: var(--primary-light);
   color: var(--primary-blue);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 .provider-card-home__logo-wrap {
-  height: 10rem;
+  height: 8rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1.2rem 2.4rem;
-  background-color: #f8fafc;
-  border-radius: var(--radius-lg);
-  border: 1px solid #edf2f7;
-  transition: all var(--transition-normal);
-}
-
-.provider-card-home:hover .provider-card-home__logo-wrap {
-  background-color: #ffffff;
-  border-color: rgba(0, 98, 185, 0.25);
-  box-shadow: 0 4px 16px rgba(0, 98, 185, 0.08);
+  margin-bottom: 1.6rem;
+  padding: 0 1rem;
 }
 
 .provider-card-home__logo {
-  max-height: 5.8rem;
-  max-width: 86%;
-  width: auto;
-  height: auto;
+  max-height: 6.8rem;
+  max-width: 90%;
   object-fit: contain;
   transition: transform var(--transition-normal);
 }
 
-.provider-card-home__logo.logo-wide {
-  max-height: 5.2rem;
-  max-width: 95%;
-}
-
-.provider-card-home__logo.logo-compact {
-  max-height: 6.4rem;
-  max-width: 82%;
-}
-
 .provider-card-home:hover .provider-card-home__logo {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
 .provider-card-home__title {
-  font-size: 1.95rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: var(--primary-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .provider-card-home__desc {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 2.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.6rem;
   flex-grow: 1;
 }
 
@@ -1678,34 +1655,35 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #16a34a;
+  padding-top: 1.2rem;
+  border-top: 1px solid #f1f5f9;
+  width: 100%;
+  justify-content: center;
 }
 
 .provider-card-home__status::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: #16a34a;
   box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
 }
 
-/* ==========================================================================
-   11. ALLIES SHOWCASE GRID (PROFESSIONAL FOR SOCIOS.HTML)
-   ========================================================================== */
+/* Allies Showcase Grid (Professional Redesign for Socios.html) */
 .partner-grid-pro {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  gap: 2.8rem;
-  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.2rem;
 }
 
 .partner-card-pro {
   background-color: var(--bg-white);
   border-radius: var(--radius-xl);
-  padding: 3.5rem 2.8rem 3rem;
+  padding: 3.2rem 2.4rem 2.8rem;
   border: 1px solid #e2e8f0;
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -1724,7 +1702,7 @@ button {
 
 .partner-card-pro__badge {
   display: inline-block;
-  padding: 0.45rem 1.4rem;
+  padding: 0.45rem 1.2rem;
   font-size: 1.15rem;
   font-weight: 700;
   border-radius: var(--radius-full);
@@ -1737,70 +1715,48 @@ button {
 }
 
 .partner-card-pro__logo-wrap {
-  height: 10rem;
+  height: 9rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2.2rem;
-  padding: 1.2rem 2.4rem;
-  background-color: #f8fafc;
-  border-radius: var(--radius-lg);
-  border: 1px solid #edf2f6;
-  transition: all var(--transition-normal);
-}
-
-.partner-card-pro:hover .partner-card-pro__logo-wrap {
-  background-color: #ffffff;
-  border-color: rgba(0, 98, 185, 0.25);
-  box-shadow: 0 4px 16px rgba(0, 98, 185, 0.08);
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
 }
 
 .partner-card-pro__logo {
-  max-height: 5.8rem;
-  max-width: 86%;
-  width: auto;
-  height: auto;
+  max-height: 7.5rem;
+  max-width: 90%;
   object-fit: contain;
   transition: transform var(--transition-normal);
 }
 
-.partner-card-pro__logo.logo-wide {
-  max-height: 5.2rem;
-  max-width: 95%;
-}
-
-.partner-card-pro__logo.logo-compact {
-  max-height: 6.4rem;
-  max-width: 82%;
-}
-
 .partner-card-pro:hover .partner-card-pro__logo {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
 .partner-card-pro__title {
-  font-size: 1.95rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--primary-dark);
   margin-bottom: 0.8rem;
 }
 
 .partner-card-pro__desc {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 2.2rem;
+  line-height: 1.55;
+  margin-bottom: 2rem;
   flex-grow: 1;
 }
 
 .partner-card-pro__features {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.8rem;
   width: 100%;
   text-align: left;
-  padding-top: 1.8rem;
+  padding-top: 1.5rem;
   border-top: 1px solid #f1f5f9;
   font-size: 1.35rem;
   color: var(--text-main);
@@ -1809,7 +1765,7 @@ button {
 .partner-card-pro__features div {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
 .partner-card-pro__features i {
@@ -1818,7 +1774,7 @@ button {
 }
 
 .partner-card-pro__status {
-  margin-top: 2.2rem;
+  margin-top: 2rem;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -1828,6 +1784,13 @@ button {
 }
 
 .partner-card-pro__status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
   content: '';
   width: 8px;
   height: 8px;
