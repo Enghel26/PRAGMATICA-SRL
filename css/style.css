@@ -1258,6 +1258,13 @@ button {
   transition: all var(--transition-normal);
 }
 
+.service-card-modern__icon-badge svg {
+  width: 2.8rem;
+  height: 2.8rem;
+  fill: currentColor;
+  display: block;
+}
+
 .service-card-modern:hover .service-card-modern__icon-badge {
   transform: translateY(-4px) scale(1.1);
   box-shadow: 0 12px 28px rgba(0, 98, 185, 0.45);
@@ -1485,6 +1492,12 @@ button {
   transition: all var(--transition-normal);
 }
 
+.client-logo-card img[src*="mundoairee"] {
+  max-height: 8.8rem;
+  max-width: 90%;
+  transform: scale(1.18);
+}
+
 .client-logo-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0, 98, 185, 0.14);
@@ -1494,6 +1507,10 @@ button {
 .client-logo-card:hover img {
   filter: grayscale(0%) opacity(1);
   transform: scale(1.08);
+}
+
+.client-logo-card:hover img[src*="mundoairee"] {
+  transform: scale(1.26);
 }
 
 /* Trust Highlights in Separate Independent Floating Pills */
@@ -1845,8 +1862,18 @@ button {
   max-width: 92%;
 }
 
+.client-card-pro img[src*="mundoairee"] {
+  max-height: 11rem;
+  max-width: 88%;
+  transform: scale(1.2);
+}
+
 .client-card-pro:hover img {
   transform: scale(1.08);
+}
+
+.client-card-pro:hover img[src*="mundoairee"] {
+  transform: scale(1.28);
 }
 
 /* Trust Pillars Section */
