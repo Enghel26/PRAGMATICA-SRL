@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes de Desarrollo Web Informativo y Corporativo | Pragmática S.R.L.</title>
+  <meta name="description" content="Planes de Desarrollo Web Informativo y Corporativo de Pragmática S.R.L. Diseños modernos, alto rendimiento, optimización SEO y máxima seguridad.">
+  <link rel="icon" type="image/png" href="../assets/png/whiteIcon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    :root {
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-popular: #f0f7ff;
+      --bg-card-custom: linear-gradient(165deg, #ffffff 0%, #faf5ff 100%);
+      --bg-table-even: #f8fafc;
+      --bg-table-head: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+      --border-color: #e2e8f0;
+      --border-card: #e2e8f0;
+      --border-hover: rgba(37, 99, 235, 0.35);
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-glow: rgba(37, 99, 235, 0.18);
+      --purple-accent: #7c3aed;
+      --purple-hover: #6d28d9;
+      --purple-glow: rgba(124, 58, 237, 0.18);
+      --success: #059669;
+      --success-bg: rgba(5, 150, 105, 0.1);
+      --danger: #94a3b8;
+      --danger-bg: rgba(148, 163, 184, 0.12);
+      --badge-bg: rgba(37, 99, 235, 0.08);
+      --badge-text: #1d4ed8;
+      --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+      --card-shadow-hover: 0 20px 35px -10px rgba(15, 23, 42, 0.12);
+      --card-shadow-popular: 0 0 0 1px #2563eb, 0 15px 35px -5px rgba(37, 99, 235, 0.2);
+      --ambient-glow: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.04) 35%, transparent 70%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      background-image: var(--ambient-glow);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100% 700px;
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1.5rem 5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Top Bar / Navigation */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      transition: filter 0.25s ease, opacity 0.25s ease;
+    }
+
+    .top-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      transition: all 0.2s ease;
+    }
+
+    .nav-back-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .nav-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.5rem 1.15rem;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 10px rgba(37, 211, 102, 0.25);
+    }
+
+    .nav-wa-btn:hover {
+      background: #1eb857;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      color: #ffffff;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 3.75rem;
+      padding: 0 0.5rem;
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 0.4rem 1.15rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--accent-glow);
+      box-shadow: 0 2px 10px var(--accent-glow);
+    }
+
+    .header h1 {
+      font-size: clamp(2rem, 4vw, 2.85rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.15rem;
+      line-height: 1.18;
+      color: var(--text-main);
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: clamp(0.98rem, 1.8vw, 1.1rem);
+      line-height: 1.65;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Pricing Grid Responsive Structure */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 5.5rem;
+      align-items: stretch;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 1140px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+      }
+    }
+
+    @media (max-width: 660px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 1.25rem;
+      }
+    }
+
+    .plan-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 1.25rem;
+      padding: 2.25rem 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+      box-shadow: var(--card-shadow);
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--border-hover);
+    }
+
+    .plan-card.popular {
+      background: var(--bg-card-popular);
+      border: 2px solid var(--accent);
+      box-shadow: var(--card-shadow-popular);
+    }
+
+    .plan-card.popular:hover {
+      box-shadow: 0 0 0 2px var(--accent), 0 25px 45px -10px rgba(59, 130, 246, 0.35);
+    }
+
+    .plan-card.custom {
+      background: var(--bg-card-custom);
+      border: 1.5px solid var(--purple-accent);
+      box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.15);
+    }
+
+    .plan-card.custom:hover {
+      box-shadow: 0 0 0 2px var(--purple-accent), 0 25px 45px -10px rgba(168, 85, 247, 0.3);
+    }
+
+    /* Badges */
+    .popular-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1.1rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px var(--accent-glow);
+      z-index: 2;
+    }
+
+    .custom-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--purple-accent) 0%, #7e22ce 100%);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1.1rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px var(--purple-glow);
+      z-index: 2;
+    }
+
+    .plan-name {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .plan-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      min-height: 2.85rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .plan-meta {
+      background: rgba(128, 128, 128, 0.06);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 0.95rem 1.1rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.85rem;
+    }
+
+    .plan-meta div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed rgba(128, 128, 128, 0.15);
+    }
+
+    .plan-meta div:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .plan-meta div:first-child {
+      padding-top: 0;
+    }
+
+    .plan-meta span:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .plan-meta span:last-child {
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: right;
+    }
+
+    .features-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .features-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.48;
+      color: var(--text-main);
+    }
+
+    .features-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .features-list li strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .icon-check {
+      color: var(--success);
+      background: var(--success-bg);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+      line-height: 1;
+    }
+
+    .custom-highlight-box {
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0.02) 100%);
+      border: 1.5px dashed var(--purple-accent);
+      border-radius: 1rem;
+      padding: 1.4rem;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .custom-highlight-box h4 {
+      color: var(--purple-accent);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+
+    .custom-highlight-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .custom-highlight-box .features-list {
+      margin-bottom: 0;
+      flex-grow: 1;
+    }
+
+    .btn-plan {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.95rem 1.25rem;
+      border-radius: 0.85rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      background: rgba(128, 128, 128, 0.06);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: auto;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-plan:hover {
+      border-color: var(--accent);
+      color: #ffffff;
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px var(--accent-glow);
+    }
+
+    .plan-card.popular .btn-plan {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .plan-card.popular .btn-plan:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      box-shadow: 0 8px 22px var(--accent-glow);
+    }
+
+    .plan-card.custom .btn-plan {
+      background: var(--purple-accent);
+      border-color: var(--purple-accent);
+      color: #ffffff;
+      box-shadow: 0 4px 14px var(--purple-glow);
+    }
+
+    .plan-card.custom .btn-plan:hover {
+      background: var(--purple-hover);
+      border-color: var(--purple-hover);
+      box-shadow: 0 8px 22px var(--purple-glow);
+    }
+
+    /* Comparison Section */
+    .comparison-section {
+      margin-top: 3.5rem;
+    }
+
+    .comparison-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2.75rem;
+      padding: 0 1rem;
+    }
+
+    .comparison-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.65rem;
+      line-height: 1.25;
+      color: var(--text-main);
+    }
+
+    .comparison-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Responsive Table Container */
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 1.25rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    /* Custom subtle scrollbar */
+    .table-responsive::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+      background: var(--bg-table-even);
+      border-bottom-left-radius: 1.25rem;
+      border-bottom-right-radius: 1.25rem;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 999px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 760px;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1.05rem 1.2rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    thead th {
+      background: var(--bg-table-head);
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 1.35rem 1rem;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    thead th:first-child {
+      text-align: left;
+      width: 32%;
+      min-width: 210px;
+      padding-left: 1.5rem;
+    }
+
+    thead th:nth-child(2) {
+      width: 17%;
+      min-width: 135px;
+    }
+
+    thead th:nth-child(3) {
+      width: 17%;
+      min-width: 135px;
+      color: var(--accent);
+      background: rgba(59, 130, 246, 0.08);
+      border-bottom-color: var(--accent);
+    }
+
+    thead th:nth-child(4) {
+      width: 17%;
+      min-width: 135px;
+    }
+
+    thead th:nth-child(5) {
+      width: 17%;
+      min-width: 145px;
+      color: var(--purple-accent);
+      background: rgba(168, 85, 247, 0.06);
+    }
+
+    /* Sticky First Column for Mobile / Tablet Horizontal Scrolling */
+    @media (max-width: 900px) {
+      thead th:first-child,
+      tbody td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 5;
+        background: var(--bg-card);
+        border-right: 1px solid var(--border-color);
+        box-shadow: 4px 0 10px -2px rgba(0, 0, 0, 0.18);
+      }
+
+      thead th:first-child {
+        z-index: 6;
+        background: var(--bg-table-head);
+      }
+
+      tbody tr:nth-child(even) td:first-child {
+        background: var(--bg-table-even);
+      }
+
+      tbody tr:hover td:first-child {
+        background: var(--bg-card);
+      }
+    }
+
+    tbody tr {
+      transition: background-color 0.15s ease;
+    }
+
+    tbody tr:hover {
+      background: rgba(59, 130, 246, 0.04);
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--bg-table-even);
+    }
+
+    tbody td {
+      text-align: center;
+      color: var(--text-main);
+    }
+
+    tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      padding-left: 1.5rem;
+      color: var(--text-main);
+    }
+
+    tbody td small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      margin-top: 0.25rem;
+      font-weight: normal;
+      line-height: 1.35;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85em;
+      padding: 0.15em 0.35em;
+      border-radius: 0.35rem;
+      background: rgba(128, 128, 128, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(128, 128, 128, 0.15);
+    }
+
+    .category-row td {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.12) 0%, rgba(59, 130, 246, 0.03) 100%) !important;
+      color: var(--accent) !important;
+      font-weight: 800 !important;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.07em;
+      padding: 0.85rem 1.5rem;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      left: 0;
+    }
+
+    .check {
+      color: var(--success);
+      background: var(--success-bg);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .cross {
+      color: var(--danger);
+      background: var(--danger-bg);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background: rgba(168, 85, 247, 0.12);
+      color: var(--purple-accent);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Notes Box / Footer */
+    .notes-box {
+      margin-top: 3.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--accent);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    .notes-box h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .notes-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .notes-box li {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .notes-box li::before {
+      content: '•';
+      color: var(--accent);
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0.35rem;
+      top: -0.1rem;
+      line-height: 1.5;
+    }
+
+    .notes-box strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Print Styles */
+    @media print {
+      .top-bar, .btn-plan {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        background-image: none !important;
+        color: #000000 !important;
+        padding: 0 !important;
+      }
+      .plan-card, .table-responsive, .notes-box {
+        box-shadow: none !important;
+        border: 1px solid #cccccc !important;
+      }
+      .plan-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Mobile Responsive Optimizations (<660px) */
+    @media (max-width: 660px) {
+      body {
+        padding: 1.25rem 1rem 3.5rem;
+      }
+
+      .top-bar {
+        margin-bottom: 1.5rem;
+      }
+
+      .header {
+        margin-bottom: 2.75rem;
+        padding: 0;
+      }
+
+      .header h1 {
+        font-size: 1.85rem;
+      }
+
+      .plan-card {
+        padding: 1.85rem 1.25rem 1.6rem;
+      }
+
+      .plan-name {
+        font-size: 1.3rem;
+      }
+
+      .plan-desc {
+        min-height: auto;
+      }
+
+      .comparison-section {
+        margin-top: 2.5rem;
+      }
+
+      .comparison-header {
+        margin-bottom: 1.75rem;
+        padding: 0;
+      }
+
+      .comparison-header h2 {
+        font-size: 1.55rem;
+      }
+
+      th, td {
+        padding: 0.85rem 0.85rem;
+        font-size: 0.82rem;
+      }
+
+      thead th {
+        padding: 1rem 0.7rem;
+      }
+
+      thead th:first-child,
+      tbody td:first-child {
+        padding-left: 1rem;
+        min-width: 180px;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .top-nav-actions {
+        justify-content: center;
+      }
+
+      .notes-box {
+        padding: 1.35rem 1.15rem;
+        margin-top: 2.5rem;
+      }
+
+      .notes-box li {
+        padding-left: 1.25rem;
+        font-size: 0.86rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Barra Superior de Navegación con Marca y Enlaces de Retorno -->
+    <nav class="top-bar" aria-label="Navegación principal">
+      <a href="../index.html" class="brand-link" title="Volver al Inicio - Pragmática S.R.L.">
+        <img src="../logo/Logo.png" alt="Pragmática S.R.L." class="brand-logo">
+      </a>
+      <div class="top-nav-actions">
+        <a href="../index.html" class="nav-back-link">
+          <i class="fa fa-home"></i> Inicio
+        </a>
+        <a href="../Soluciones.html" class="nav-back-link">
+          <i class="fa fa-th-large"></i> Servicios
+        </a>
+        <a href="../Contacto.html" class="nav-back-link">
+          <i class="fa fa-envelope-o"></i> Contacto
+        </a>
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20informaci%C3%B3n%20sobre%20los%20Planes%20de%20Desarrollo%20Web" target="_blank" class="nav-wa-btn" aria-label="Consultar por WhatsApp">
+          <i class="fa fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="header">
+      <span class="header-badge">Soluciones Digitales Corporativas</span>
+      <h1>Planes de Desarrollo de Páginas Web</h1>
+      <p>Sitios web informativos y corporativos diseñados con estándares de ingeniería de software: alto rendimiento, seguridad, optimización SEO y enfoque comercial.</p>
+    </header>
+
+    <!-- Tarjetas de los 4 Planes -->
+    <section class="pricing-grid">
+
+      <!-- 1. PLAN BÁSICO -->
+      <div class="plan-card">
+        <h3 class="plan-name">Plan Básico</h3>
+        <p class="plan-desc">Presencia digital ágil y profesional para negocios o profesionales en etapa inicial.</p>
+        
+        <div class="plan-meta">
+          <div><span>Estructura:</span> <span>Landing Page (4-5 secc.)</span></div>
+          <div><span>Entrega estimada:</span> <span>5 a 7 días hábiles</span></div>
+          <div><span>Garantía post-entrega:</span> <span>15 días</span></div>
+        </div>
+
+        <div class="features-title">12 Propuestas Incluidas:</div>
+        <ul class="features-list">
+          <li><span class="icon-check">✓</span> <span><strong>Arquitectura One-Page:</strong> Navegación fluida de 4 a 5 secciones informativas.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Diseño Optimizado:</strong> Basado en estructura/layout predefinido adaptado a tu marca.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>100% Responsive:</strong> Adaptado a celulares, tablets y escritorio.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Código 100% Estático:</strong> Máxima velocidad y seguridad sin bases de datos.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Botón de WhatsApp:</strong> Acceso flotante directo para atención inmediata.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Redes Sociales:</strong> Integración de enlaces a perfiles oficiales.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Apoyo Visual (Stock):</strong> Banco de imágenes libres de derechos y revisión ortográfica básica.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>SEO Técnico Base:</strong> Compresión de imágenes y etiquetas Meta básicas.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Despliegue + SSL:</strong> Configuración de DNS en servidor del cliente y certificado HTTPS.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>2 Rondas de Revisión:</strong> Ajustes menores incluidos antes de publicar.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Entrega Ágil:</strong> Puesta en marcha de 5 a 7 días hábiles.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Soporte de Garantía:</strong> 15 días de cobertura técnica post-lanzamiento.</span></li>
+        </ul>
+
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20B%C3%A1sico%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
+          Elegir Plan Básico <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- 2. PLAN INTERMEDIO -->
+      <div class="plan-card popular">
+        <span class="popular-tag">Más Recomendado</span>
+        <h3 class="plan-name">Plan Intermedio</h3>
+        <p class="plan-desc">Sitio corporativo multipágina para empresas que buscan proyectar solidez y captar prospectos.</p>
+        
+        <div class="plan-meta">
+          <div><span>Estructura:</span> <span>4 a 5 Páginas (inc. Home)</span></div>
+          <div><span>Entrega estimada:</span> <span>10 a 14 días hábiles</span></div>
+          <div><span>Garantía post-entrega:</span> <span>30 días</span></div>
+        </div>
+
+        <div class="features-title">13 Propuestas Incluidas:</div>
+        <ul class="features-list">
+          <li><span class="icon-check">✓</span> <span><strong>Sitio Multipágina:</strong> De 4 a 5 páginas independientes (incluyendo el Home Page).</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Diseño Semipersonalizado:</strong> Bloques adaptados con micro-interacciones y efectos al hacer scroll.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>100% Responsive:</strong> Visualización óptima en todo tipo de pantallas.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Arquitectura 100% Estática:</strong> Carga instantánea y estabilidad garantizada.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Formulario de Contacto:</strong> Envío directo a correo con validación y filtro anti-spam.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Mapa Interactivo:</strong> Ubicación con Google Maps embebido.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>WhatsApp + Redes:</strong> Botón con mensaje personalizado y enlaces sociales.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Correos Corporativos:</strong> Configuración de 3 a 5 cuentas (<code>@tuempresa.com</code>).</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Copywriting Básico Persuasivo:</strong> Optimización comercial de textos + imágenes HD.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>SEO On-Page Individual:</strong> Meta títulos, descripciones y jerarquía H1-H3 por página.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Despliegue + SSL:</strong> Configuración completa en el hosting del cliente.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>3 Rondas de Revisión:</strong> Mayor margen de ajustes de diseño y contenido.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Garantía Extendida:</strong> Entrega en 10-14 días hábiles y 30 días de garantía técnica.</span></li>
+        </ul>
+
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20Intermedio%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
+          Elegir Plan Intermedio <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- 3. PLAN PREMIUM -->
+      <div class="plan-card">
+        <h3 class="plan-name">Plan Premium</h3>
+        <p class="plan-desc">Presencia corporativa de alto impacto con diseño exclusivo desde cero, bilingüe y autogestión parcial.</p>
+        
+        <div class="plan-meta">
+          <div><span>Estructura:</span> <span>6 a 10 Páginas Internas</span></div>
+          <div><span>Entrega estimada:</span> <span>3 a 4 semanas</span></div>
+          <div><span>Garantía post-entrega:</span> <span>45 días</span></div>
+        </div>
+
+        <div class="features-title">15 Propuestas Incluidas:</div>
+        <ul class="features-list">
+          <li><span class="icon-check">✓</span> <span><strong>Arquitectura de 6 a 10 Vistas:</strong> Desglose amplio de servicios, FAQ, catálogo, blog o proyectos.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Diseño UI/UX 100% a Medida:</strong> Creado desde cero con componentes interactivos (filtros, acordeones).</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Modo Claro / Oscuro:</strong> Selector de tema visual (Light & Dark Mode) integrado.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Panel Administrativo Básico:</strong> Autogestión acotada para noticias/catálogo/galería sin alterar el diseño.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Sitio Bilingüe (ES / EN):</strong> Soporte para 2 idiomas en toda la plataforma.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Formularios de Cotización/Citas:</strong> Captación avanzada con enrutamiento por área.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Píxeles Publicitarios:</strong> Integración de Meta Pixel y etiquetas de Google Ads + WhatsApp/Mapa.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Hasta 10 Correos Corporativos:</strong> Configuración completa de cuentas empresariales.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Copywriting Estratégico Completo:</strong> Redacción orientada a ventas y curaduría multimedia.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>SEO Avanzado + Schema.org:</strong> Marcado de datos estructurados y optimización profunda.</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>Indexación en Google:</strong> Alta en Google Search Console (<code>sitemap.xml</code> y <code>robots.txt</code>).</span></li>
+          <li><span class="icon-check">✓</span> <span><strong>4 Rondas de Revisión + 45 Días Garantía:</strong> Despliegue SSL y respaldo técnico superior.</span></li>
+        </ul>
+
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20Premium%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
+          Elegir Plan Premium <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- 4. PLAN PERSONALIZADO -->
+      <div class="plan-card custom">
+        <span class="custom-tag">Sin Límites</span>
+        <h3 class="plan-name">Plan Personalizado</h3>
+        <p class="plan-desc">Soluciones corporativas a gran escala diseñadas íntegramente bajo los requerimientos específicos del cliente.</p>
+        
+        <div class="plan-meta">
+          <div><span>Estructura:</span> <span>Sin límite predefinido</span></div>
+          <div><span>Entrega estimada:</span> <span>Según alcance</span></div>
+          <div><span>Garantía post-entrega:</span> <span>A medida</span></div>
+        </div>
+
+        <div class="custom-highlight-box">
+          <h4>Todo el Plan Premium + Lo que tu empresa necesite</h4>
+          <p>Este plan no tiene un desglose restrictivo: cubre absolutamente todas las capacidades de los planes anteriores más cualquier requerimiento particular que solicites.</p>
+          <ul class="features-list" style="margin-bottom: 0;">
+            <li><span class="icon-check">✓</span> <span><strong>Cantidad de páginas y secciones ilimitadas</strong> según tu proyecto.</span></li>
+            <li><span class="icon-check">✓</span> <span><strong>Módulos administrables a medida</strong> adaptados a tu flujo de trabajo.</span></li>
+            <li><span class="icon-check">✓</span> <span><strong>Integraciones especiales</strong> (CRM, APIs informativas, analítica avanzada, múltiples idiomas).</span></li>
+            <li><span class="icon-check">✓</span> <span><strong>Atención, tiempos y soporte VIP</strong> definidos por contrato según requerimiento.</span></li>
+          </ul>
+        </div>
+
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20una%20cotizaci%C3%B3n%20a%20medida%20para%20un%20Plan%20Personalizado%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
+          Solicitar Cotización a Medida <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Tabla Comparativa Maestra -->
+    <section class="comparison-section">
+      <div class="comparison-header">
+        <h2>Matriz Comparativa de Planes</h2>
+        <p>Revisa al detalle qué incluye cada nivel para elegir la opción ideal para tu negocio.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Característica / Entregable</th>
+              <th>Básico</th>
+              <th>Intermedio</th>
+              <th>Premium</th>
+              <th>Personalizado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ARQUITECTURA Y DISEÑO -->
+            <tr class="category-row">
+              <td colspan="5">1. Arquitectura, Diseño y Experiencia Visual (UI/UX)</td>
+            </tr>
+            <tr>
+              <td>Estructura y Cantidad de Páginas</td>
+              <td>Landing Page<br><small>(4 a 5 secciones)</small></td>
+              <td>Multipágina<br><small>(4 a 5 páginas inc. Home)</small></td>
+              <td>Corporativa Extendida<br><small>(6 a 10 páginas)</small></td>
+              <td><span class="badge-custom">Sin límite / A medida</span></td>
+            </tr>
+            <tr>
+              <td>Nivel de Personalización de Diseño</td>
+              <td>Layout predefinido y optimizado</td>
+              <td>Semipersonalizado con micro-interacciones</td>
+              <td>100% Exclusivo desde cero + Componentes interactivos</td>
+              <td><span class="badge-custom">100% A requerimiento</span></td>
+            </tr>
+            <tr>
+              <td>Diseño 100% Responsive (Móvil, Tablet, PC)</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Selector de Tema Claro / Oscuro (Light & Dark Mode)</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Soporte Multilenguaje (Español / Inglés)</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="badge-custom">Multi-idioma a medida</span></td>
+            </tr>
+
+            <!-- GESTIÓN Y CONTENIDO -->
+            <tr class="category-row">
+              <td colspan="5">2. Administración de Contenido y Copywriting</td>
+            </tr>
+            <tr>
+              <td>Modalidad Técnica del Sitio</td>
+              <td>100% Estático</td>
+              <td>100% Estático</td>
+              <td>Híbrido (Con Panel Básico Acotado)</td>
+              <td><span class="badge-custom">Según requerimiento</span></td>
+            </tr>
+            <tr>
+              <td>Panel Autogestionable (Noticias / Catálogo / Galería)</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">✓</span> <small>(Alcance acotado)</small></td>
+              <td><span class="badge-custom">Total o a medida</span></td>
+            </tr>
+            <tr>
+              <td>Redacción Comercial (Copywriting) e Imágenes</td>
+              <td>Imágenes de Stock + Revisión ortográfica básica</td>
+              <td>Copywriting básico persuasivo + Imágenes HD</td>
+              <td>Copywriting estratégico completo + Curaduría multimedia</td>
+              <td><span class="badge-custom">Todo incluido a medida</span></td>
+            </tr>
+
+            <!-- CONVERSIÓN Y COMUNICACIÓN -->
+            <tr class="category-row">
+              <td colspan="5">3. Captación de Clientes y Canales de Contacto</td>
+            </tr>
+            <tr>
+              <td>Botón Flotante de WhatsApp y Redes Sociales</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span> <small>(Mensaje personalizado)</small></td>
+              <td><span class="check">✓</span> <small>(Mensaje personalizado)</small></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Formulario de Contacto con Protección Anti-Spam</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">✓</span> <small>(Estándar)</small></td>
+              <td><span class="check">✓</span> <small>(Avanzado / Cotizador / Citas)</small></td>
+              <td><span class="badge-custom">Flujos a medida</span></td>
+            </tr>
+            <tr>
+              <td>Mapa Interactivo de Ubicación (Google Maps)</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Configuración de Correos Corporativos (<code>@tuempresa.com</code>)</td>
+              <td><span class="cross">—</span></td>
+              <td>3 a 5 cuentas</td>
+              <td>Hasta 10 cuentas</td>
+              <td><span class="badge-custom">Según requerimiento</span></td>
+            </tr>
+
+            <!-- SEO E INFRAESTRUCTURA -->
+            <tr class="category-row">
+              <td colspan="5">4. Posicionamiento SEO, Marketing e Infraestructura</td>
+            </tr>
+            <tr>
+              <td>Optimización SEO en el Sitio</td>
+              <td>SEO Técnico Base<br><small>(Velocidad + Meta básicas)</small></td>
+              <td>SEO On-Page Individual<br><small>(Por cada una de las 4-5 vistas)</small></td>
+              <td>SEO Avanzado + Datos Estructurados (Schema.org)</td>
+              <td><span class="badge-custom">Estrategia completa</span></td>
+            </tr>
+            <tr>
+              <td>Indexación en Google Search Console (Sitemap.xml)</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Integración de Píxeles Publicitarios (Meta Pixel / Google Ads)</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Configuración de Servidor, DNS y Certificado SSL (HTTPS)</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+
+            <!-- TIEMPOS Y GARANTÍA -->
+            <tr class="category-row">
+              <td colspan="5">5. Revisiones, Entrega y Garantía Post-Lanzamiento</td>
+            </tr>
+            <tr>
+              <td>Rondas de Revisión Incluidas</td>
+              <td>2 Rondas</td>
+              <td>3 Rondas</td>
+              <td>4 Rondas</td>
+              <td><span class="badge-custom">A requerimiento</span></td>
+            </tr>
+            <tr>
+              <td>Tiempo Estimado de Entrega</td>
+              <td>5 a 7 días hábiles</td>
+              <td>10 a 14 días hábiles</td>
+              <td>3 a 4 semanas</td>
+              <td><span class="badge-custom">Según alcance</span></td>
+            </tr>
+            <tr>
+              <td>Garantía Técnica Post-Entrega</td>
+              <td>15 días</td>
+              <td>30 días</td>
+              <td>45 días</td>
+              <td><span class="badge-custom">A medida</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Condiciones Generales -->
+    <aside class="notes-box">
+      <h3>📌 Condiciones Técnicas y Comerciales Importantes</h3>
+      <ul>
+        <li><strong>Adquisición de Hosting y Dominio:</strong> En todos los planes se incluye la asesoría técnica, configuración de registros DNS, despliegue en el servidor y activación del Certificado SSL (HTTPS). El pago anual por la propiedad del Dominio y el servicio de Hosting corre directamente por cuenta del cliente.</li>
+        <li><strong>Modalidad Informativa y Corporativa:</strong> Estos planes están orientados exclusivamente a sitios web de carácter informativo, corporativo y de captación de prospectos (Leads). Desarrollos de sistemas web a medida, plataformas SaaS, facturación electrónica, pasarelas de pago con carrito de compras complejo, intranets o aplicaciones con lógica de negocio avanzada se cotizan en la categoría de <strong>Desarrollo de Software a Medida</strong>.</li>
+        <li><strong>Tiempos de Entrega:</strong> Los plazos de entrega comienzan a correr a partir del momento en que el cliente suministra la información base requerida (logotipo, información de la empresa y recursos acordados).</li>
+      </ul>
+    </aside>
+
+    <!-- Footer Corporativo Pragmática -->
+    <footer style="margin-top: 4.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+      <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <a href="../index.html" class="nav-back-link"><i class="fa fa-home"></i> Inicio</a>
+        <a href="../Soluciones.html" class="nav-back-link"><i class="fa fa-th-large"></i> Soluciones TI</a>
+        <a href="../Empresa.html" class="nav-back-link"><i class="fa fa-building-o"></i> Empresa</a>
+        <a href="../Socios.html" class="nav-back-link"><i class="fa fa-handshake-o"></i> Socios</a>
+        <a href="../Contacto.html" class="nav-back-link"><i class="fa fa-envelope-o"></i> Contacto</a>
+      </div>
+      <p style="margin: 0;">© 2026 PRAGMÁTICA S.R.L. — Todos los derechos reservados. Soluciones Tecnológicas y Consultoría Especializada.</p>
+    </footer>
+  </div>
+</body>
+</html>
