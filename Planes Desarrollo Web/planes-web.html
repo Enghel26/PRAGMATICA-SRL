@@ -881,37 +881,114 @@
         font-size: 0.86rem;
       }
     }
+    /* Selector de Idioma (ES / EN) */
+    .lang-switch {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .lang-indicator {
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      left: 3px;
+      width: calc(50% - 3px);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--purple-accent) 100%);
+      box-shadow: 0 3px 10px var(--accent-glow);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .lang-switch[data-active="en"] .lang-indicator {
+      transform: translateX(100%);
+    }
+
+    .lang-btn {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      min-width: 52px;
+      border: 0;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 0.42rem 0.8rem;
+      border-radius: 999px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-btn:hover {
+      color: var(--accent);
+    }
+
+    .lang-btn.is-active,
+    .lang-btn.is-active:hover {
+      color: #ffffff;
+    }
+
+    .lang-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .container {
+      transition: opacity 0.18s ease;
+    }
+
+    .container.is-switching {
+      opacity: 0.25;
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <!-- Barra Superior de Navegación con Marca y Enlaces de Retorno -->
-    <nav class="top-bar" aria-label="Navegación principal">
-      <a href="../index.html" class="brand-link" title="Volver al Inicio - Pragmática S.R.L.">
+    <nav class="top-bar" aria-label="Navegación principal" data-i18n-attr="aria-label:nav.aria">
+      <a href="../index.html" class="brand-link" title="Volver al Inicio - Pragmática S.R.L." data-i18n-attr="title:nav.brand">
         <img src="../logo/Logo.png" alt="Pragmática S.R.L." class="brand-logo">
       </a>
       <div class="top-nav-actions">
         <a href="../index.html" class="nav-back-link">
-          <i class="fa fa-home"></i> Inicio
+          <i class="fa fa-home"></i> <span data-i18n="nav.home">Inicio</span>
         </a>
         <a href="../Soluciones.html" class="nav-back-link">
-          <i class="fa fa-th-large"></i> Servicios
+          <i class="fa fa-th-large"></i> <span data-i18n="nav.services">Servicios</span>
         </a>
         <a href="../Contacto.html" class="nav-back-link">
-          <i class="fa fa-envelope-o"></i> Contacto
+          <i class="fa fa-envelope-o"></i> <span data-i18n="nav.contact">Contacto</span>
         </a>
-        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20informaci%C3%B3n%20sobre%20los%20Planes%20de%20Desarrollo%20Web" target="_blank" class="nav-wa-btn" aria-label="Consultar por WhatsApp">
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20informaci%C3%B3n%20sobre%20los%20Planes%20de%20Desarrollo%20Web" target="_blank" class="nav-wa-btn" aria-label="Consultar por WhatsApp" data-i18n-attr="href:wa.nav;aria-label:nav.waAria">
           <i class="fa fa-whatsapp"></i> WhatsApp
         </a>
+        <!-- Selector de Idioma -->
+        <div class="lang-switch" id="lang-switch" role="group" aria-label="Seleccionar idioma" data-active="es" data-i18n-attr="aria-label:lang.aria">
+          <span class="lang-indicator" aria-hidden="true"></span>
+          <button type="button" class="lang-btn is-active" id="lang-btn-es" data-lang="es" aria-pressed="true" title="Español">ES</button>
+          <button type="button" class="lang-btn" id="lang-btn-en" data-lang="en" aria-pressed="false" title="English">EN</button>
+        </div>
       </div>
     </nav>
 
     <!-- Encabezado -->
     <header class="header">
-      <span class="header-badge">Soluciones Digitales Corporativas</span>
-      <h1>Planes de Desarrollo de Páginas Web</h1>
-      <p>Sitios web informativos y corporativos diseñados con estándares de ingeniería de software: alto rendimiento, seguridad, optimización SEO y enfoque comercial.</p>
+      <span class="header-badge" data-i18n="hdr.badge">Soluciones Digitales Corporativas</span>
+      <h1 data-i18n="hdr.title">Planes de Desarrollo de Páginas Web</h1>
+      <p data-i18n="hdr.desc">Sitios web informativos y corporativos diseñados con estándares de ingeniería de software: alto rendimiento, seguridad, optimización SEO y enfoque comercial.</p>
     </header>
 
     <!-- Tarjetas de los 4 Planes -->
@@ -919,127 +996,127 @@
 
       <!-- 1. PLAN BÁSICO -->
       <div class="plan-card">
-        <h3 class="plan-name">Plan Básico</h3>
-        <p class="plan-desc">Presencia digital ágil y profesional para negocios o profesionales en etapa inicial.</p>
+        <h3 class="plan-name" data-i18n="p1.name">Plan Básico</h3>
+        <p class="plan-desc" data-i18n="p1.desc">Presencia digital ágil y profesional para negocios o profesionales en etapa inicial.</p>
         
         <div class="plan-meta">
-          <div><span>Estructura:</span> <span>Landing Page (4-5 secc.)</span></div>
-          <div><span>Entrega estimada:</span> <span>5 a 7 días hábiles</span></div>
-          <div><span>Garantía post-entrega:</span> <span>15 días</span></div>
+          <div><span data-i18n="meta.structure">Estructura:</span> <span data-i18n="p1.m1">Landing Page (4-5 secc.)</span></div>
+          <div><span data-i18n="meta.delivery">Entrega estimada:</span> <span data-i18n="p1.m2">5 a 7 días hábiles</span></div>
+          <div><span data-i18n="meta.warranty">Garantía post-entrega:</span> <span data-i18n="p1.m3">15 días</span></div>
         </div>
 
-        <div class="features-title">12 Propuestas Incluidas:</div>
+        <div class="features-title" data-i18n="p1.ft">12 Propuestas Incluidas:</div>
         <ul class="features-list">
-          <li><span class="icon-check">✓</span> <span><strong>Arquitectura One-Page:</strong> Navegación fluida de 4 a 5 secciones informativas.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Diseño Optimizado:</strong> Basado en estructura/layout predefinido adaptado a tu marca.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>100% Responsive:</strong> Adaptado a celulares, tablets y escritorio.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Código 100% Estático:</strong> Máxima velocidad y seguridad sin bases de datos.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Botón de WhatsApp:</strong> Acceso flotante directo para atención inmediata.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Redes Sociales:</strong> Integración de enlaces a perfiles oficiales.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Apoyo Visual (Stock):</strong> Banco de imágenes libres de derechos y revisión ortográfica básica.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>SEO Técnico Base:</strong> Compresión de imágenes y etiquetas Meta básicas.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Despliegue + SSL:</strong> Configuración de DNS en servidor del cliente y certificado HTTPS.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>2 Rondas de Revisión:</strong> Ajustes menores incluidos antes de publicar.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Entrega Ágil:</strong> Puesta en marcha de 5 a 7 días hábiles.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Soporte de Garantía:</strong> 15 días de cobertura técnica post-lanzamiento.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f1"><strong>Arquitectura One-Page:</strong> Navegación fluida de 4 a 5 secciones informativas.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f2"><strong>Diseño Optimizado:</strong> Basado en estructura/layout predefinido adaptado a tu marca.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f3"><strong>100% Responsive:</strong> Adaptado a celulares, tablets y escritorio.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f4"><strong>Código 100% Estático:</strong> Máxima velocidad y seguridad sin bases de datos.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f5"><strong>Botón de WhatsApp:</strong> Acceso flotante directo para atención inmediata.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f6"><strong>Redes Sociales:</strong> Integración de enlaces a perfiles oficiales.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f7"><strong>Apoyo Visual (Stock):</strong> Banco de imágenes libres de derechos y revisión ortográfica básica.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f8"><strong>SEO Técnico Base:</strong> Compresión de imágenes y etiquetas Meta básicas.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f9"><strong>Despliegue + SSL:</strong> Configuración de DNS en servidor del cliente y certificado HTTPS.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f10"><strong>2 Rondas de Revisión:</strong> Ajustes menores incluidos antes de publicar.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f11"><strong>Entrega Ágil:</strong> Puesta en marcha de 5 a 7 días hábiles.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p1.f12"><strong>Soporte de Garantía:</strong> 15 días de cobertura técnica post-lanzamiento.</span></li>
         </ul>
 
-        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20B%C3%A1sico%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
-          Elegir Plan Básico <i class="fa fa-whatsapp"></i>
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20B%C3%A1sico%20de%20Desarrollo%20Web" target="_blank" class="btn-plan" data-i18n-attr="href:wa.p1">
+          <span data-i18n="p1.btn">Elegir Plan Básico</span> <i class="fa fa-whatsapp"></i>
         </a>
       </div>
 
       <!-- 2. PLAN INTERMEDIO -->
       <div class="plan-card popular">
-        <span class="popular-tag">Más Recomendado</span>
-        <h3 class="plan-name">Plan Intermedio</h3>
-        <p class="plan-desc">Sitio corporativo multipágina para empresas que buscan proyectar solidez y captar prospectos.</p>
+        <span class="popular-tag" data-i18n="p2.tag">Más Recomendado</span>
+        <h3 class="plan-name" data-i18n="p2.name">Plan Intermedio</h3>
+        <p class="plan-desc" data-i18n="p2.desc">Sitio corporativo multipágina para empresas que buscan proyectar solidez y captar prospectos.</p>
         
         <div class="plan-meta">
-          <div><span>Estructura:</span> <span>4 a 5 Páginas (inc. Home)</span></div>
-          <div><span>Entrega estimada:</span> <span>10 a 14 días hábiles</span></div>
-          <div><span>Garantía post-entrega:</span> <span>30 días</span></div>
+          <div><span data-i18n="meta.structure">Estructura:</span> <span data-i18n="p2.m1">4 a 5 Páginas (inc. Home)</span></div>
+          <div><span data-i18n="meta.delivery">Entrega estimada:</span> <span data-i18n="p2.m2">10 a 14 días hábiles</span></div>
+          <div><span data-i18n="meta.warranty">Garantía post-entrega:</span> <span data-i18n="p2.m3">30 días</span></div>
         </div>
 
-        <div class="features-title">13 Propuestas Incluidas:</div>
+        <div class="features-title" data-i18n="p2.ft">13 Propuestas Incluidas:</div>
         <ul class="features-list">
-          <li><span class="icon-check">✓</span> <span><strong>Sitio Multipágina:</strong> De 4 a 5 páginas independientes (incluyendo el Home Page).</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Diseño Semipersonalizado:</strong> Bloques adaptados con micro-interacciones y efectos al hacer scroll.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>100% Responsive:</strong> Visualización óptima en todo tipo de pantallas.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Arquitectura 100% Estática:</strong> Carga instantánea y estabilidad garantizada.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Formulario de Contacto:</strong> Envío directo a correo con validación y filtro anti-spam.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Mapa Interactivo:</strong> Ubicación con Google Maps embebido.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>WhatsApp + Redes:</strong> Botón con mensaje personalizado y enlaces sociales.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Correos Corporativos:</strong> Configuración de 3 a 5 cuentas (<code>@tuempresa.com</code>).</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Copywriting Básico Persuasivo:</strong> Optimización comercial de textos + imágenes HD.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>SEO On-Page Individual:</strong> Meta títulos, descripciones y jerarquía H1-H3 por página.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Despliegue + SSL:</strong> Configuración completa en el hosting del cliente.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>3 Rondas de Revisión:</strong> Mayor margen de ajustes de diseño y contenido.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Garantía Extendida:</strong> Entrega en 10-14 días hábiles y 30 días de garantía técnica.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f1"><strong>Sitio Multipágina:</strong> De 4 a 5 páginas independientes (incluyendo el Home Page).</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f2"><strong>Diseño Semipersonalizado:</strong> Bloques adaptados con micro-interacciones y efectos al hacer scroll.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f3"><strong>100% Responsive:</strong> Visualización óptima en todo tipo de pantallas.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f4"><strong>Arquitectura 100% Estática:</strong> Carga instantánea y estabilidad garantizada.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f5"><strong>Formulario de Contacto:</strong> Envío directo a correo con validación y filtro anti-spam.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f6"><strong>Mapa Interactivo:</strong> Ubicación con Google Maps embebido.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f7"><strong>WhatsApp + Redes:</strong> Botón con mensaje personalizado y enlaces sociales.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f8"><strong>Correos Corporativos:</strong> Configuración de 3 a 5 cuentas (<code>@tuempresa.com</code>).</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f9"><strong>Copywriting Básico Persuasivo:</strong> Optimización comercial de textos + imágenes HD.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f10"><strong>SEO On-Page Individual:</strong> Meta títulos, descripciones y jerarquía H1-H3 por página.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f11"><strong>Despliegue + SSL:</strong> Configuración completa en el hosting del cliente.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f12"><strong>3 Rondas de Revisión:</strong> Mayor margen de ajustes de diseño y contenido.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p2.f13"><strong>Garantía Extendida:</strong> Entrega en 10-14 días hábiles y 30 días de garantía técnica.</span></li>
         </ul>
 
-        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20Intermedio%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
-          Elegir Plan Intermedio <i class="fa fa-whatsapp"></i>
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20Intermedio%20de%20Desarrollo%20Web" target="_blank" class="btn-plan" data-i18n-attr="href:wa.p2">
+          <span data-i18n="p2.btn">Elegir Plan Intermedio</span> <i class="fa fa-whatsapp"></i>
         </a>
       </div>
 
       <!-- 3. PLAN PREMIUM -->
       <div class="plan-card">
-        <h3 class="plan-name">Plan Premium</h3>
-        <p class="plan-desc">Presencia corporativa de alto impacto con diseño exclusivo desde cero, bilingüe y autogestión parcial.</p>
+        <h3 class="plan-name" data-i18n="p3.name">Plan Premium</h3>
+        <p class="plan-desc" data-i18n="p3.desc">Presencia corporativa de alto impacto con diseño exclusivo desde cero, bilingüe y autogestión parcial.</p>
         
         <div class="plan-meta">
-          <div><span>Estructura:</span> <span>6 a 10 Páginas Internas</span></div>
-          <div><span>Entrega estimada:</span> <span>3 a 4 semanas</span></div>
-          <div><span>Garantía post-entrega:</span> <span>45 días</span></div>
+          <div><span data-i18n="meta.structure">Estructura:</span> <span data-i18n="p3.m1">6 a 10 Páginas Internas</span></div>
+          <div><span data-i18n="meta.delivery">Entrega estimada:</span> <span data-i18n="p3.m2">3 a 4 semanas</span></div>
+          <div><span data-i18n="meta.warranty">Garantía post-entrega:</span> <span data-i18n="p3.m3">45 días</span></div>
         </div>
 
-        <div class="features-title">15 Propuestas Incluidas:</div>
+        <div class="features-title" data-i18n="p3.ft">15 Propuestas Incluidas:</div>
         <ul class="features-list">
-          <li><span class="icon-check">✓</span> <span><strong>Arquitectura de 6 a 10 Vistas:</strong> Desglose amplio de servicios, FAQ, catálogo, blog o proyectos.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Diseño UI/UX 100% a Medida:</strong> Creado desde cero con componentes interactivos (filtros, acordeones).</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Modo Claro / Oscuro:</strong> Selector de tema visual (Light & Dark Mode) integrado.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Panel Administrativo Básico:</strong> Autogestión acotada para noticias/catálogo/galería sin alterar el diseño.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Sitio Bilingüe (ES / EN):</strong> Soporte para 2 idiomas en toda la plataforma.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Formularios de Cotización/Citas:</strong> Captación avanzada con enrutamiento por área.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Píxeles Publicitarios:</strong> Integración de Meta Pixel y etiquetas de Google Ads + WhatsApp/Mapa.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Hasta 10 Correos Corporativos:</strong> Configuración completa de cuentas empresariales.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Copywriting Estratégico Completo:</strong> Redacción orientada a ventas y curaduría multimedia.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>SEO Avanzado + Schema.org:</strong> Marcado de datos estructurados y optimización profunda.</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>Indexación en Google:</strong> Alta en Google Search Console (<code>sitemap.xml</code> y <code>robots.txt</code>).</span></li>
-          <li><span class="icon-check">✓</span> <span><strong>4 Rondas de Revisión + 45 Días Garantía:</strong> Despliegue SSL y respaldo técnico superior.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f1"><strong>Arquitectura de 6 a 10 Vistas:</strong> Desglose amplio de servicios, FAQ, catálogo, blog o proyectos.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f2"><strong>Diseño UI/UX 100% a Medida:</strong> Creado desde cero con componentes interactivos (filtros, acordeones).</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f3"><strong>Modo Claro / Oscuro:</strong> Selector de tema visual (Light &amp; Dark Mode) integrado.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f4"><strong>Panel Administrativo Básico:</strong> Autogestión acotada para noticias/catálogo/galería sin alterar el diseño.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f5"><strong>Sitio Bilingüe (ES / EN):</strong> Soporte para 2 idiomas en toda la plataforma.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f6"><strong>Formularios de Cotización/Citas:</strong> Captación avanzada con enrutamiento por área.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f7"><strong>Píxeles Publicitarios:</strong> Integración de Meta Pixel y etiquetas de Google Ads + WhatsApp/Mapa.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f8"><strong>Hasta 10 Correos Corporativos:</strong> Configuración completa de cuentas empresariales.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f9"><strong>Copywriting Estratégico Completo:</strong> Redacción orientada a ventas y curaduría multimedia.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f10"><strong>SEO Avanzado + Schema.org:</strong> Marcado de datos estructurados y optimización profunda.</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f11"><strong>Indexación en Google:</strong> Alta en Google Search Console (<code>sitemap.xml</code> y <code>robots.txt</code>).</span></li>
+          <li><span class="icon-check">✓</span> <span data-i18n="p3.f12"><strong>4 Rondas de Revisión + 45 Días Garantía:</strong> Despliegue SSL y respaldo técnico superior.</span></li>
         </ul>
 
-        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20Premium%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
-          Elegir Plan Premium <i class="fa fa-whatsapp"></i>
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20el%20Plan%20Premium%20de%20Desarrollo%20Web" target="_blank" class="btn-plan" data-i18n-attr="href:wa.p3">
+          <span data-i18n="p3.btn">Elegir Plan Premium</span> <i class="fa fa-whatsapp"></i>
         </a>
       </div>
 
       <!-- 4. PLAN PERSONALIZADO -->
       <div class="plan-card custom">
-        <span class="custom-tag">Sin Límites</span>
-        <h3 class="plan-name">Plan Personalizado</h3>
-        <p class="plan-desc">Soluciones corporativas a gran escala diseñadas íntegramente bajo los requerimientos específicos del cliente.</p>
+        <span class="custom-tag" data-i18n="p4.tag">Sin Límites</span>
+        <h3 class="plan-name" data-i18n="p4.name">Plan Personalizado</h3>
+        <p class="plan-desc" data-i18n="p4.desc">Soluciones corporativas a gran escala diseñadas íntegramente bajo los requerimientos específicos del cliente.</p>
         
         <div class="plan-meta">
-          <div><span>Estructura:</span> <span>Sin límite predefinido</span></div>
-          <div><span>Entrega estimada:</span> <span>Según alcance</span></div>
-          <div><span>Garantía post-entrega:</span> <span>A medida</span></div>
+          <div><span data-i18n="meta.structure">Estructura:</span> <span data-i18n="p4.m1">Sin límite predefinido</span></div>
+          <div><span data-i18n="meta.delivery">Entrega estimada:</span> <span data-i18n="v.scope">Según alcance</span></div>
+          <div><span data-i18n="meta.warranty">Garantía post-entrega:</span> <span data-i18n="v.custom">A medida</span></div>
         </div>
 
         <div class="custom-highlight-box">
-          <h4>Todo el Plan Premium + Lo que tu empresa necesite</h4>
-          <p>Este plan no tiene un desglose restrictivo: cubre absolutamente todas las capacidades de los planes anteriores más cualquier requerimiento particular que solicites.</p>
+          <h4 data-i18n="p4.boxTitle">Todo el Plan Premium + Lo que tu empresa necesite</h4>
+          <p data-i18n="p4.boxDesc">Este plan no tiene un desglose restrictivo: cubre absolutamente todas las capacidades de los planes anteriores más cualquier requerimiento particular que solicites.</p>
           <ul class="features-list" style="margin-bottom: 0;">
-            <li><span class="icon-check">✓</span> <span><strong>Cantidad de páginas y secciones ilimitadas</strong> según tu proyecto.</span></li>
-            <li><span class="icon-check">✓</span> <span><strong>Módulos administrables a medida</strong> adaptados a tu flujo de trabajo.</span></li>
-            <li><span class="icon-check">✓</span> <span><strong>Integraciones especiales</strong> (CRM, APIs informativas, analítica avanzada, múltiples idiomas).</span></li>
-            <li><span class="icon-check">✓</span> <span><strong>Atención, tiempos y soporte VIP</strong> definidos por contrato según requerimiento.</span></li>
+            <li><span class="icon-check">✓</span> <span data-i18n="p4.f1"><strong>Cantidad de páginas y secciones ilimitadas</strong> según tu proyecto.</span></li>
+            <li><span class="icon-check">✓</span> <span data-i18n="p4.f2"><strong>Módulos administrables a medida</strong> adaptados a tu flujo de trabajo.</span></li>
+            <li><span class="icon-check">✓</span> <span data-i18n="p4.f3"><strong>Integraciones especiales</strong> (CRM, APIs informativas, analítica avanzada, múltiples idiomas).</span></li>
+            <li><span class="icon-check">✓</span> <span data-i18n="p4.f4"><strong>Atención, tiempos y soporte VIP</strong> definidos por contrato según requerimiento.</span></li>
           </ul>
         </div>
 
-        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20una%20cotizaci%C3%B3n%20a%20medida%20para%20un%20Plan%20Personalizado%20de%20Desarrollo%20Web" target="_blank" class="btn-plan">
-          Solicitar Cotización a Medida <i class="fa fa-whatsapp"></i>
+        <a href="https://wa.me/18499367087?text=Hola%20Pragm%C3%A1tica,%20deseo%20una%20cotizaci%C3%B3n%20a%20medida%20para%20un%20Plan%20Personalizado%20de%20Desarrollo%20Web" target="_blank" class="btn-plan" data-i18n-attr="href:wa.p4">
+          <span data-i18n="p4.btn">Solicitar Cotización a Medida</span> <i class="fa fa-whatsapp"></i>
         </a>
       </div>
 
@@ -1048,148 +1125,148 @@
     <!-- Tabla Comparativa Maestra -->
     <section class="comparison-section">
       <div class="comparison-header">
-        <h2>Matriz Comparativa de Planes</h2>
-        <p>Revisa al detalle qué incluye cada nivel para elegir la opción ideal para tu negocio.</p>
+        <h2 data-i18n="cmp.title">Matriz Comparativa de Planes</h2>
+        <p data-i18n="cmp.desc">Revisa al detalle qué incluye cada nivel para elegir la opción ideal para tu negocio.</p>
       </div>
 
       <div class="table-responsive">
         <table>
           <thead>
             <tr>
-              <th>Característica / Entregable</th>
-              <th>Básico</th>
-              <th>Intermedio</th>
+              <th data-i18n="th.feature">Característica / Entregable</th>
+              <th data-i18n="th.basic">Básico</th>
+              <th data-i18n="th.intermediate">Intermedio</th>
               <th>Premium</th>
-              <th>Personalizado</th>
+              <th data-i18n="th.custom">Personalizado</th>
             </tr>
           </thead>
           <tbody>
             <!-- ARQUITECTURA Y DISEÑO -->
             <tr class="category-row">
-              <td colspan="5">1. Arquitectura, Diseño y Experiencia Visual (UI/UX)</td>
+              <td colspan="5" data-i18n="cat1">1. Arquitectura, Diseño y Experiencia Visual (UI/UX)</td>
             </tr>
             <tr>
-              <td>Estructura y Cantidad de Páginas</td>
-              <td>Landing Page<br><small>(4 a 5 secciones)</small></td>
-              <td>Multipágina<br><small>(4 a 5 páginas inc. Home)</small></td>
-              <td>Corporativa Extendida<br><small>(6 a 10 páginas)</small></td>
-              <td><span class="badge-custom">Sin límite / A medida</span></td>
+              <td data-i18n="r.pages">Estructura y Cantidad de Páginas</td>
+              <td data-i18n="r.pages.1">Landing Page<br><small>(4 a 5 secciones)</small></td>
+              <td data-i18n="r.pages.2">Multipágina<br><small>(4 a 5 páginas inc. Home)</small></td>
+              <td data-i18n="r.pages.3">Corporativa Extendida<br><small>(6 a 10 páginas)</small></td>
+              <td><span class="badge-custom" data-i18n="r.pages.4">Sin límite / A medida</span></td>
             </tr>
             <tr>
-              <td>Nivel de Personalización de Diseño</td>
-              <td>Layout predefinido y optimizado</td>
-              <td>Semipersonalizado con micro-interacciones</td>
-              <td>100% Exclusivo desde cero + Componentes interactivos</td>
-              <td><span class="badge-custom">100% A requerimiento</span></td>
+              <td data-i18n="r.design">Nivel de Personalización de Diseño</td>
+              <td data-i18n="r.design.1">Layout predefinido y optimizado</td>
+              <td data-i18n="r.design.2">Semipersonalizado con micro-interacciones</td>
+              <td data-i18n="r.design.3">100% Exclusivo desde cero + Componentes interactivos</td>
+              <td><span class="badge-custom" data-i18n="r.design.4">100% A requerimiento</span></td>
             </tr>
             <tr>
-              <td>Diseño 100% Responsive (Móvil, Tablet, PC)</td>
+              <td data-i18n="r.responsive">Diseño 100% Responsive (Móvil, Tablet, PC)</td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
             </tr>
             <tr>
-              <td>Selector de Tema Claro / Oscuro (Light & Dark Mode)</td>
+              <td data-i18n="r.theme">Selector de Tema Claro / Oscuro (Light &amp; Dark Mode)</td>
               <td><span class="cross">—</span></td>
               <td><span class="cross">—</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
             </tr>
             <tr>
-              <td>Soporte Multilenguaje (Español / Inglés)</td>
+              <td data-i18n="r.lang">Soporte Multilenguaje (Español / Inglés)</td>
               <td><span class="cross">—</span></td>
               <td><span class="cross">—</span></td>
               <td><span class="check">✓</span></td>
-              <td><span class="badge-custom">Multi-idioma a medida</span></td>
+              <td><span class="badge-custom" data-i18n="r.lang.4">Multi-idioma a medida</span></td>
             </tr>
 
             <!-- GESTIÓN Y CONTENIDO -->
             <tr class="category-row">
-              <td colspan="5">2. Administración de Contenido y Copywriting</td>
+              <td colspan="5" data-i18n="cat2">2. Administración de Contenido y Copywriting</td>
             </tr>
             <tr>
-              <td>Modalidad Técnica del Sitio</td>
-              <td>100% Estático</td>
-              <td>100% Estático</td>
-              <td>Híbrido (Con Panel Básico Acotado)</td>
-              <td><span class="badge-custom">Según requerimiento</span></td>
+              <td data-i18n="r.mode">Modalidad Técnica del Sitio</td>
+              <td data-i18n="r.mode.static">100% Estático</td>
+              <td data-i18n="r.mode.static">100% Estático</td>
+              <td data-i18n="r.mode.3">Híbrido (Con Panel Básico Acotado)</td>
+              <td><span class="badge-custom" data-i18n="v.req">Según requerimiento</span></td>
             </tr>
             <tr>
-              <td>Panel Autogestionable (Noticias / Catálogo / Galería)</td>
+              <td data-i18n="r.cms">Panel Autogestionable (Noticias / Catálogo / Galería)</td>
               <td><span class="cross">—</span></td>
               <td><span class="cross">—</span></td>
-              <td><span class="check">✓</span> <small>(Alcance acotado)</small></td>
-              <td><span class="badge-custom">Total o a medida</span></td>
+              <td><span class="check">✓</span> <small data-i18n="r.cms.3">(Alcance acotado)</small></td>
+              <td><span class="badge-custom" data-i18n="r.cms.4">Total o a medida</span></td>
             </tr>
             <tr>
-              <td>Redacción Comercial (Copywriting) e Imágenes</td>
-              <td>Imágenes de Stock + Revisión ortográfica básica</td>
-              <td>Copywriting básico persuasivo + Imágenes HD</td>
-              <td>Copywriting estratégico completo + Curaduría multimedia</td>
-              <td><span class="badge-custom">Todo incluido a medida</span></td>
+              <td data-i18n="r.copy">Redacción Comercial (Copywriting) e Imágenes</td>
+              <td data-i18n="r.copy.1">Imágenes de Stock + Revisión ortográfica básica</td>
+              <td data-i18n="r.copy.2">Copywriting básico persuasivo + Imágenes HD</td>
+              <td data-i18n="r.copy.3">Copywriting estratégico completo + Curaduría multimedia</td>
+              <td><span class="badge-custom" data-i18n="r.copy.4">Todo incluido a medida</span></td>
             </tr>
 
             <!-- CONVERSIÓN Y COMUNICACIÓN -->
             <tr class="category-row">
-              <td colspan="5">3. Captación de Clientes y Canales de Contacto</td>
+              <td colspan="5" data-i18n="cat3">3. Captación de Clientes y Canales de Contacto</td>
             </tr>
             <tr>
-              <td>Botón Flotante de WhatsApp y Redes Sociales</td>
+              <td data-i18n="r.wa">Botón Flotante de WhatsApp y Redes Sociales</td>
               <td><span class="check">✓</span></td>
-              <td><span class="check">✓</span> <small>(Mensaje personalizado)</small></td>
-              <td><span class="check">✓</span> <small>(Mensaje personalizado)</small></td>
+              <td><span class="check">✓</span> <small data-i18n="r.wa.msg">(Mensaje personalizado)</small></td>
+              <td><span class="check">✓</span> <small data-i18n="r.wa.msg">(Mensaje personalizado)</small></td>
               <td><span class="check">✓</span></td>
             </tr>
             <tr>
-              <td>Formulario de Contacto con Protección Anti-Spam</td>
+              <td data-i18n="r.form">Formulario de Contacto con Protección Anti-Spam</td>
               <td><span class="cross">—</span></td>
-              <td><span class="check">✓</span> <small>(Estándar)</small></td>
-              <td><span class="check">✓</span> <small>(Avanzado / Cotizador / Citas)</small></td>
-              <td><span class="badge-custom">Flujos a medida</span></td>
+              <td><span class="check">✓</span> <small data-i18n="r.form.2">(Estándar)</small></td>
+              <td><span class="check">✓</span> <small data-i18n="r.form.3">(Avanzado / Cotizador / Citas)</small></td>
+              <td><span class="badge-custom" data-i18n="r.form.4">Flujos a medida</span></td>
             </tr>
             <tr>
-              <td>Mapa Interactivo de Ubicación (Google Maps)</td>
+              <td data-i18n="r.map">Mapa Interactivo de Ubicación (Google Maps)</td>
               <td><span class="cross">—</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
             </tr>
             <tr>
-              <td>Configuración de Correos Corporativos (<code>@tuempresa.com</code>)</td>
+              <td data-i18n="r.mail">Configuración de Correos Corporativos (<code>@tuempresa.com</code>)</td>
               <td><span class="cross">—</span></td>
-              <td>3 a 5 cuentas</td>
-              <td>Hasta 10 cuentas</td>
-              <td><span class="badge-custom">Según requerimiento</span></td>
+              <td data-i18n="r.mail.2">3 a 5 cuentas</td>
+              <td data-i18n="r.mail.3">Hasta 10 cuentas</td>
+              <td><span class="badge-custom" data-i18n="v.req">Según requerimiento</span></td>
             </tr>
 
             <!-- SEO E INFRAESTRUCTURA -->
             <tr class="category-row">
-              <td colspan="5">4. Posicionamiento SEO, Marketing e Infraestructura</td>
+              <td colspan="5" data-i18n="cat4">4. Posicionamiento SEO, Marketing e Infraestructura</td>
             </tr>
             <tr>
-              <td>Optimización SEO en el Sitio</td>
-              <td>SEO Técnico Base<br><small>(Velocidad + Meta básicas)</small></td>
-              <td>SEO On-Page Individual<br><small>(Por cada una de las 4-5 vistas)</small></td>
-              <td>SEO Avanzado + Datos Estructurados (Schema.org)</td>
-              <td><span class="badge-custom">Estrategia completa</span></td>
+              <td data-i18n="r.seo">Optimización SEO en el Sitio</td>
+              <td data-i18n="r.seo.1">SEO Técnico Base<br><small>(Velocidad + Meta básicas)</small></td>
+              <td data-i18n="r.seo.2">SEO On-Page Individual<br><small>(Por cada una de las 4-5 vistas)</small></td>
+              <td data-i18n="r.seo.3">SEO Avanzado + Datos Estructurados (Schema.org)</td>
+              <td><span class="badge-custom" data-i18n="r.seo.4">Estrategia completa</span></td>
             </tr>
             <tr>
-              <td>Indexación en Google Search Console (Sitemap.xml)</td>
+              <td data-i18n="r.index">Indexación en Google Search Console (Sitemap.xml)</td>
               <td><span class="cross">—</span></td>
               <td><span class="cross">—</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
             </tr>
             <tr>
-              <td>Integración de Píxeles Publicitarios (Meta Pixel / Google Ads)</td>
+              <td data-i18n="r.pixel">Integración de Píxeles Publicitarios (Meta Pixel / Google Ads)</td>
               <td><span class="cross">—</span></td>
               <td><span class="cross">—</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
             </tr>
             <tr>
-              <td>Configuración de Servidor, DNS y Certificado SSL (HTTPS)</td>
+              <td data-i18n="r.ssl">Configuración de Servidor, DNS y Certificado SSL (HTTPS)</td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
@@ -1198,28 +1275,28 @@
 
             <!-- TIEMPOS Y GARANTÍA -->
             <tr class="category-row">
-              <td colspan="5">5. Revisiones, Entrega y Garantía Post-Lanzamiento</td>
+              <td colspan="5" data-i18n="cat5">5. Revisiones, Entrega y Garantía Post-Lanzamiento</td>
             </tr>
             <tr>
-              <td>Rondas de Revisión Incluidas</td>
-              <td>2 Rondas</td>
-              <td>3 Rondas</td>
-              <td>4 Rondas</td>
-              <td><span class="badge-custom">A requerimiento</span></td>
+              <td data-i18n="r.rounds">Rondas de Revisión Incluidas</td>
+              <td data-i18n="r.rounds.1">2 Rondas</td>
+              <td data-i18n="r.rounds.2">3 Rondas</td>
+              <td data-i18n="r.rounds.3">4 Rondas</td>
+              <td><span class="badge-custom" data-i18n="r.rounds.4">A requerimiento</span></td>
             </tr>
             <tr>
-              <td>Tiempo Estimado de Entrega</td>
-              <td>5 a 7 días hábiles</td>
-              <td>10 a 14 días hábiles</td>
-              <td>3 a 4 semanas</td>
-              <td><span class="badge-custom">Según alcance</span></td>
+              <td data-i18n="r.time">Tiempo Estimado de Entrega</td>
+              <td data-i18n="p1.m2">5 a 7 días hábiles</td>
+              <td data-i18n="p2.m2">10 a 14 días hábiles</td>
+              <td data-i18n="p3.m2">3 a 4 semanas</td>
+              <td><span class="badge-custom" data-i18n="v.scope">Según alcance</span></td>
             </tr>
             <tr>
-              <td>Garantía Técnica Post-Entrega</td>
-              <td>15 días</td>
-              <td>30 días</td>
-              <td>45 días</td>
-              <td><span class="badge-custom">A medida</span></td>
+              <td data-i18n="r.warranty">Garantía Técnica Post-Entrega</td>
+              <td data-i18n="p1.m3">15 días</td>
+              <td data-i18n="p2.m3">30 días</td>
+              <td data-i18n="p3.m3">45 días</td>
+              <td><span class="badge-custom" data-i18n="v.custom">A medida</span></td>
             </tr>
           </tbody>
         </table>
@@ -1228,25 +1305,303 @@
 
     <!-- Condiciones Generales -->
     <aside class="notes-box">
-      <h3>📌 Condiciones Técnicas y Comerciales Importantes</h3>
+      <h3 data-i18n="notes.title">📌 Condiciones Técnicas y Comerciales Importantes</h3>
       <ul>
-        <li><strong>Adquisición de Hosting y Dominio:</strong> En todos los planes se incluye la asesoría técnica, configuración de registros DNS, despliegue en el servidor y activación del Certificado SSL (HTTPS). El pago anual por la propiedad del Dominio y el servicio de Hosting corre directamente por cuenta del cliente.</li>
-        <li><strong>Modalidad Informativa y Corporativa:</strong> Estos planes están orientados exclusivamente a sitios web de carácter informativo, corporativo y de captación de prospectos (Leads). Desarrollos de sistemas web a medida, plataformas SaaS, facturación electrónica, pasarelas de pago con carrito de compras complejo, intranets o aplicaciones con lógica de negocio avanzada se cotizan en la categoría de <strong>Desarrollo de Software a Medida</strong>.</li>
-        <li><strong>Tiempos de Entrega:</strong> Los plazos de entrega comienzan a correr a partir del momento en que el cliente suministra la información base requerida (logotipo, información de la empresa y recursos acordados).</li>
+        <li data-i18n="notes.1"><strong>Adquisición de Hosting y Dominio:</strong> En todos los planes se incluye la asesoría técnica, configuración de registros DNS, despliegue en el servidor y activación del Certificado SSL (HTTPS). El pago anual por la propiedad del Dominio y el servicio de Hosting corre directamente por cuenta del cliente.</li>
+        <li data-i18n="notes.2"><strong>Modalidad Informativa y Corporativa:</strong> Estos planes están orientados exclusivamente a sitios web de carácter informativo, corporativo y de captación de prospectos (Leads). Desarrollos de sistemas web a medida, plataformas SaaS, facturación electrónica, pasarelas de pago con carrito de compras complejo, intranets o aplicaciones con lógica de negocio avanzada se cotizan en la categoría de <strong>Desarrollo de Software a Medida</strong>.</li>
+        <li data-i18n="notes.3"><strong>Tiempos de Entrega:</strong> Los plazos de entrega comienzan a correr a partir del momento en que el cliente suministra la información base requerida (logotipo, información de la empresa y recursos acordados).</li>
       </ul>
     </aside>
 
     <!-- Footer Corporativo Pragmática -->
     <footer style="margin-top: 4.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
       <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-        <a href="../index.html" class="nav-back-link"><i class="fa fa-home"></i> Inicio</a>
-        <a href="../Soluciones.html" class="nav-back-link"><i class="fa fa-th-large"></i> Soluciones TI</a>
-        <a href="../Empresa.html" class="nav-back-link"><i class="fa fa-building-o"></i> Empresa</a>
-        <a href="../Socios.html" class="nav-back-link"><i class="fa fa-handshake-o"></i> Socios</a>
-        <a href="../Contacto.html" class="nav-back-link"><i class="fa fa-envelope-o"></i> Contacto</a>
+        <a href="../index.html" class="nav-back-link"><i class="fa fa-home"></i> <span data-i18n="nav.home">Inicio</span></a>
+        <a href="../Soluciones.html" class="nav-back-link"><i class="fa fa-th-large"></i> <span data-i18n="ft.solutions">Soluciones TI</span></a>
+        <a href="../Empresa.html" class="nav-back-link"><i class="fa fa-building-o"></i> <span data-i18n="ft.company">Empresa</span></a>
+        <a href="../Socios.html" class="nav-back-link"><i class="fa fa-handshake-o"></i> <span data-i18n="ft.partners">Socios</span></a>
+        <a href="../Contacto.html" class="nav-back-link"><i class="fa fa-envelope-o"></i> <span data-i18n="nav.contact">Contacto</span></a>
       </div>
-      <p style="margin: 0;">© 2026 PRAGMÁTICA S.R.L. — Todos los derechos reservados. Soluciones Tecnológicas y Consultoría Especializada.</p>
+      <p style="margin: 0;" data-i18n="ft.copy">© 2026 PRAGMÁTICA S.R.L. — Todos los derechos reservados. Soluciones Tecnológicas y Consultoría Especializada.</p>
     </footer>
   </div>
+
+  <!-- Internacionalización (ES / EN) -->
+  <script>
+    (function () {
+      'use strict';
+
+      var STORAGE_KEY = 'pragmatica-lang';
+      var WA = 'https://wa.me/18499367087?text=';
+
+      // Traducciones al inglés. El español se toma directamente del HTML original.
+      var EN = {
+        'meta.title': 'Informational &amp; Corporate Website Development Plans | Pragmática S.R.L.',
+        'meta.desc': 'Informational and Corporate Website Development Plans by Pragmática S.R.L. Modern designs, high performance, SEO optimization and maximum security.',
+
+        'nav.aria': 'Main navigation',
+        'nav.brand': 'Back to Home - Pragmática S.R.L.',
+        'nav.home': 'Home',
+        'nav.services': 'Services',
+        'nav.contact': 'Contact',
+        'nav.waAria': 'Ask us on WhatsApp',
+        'lang.aria': 'Select language',
+
+        'wa.nav': WA + encodeURIComponent('Hello Pragmática, I would like information about your Web Development Plans'),
+        'wa.p1': WA + encodeURIComponent('Hello Pragmática, I would like more information and a quote for the Basic Web Development Plan'),
+        'wa.p2': WA + encodeURIComponent('Hello Pragmática, I would like more information and a quote for the Intermediate Web Development Plan'),
+        'wa.p3': WA + encodeURIComponent('Hello Pragmática, I would like more information and a quote for the Premium Web Development Plan'),
+        'wa.p4': WA + encodeURIComponent('Hello Pragmática, I would like a custom quote for a Custom Web Development Plan'),
+
+        'hdr.badge': 'Corporate Digital Solutions',
+        'hdr.title': 'Website Development Plans',
+        'hdr.desc': 'Informational and corporate websites built to software engineering standards: high performance, security, SEO optimization and a business-driven approach.',
+
+        'meta.structure': 'Structure:',
+        'meta.delivery': 'Estimated delivery:',
+        'meta.warranty': 'Post-delivery warranty:',
+        'v.scope': 'Based on scope',
+        'v.custom': 'Tailored',
+        'v.req': 'Based on requirements',
+
+        'p1.name': 'Basic Plan',
+        'p1.desc': 'Agile, professional digital presence for businesses or professionals just getting started.',
+        'p1.m1': 'Landing Page (4-5 sections)',
+        'p1.m2': '5 to 7 business days',
+        'p1.m3': '15 days',
+        'p1.ft': '12 Included Features:',
+        'p1.f1': '<strong>One-Page Architecture:</strong> Smooth navigation across 4 to 5 informational sections.',
+        'p1.f2': '<strong>Optimized Design:</strong> Based on a predefined structure/layout adapted to your brand.',
+        'p1.f3': '<strong>100% Responsive:</strong> Adapted to phones, tablets and desktops.',
+        'p1.f4': '<strong>100% Static Code:</strong> Maximum speed and security with no databases.',
+        'p1.f5': '<strong>WhatsApp Button:</strong> Floating direct access for immediate support.',
+        'p1.f6': '<strong>Social Media:</strong> Links to your official profiles integrated.',
+        'p1.f7': '<strong>Visual Support (Stock):</strong> Royalty-free image bank and basic proofreading.',
+        'p1.f8': '<strong>Base Technical SEO:</strong> Image compression and basic Meta tags.',
+        'p1.f9': '<strong>Deployment + SSL:</strong> DNS setup on the client\'s server and HTTPS certificate.',
+        'p1.f10': '<strong>2 Revision Rounds:</strong> Minor adjustments included before launch.',
+        'p1.f11': '<strong>Fast Delivery:</strong> Up and running in 5 to 7 business days.',
+        'p1.f12': '<strong>Warranty Support:</strong> 15 days of post-launch technical coverage.',
+        'p1.btn': 'Choose Basic Plan',
+
+        'p2.tag': 'Most Recommended',
+        'p2.name': 'Intermediate Plan',
+        'p2.desc': 'Multi-page corporate website for companies looking to project solidity and capture leads.',
+        'p2.m1': '4 to 5 Pages (incl. Home)',
+        'p2.m2': '10 to 14 business days',
+        'p2.m3': '30 days',
+        'p2.ft': '13 Included Features:',
+        'p2.f1': '<strong>Multi-Page Website:</strong> 4 to 5 independent pages (including the Home Page).',
+        'p2.f2': '<strong>Semi-Custom Design:</strong> Tailored blocks with micro-interactions and scroll effects.',
+        'p2.f3': '<strong>100% Responsive:</strong> Optimal display on every type of screen.',
+        'p2.f4': '<strong>100% Static Architecture:</strong> Instant loading and guaranteed stability.',
+        'p2.f5': '<strong>Contact Form:</strong> Sent straight to your inbox with validation and anti-spam filter.',
+        'p2.f6': '<strong>Interactive Map:</strong> Location with embedded Google Maps.',
+        'p2.f7': '<strong>WhatsApp + Social:</strong> Button with a custom message and social links.',
+        'p2.f8': '<strong>Corporate Emails:</strong> Setup of 3 to 5 accounts (<code>@yourcompany.com</code>).',
+        'p2.f9': '<strong>Basic Persuasive Copywriting:</strong> Business-focused text optimization + HD images.',
+        'p2.f10': '<strong>Per-Page On-Page SEO:</strong> Meta titles, descriptions and H1-H3 hierarchy for each page.',
+        'p2.f11': '<strong>Deployment + SSL:</strong> Full setup on the client\'s hosting.',
+        'p2.f12': '<strong>3 Revision Rounds:</strong> More room for design and content adjustments.',
+        'p2.f13': '<strong>Extended Warranty:</strong> Delivery in 10-14 business days and 30 days of technical warranty.',
+        'p2.btn': 'Choose Intermediate Plan',
+
+        'p3.name': 'Premium Plan',
+        'p3.desc': 'High-impact corporate presence with an exclusive design built from scratch, bilingual and partially self-managed.',
+        'p3.m1': '6 to 10 Internal Pages',
+        'p3.m2': '3 to 4 weeks',
+        'p3.m3': '45 days',
+        'p3.ft': '15 Included Features:',
+        'p3.f1': '<strong>6 to 10 View Architecture:</strong> In-depth breakdown of services, FAQ, catalog, blog or projects.',
+        'p3.f2': '<strong>100% Custom UI/UX Design:</strong> Built from scratch with interactive components (filters, accordions).',
+        'p3.f3': '<strong>Light / Dark Mode:</strong> Built-in visual theme switcher (Light &amp; Dark Mode).',
+        'p3.f4': '<strong>Basic Admin Panel:</strong> Limited self-management for news/catalog/gallery without altering the design.',
+        'p3.f5': '<strong>Bilingual Website (ES / EN):</strong> Support for 2 languages across the whole platform.',
+        'p3.f6': '<strong>Quote/Appointment Forms:</strong> Advanced lead capture with routing by department.',
+        'p3.f7': '<strong>Ad Pixels:</strong> Meta Pixel and Google Ads tag integration + WhatsApp/Map.',
+        'p3.f8': '<strong>Up to 10 Corporate Emails:</strong> Full setup of business accounts.',
+        'p3.f9': '<strong>Complete Strategic Copywriting:</strong> Sales-oriented writing and multimedia curation.',
+        'p3.f10': '<strong>Advanced SEO + Schema.org:</strong> Structured data markup and in-depth optimization.',
+        'p3.f11': '<strong>Google Indexing:</strong> Google Search Console submission (<code>sitemap.xml</code> and <code>robots.txt</code>).',
+        'p3.f12': '<strong>4 Revision Rounds + 45-Day Warranty:</strong> SSL deployment and superior technical backing.',
+        'p3.btn': 'Choose Premium Plan',
+
+        'p4.tag': 'No Limits',
+        'p4.name': 'Custom Plan',
+        'p4.desc': 'Large-scale corporate solutions designed entirely around the client\'s specific requirements.',
+        'p4.m1': 'No predefined limit',
+        'p4.boxTitle': 'Everything in Premium + Whatever your company needs',
+        'p4.boxDesc': 'This plan has no restrictive breakdown: it covers every capability of the previous plans plus any specific requirement you request.',
+        'p4.f1': '<strong>Unlimited pages and sections</strong> based on your project.',
+        'p4.f2': '<strong>Custom manageable modules</strong> adapted to your workflow.',
+        'p4.f3': '<strong>Special integrations</strong> (CRM, informational APIs, advanced analytics, multiple languages).',
+        'p4.f4': '<strong>VIP service, timelines and support</strong> defined by contract according to requirements.',
+        'p4.btn': 'Request a Custom Quote',
+
+        'cmp.title': 'Plan Comparison Matrix',
+        'cmp.desc': 'Review in detail what each tier includes to choose the ideal option for your business.',
+        'th.feature': 'Feature / Deliverable',
+        'th.basic': 'Basic',
+        'th.intermediate': 'Intermediate',
+        'th.custom': 'Custom',
+
+        'cat1': '1. Architecture, Design &amp; Visual Experience (UI/UX)',
+        'r.pages': 'Structure and Number of Pages',
+        'r.pages.1': 'Landing Page<br><small>(4 to 5 sections)</small>',
+        'r.pages.2': 'Multi-page<br><small>(4 to 5 pages incl. Home)</small>',
+        'r.pages.3': 'Extended Corporate<br><small>(6 to 10 pages)</small>',
+        'r.pages.4': 'Unlimited / Tailored',
+        'r.design': 'Design Customization Level',
+        'r.design.1': 'Predefined, optimized layout',
+        'r.design.2': 'Semi-custom with micro-interactions',
+        'r.design.3': '100% Exclusive from scratch + Interactive components',
+        'r.design.4': '100% On request',
+        'r.responsive': '100% Responsive Design (Mobile, Tablet, PC)',
+        'r.theme': 'Light / Dark Theme Switcher (Light &amp; Dark Mode)',
+        'r.lang': 'Multilingual Support (Spanish / English)',
+        'r.lang.4': 'Custom multi-language',
+
+        'cat2': '2. Content Management &amp; Copywriting',
+        'r.mode': 'Technical Site Type',
+        'r.mode.static': '100% Static',
+        'r.mode.3': 'Hybrid (With Limited Basic Panel)',
+        'r.cms': 'Self-Managed Panel (News / Catalog / Gallery)',
+        'r.cms.3': '(Limited scope)',
+        'r.cms.4': 'Full or tailored',
+        'r.copy': 'Commercial Copywriting &amp; Images',
+        'r.copy.1': 'Stock images + Basic proofreading',
+        'r.copy.2': 'Basic persuasive copywriting + HD images',
+        'r.copy.3': 'Complete strategic copywriting + Multimedia curation',
+        'r.copy.4': 'All-inclusive, tailored',
+
+        'cat3': '3. Lead Capture &amp; Contact Channels',
+        'r.wa': 'Floating WhatsApp Button &amp; Social Media',
+        'r.wa.msg': '(Custom message)',
+        'r.form': 'Contact Form with Anti-Spam Protection',
+        'r.form.2': '(Standard)',
+        'r.form.3': '(Advanced / Quote / Appointments)',
+        'r.form.4': 'Custom workflows',
+        'r.map': 'Interactive Location Map (Google Maps)',
+        'r.mail': 'Corporate Email Setup (<code>@yourcompany.com</code>)',
+        'r.mail.2': '3 to 5 accounts',
+        'r.mail.3': 'Up to 10 accounts',
+
+        'cat4': '4. SEO, Marketing &amp; Infrastructure',
+        'r.seo': 'On-Site SEO Optimization',
+        'r.seo.1': 'Base Technical SEO<br><small>(Speed + basic Meta)</small>',
+        'r.seo.2': 'Per-Page On-Page SEO<br><small>(For each of the 4-5 views)</small>',
+        'r.seo.3': 'Advanced SEO + Structured Data (Schema.org)',
+        'r.seo.4': 'Complete strategy',
+        'r.index': 'Google Search Console Indexing (Sitemap.xml)',
+        'r.pixel': 'Ad Pixel Integration (Meta Pixel / Google Ads)',
+        'r.ssl': 'Server, DNS &amp; SSL Certificate Setup (HTTPS)',
+
+        'cat5': '5. Revisions, Delivery &amp; Post-Launch Warranty',
+        'r.rounds': 'Included Revision Rounds',
+        'r.rounds.1': '2 Rounds',
+        'r.rounds.2': '3 Rounds',
+        'r.rounds.3': '4 Rounds',
+        'r.rounds.4': 'On request',
+        'r.time': 'Estimated Delivery Time',
+        'r.warranty': 'Post-Delivery Technical Warranty',
+
+        'notes.title': '📌 Important Technical &amp; Commercial Terms',
+        'notes.1': '<strong>Hosting &amp; Domain Purchase:</strong> All plans include technical advice, DNS record configuration, server deployment and SSL Certificate (HTTPS) activation. The annual payment for Domain ownership and Hosting service is borne directly by the client.',
+        'notes.2': '<strong>Informational &amp; Corporate Scope:</strong> These plans are intended exclusively for informational, corporate and lead-generation websites. Custom web systems, SaaS platforms, electronic invoicing, payment gateways with complex shopping carts, intranets or applications with advanced business logic are quoted under the <strong>Custom Software Development</strong> category.',
+        'notes.3': '<strong>Delivery Times:</strong> Delivery timelines start once the client provides the required base information (logo, company information and agreed resources).',
+
+        'ft.solutions': 'IT Solutions',
+        'ft.company': 'Company',
+        'ft.partners': 'Partners',
+        'ft.copy': '© 2026 PRAGMÁTICA S.R.L. — All rights reserved. Technology Solutions &amp; Specialized Consulting.'
+      };
+
+      var container = document.querySelector('.container');
+      var switcher = document.getElementById('lang-switch');
+      var buttons = switcher.querySelectorAll('.lang-btn');
+      var textEls = document.querySelectorAll('[data-i18n]');
+      var attrEls = document.querySelectorAll('[data-i18n-attr]');
+      var metaDesc = document.querySelector('meta[name="description"]');
+
+      // Guardar el contenido original en español
+      var esTitle = document.title;
+      var esDesc = metaDesc ? metaDesc.getAttribute('content') : '';
+
+      textEls.forEach(function (el) { el._i18nEs = el.innerHTML; });
+
+      function parseAttrs(el) {
+        return el.getAttribute('data-i18n-attr').split(';').map(function (pair) {
+          var p = pair.split(':');
+          return { attr: p[0].trim(), key: p[1].trim() };
+        });
+      }
+
+      attrEls.forEach(function (el) {
+        el._i18nAttrs = parseAttrs(el);
+        el._i18nAttrsEs = {};
+        el._i18nAttrs.forEach(function (a) { el._i18nAttrsEs[a.attr] = el.getAttribute(a.attr); });
+      });
+
+      function decode(html) {
+        var t = document.createElement('textarea');
+        t.innerHTML = html;
+        return t.value;
+      }
+
+      function render(lang) {
+        var isEn = lang === 'en';
+
+        textEls.forEach(function (el) {
+          var key = el.getAttribute('data-i18n');
+          el.innerHTML = isEn && EN[key] !== undefined ? EN[key] : el._i18nEs;
+        });
+
+        attrEls.forEach(function (el) {
+          el._i18nAttrs.forEach(function (a) {
+            var val = isEn && EN[a.key] !== undefined ? decode(EN[a.key]) : el._i18nAttrsEs[a.attr];
+            el.setAttribute(a.attr, val);
+          });
+        });
+
+        document.documentElement.lang = isEn ? 'en' : 'es';
+        document.title = isEn ? decode(EN['meta.title']) : esTitle;
+        if (metaDesc) metaDesc.setAttribute('content', isEn ? EN['meta.desc'] : esDesc);
+
+        switcher.setAttribute('data-active', lang);
+        buttons.forEach(function (btn) {
+          var active = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+      }
+
+      var current = 'es';
+
+      function setLang(lang, animate) {
+        if (lang !== 'en' && lang !== 'es') lang = 'es';
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+        if (lang === current && animate) return;
+        current = lang;
+
+        if (!animate) { render(lang); return; }
+        container.classList.add('is-switching');
+        setTimeout(function () {
+          render(lang);
+          container.classList.remove('is-switching');
+        }, 180);
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () { setLang(btn.getAttribute('data-lang'), true); });
+      });
+
+      // Prioridad: ?lang=en|es en la URL > preferencia guardada > español por defecto
+      var urlLang = new URLSearchParams(window.location.search).get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      var initial = urlLang || saved || 'es';
+      if (initial === 'en') setLang('en', false);
+    })();
+  </script>
 </body>
 </html>
