@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pragmática S.R.L.</title>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      var search = window.location.search || '';
+      var hash = window.location.hash || '';
+
+      if (/\/inicio\/?$/i.test(path)) {
+        var targetHome = path.replace(/\/inicio\/?$/i, '/index.html');
+        window.location.replace(targetHome + search + hash);
+        return;
+      }
+
+      var routes = {
+        'empresa': 'Empresa.html',
+        'socios': 'Socios.html',
+        'soluciones': 'Soluciones.html',
+        'servicios': 'Soluciones.html',
+        'contacto': 'Contacto.html',
+        'nosotros': 'Nosotros.html',
+        'planes-web': 'planes-web.html'
+      };
+
+      var clean = path.replace(/\/+$/, '');
+      var parts = clean.split('/');
+      var last = decodeURIComponent(parts[parts.length - 1] || '').toLowerCase();
+
+      if (routes[last]) {
+        parts[parts.length - 1] = routes[last];
+        window.location.replace(parts.join('/') + search + hash);
+        return;
+      }
+
+      window.location.replace('index.html');
+    })();
+  </script>
+</head>
+<body></body>
+</html>
+

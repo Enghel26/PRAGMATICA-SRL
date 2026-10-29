@@ -3,6 +3,8 @@
  * Modern dynamic interactions, animations, carousel controls and scroll reveals
  */
 
+initCleanUrlMask();
+
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initHeader();
@@ -14,6 +16,42 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceFilter();
   initClientFilter();
 });
+
+/* ==========================================================================
+   00. CLEAN URL MASK (HIDE .html & RENAME index -> inicio)
+   ========================================================================== */
+function initCleanUrlMask() {
+  if (window.location.protocol !== 'http:' && window.location.protocol !== 'https:') return;
+
+  try {
+    const { pathname, search, hash } = window.location;
+    const originalPath = pathname;
+    let cleanPath = pathname;
+
+    if (/\/index\.html$/i.test(pathname)) {
+      cleanPath = pathname.replace(/\/index\.html$/i, '/inicio');
+    } else if (/\/soluciones\.html$/i.test(pathname)) {
+      cleanPath = pathname.replace(/\/soluciones\.html$/i, '/servicios');
+    } else if (pathname.endsWith('/')) {
+      cleanPath = `${pathname}inicio`;
+    } else if (/\.html$/i.test(pathname)) {
+      cleanPath = pathname.replace(/\.html$/i, '');
+    }
+
+    if (cleanPath !== originalPath) {
+      window.history.replaceState({ originalPath }, '', `${cleanPath}${search}${hash}`);
+
+      // Restore original .html path right before keyboard reload (F5 / Ctrl+R) on static dev servers
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'F5' || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'r')) {
+          window.history.replaceState(null, '', `${originalPath}${window.location.search}${window.location.hash}`);
+        }
+      });
+    }
+  } catch (e) {
+    // Ignore history API restrictions if any
+  }
+}
 
 /* ==========================================================================
    0. THEME TOGGLE (LIGHT / DARK MODE)

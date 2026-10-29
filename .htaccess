@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. Redirigir peticiones directas a index.html hacia /inicio y Soluciones.html hacia /servicios
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^(.*/)?index\.html$ /$1inicio [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?Soluciones\.html[\s?] [NC]
+  RewriteRule ^(.*/)?Soluciones\.html$ /$1servicios [R=301,L]
+
+  # 2. Redirigir peticiones directas con extensión .html a su ruta limpia sin .html
+  RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+  # 3. Servir index.html cuando la URL sea /inicio y Soluciones.html cuando sea /servicios
+  RewriteRule ^(.*/)?inicio/?$ $1index.html [NC,L]
+  RewriteRule ^(.*/)?servicios/?$ $1Soluciones.html [NC,L]
+
+  # 4. Servir internamente el archivo .html correspondiente si existe
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+

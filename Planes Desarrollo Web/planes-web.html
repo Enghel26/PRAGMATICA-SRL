@@ -1329,6 +1329,23 @@
   <!-- Internacionalización (ES / EN) -->
   <script>
     (function () {
+      if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        try {
+          var originalPath = window.location.pathname;
+          if (/\.html$/i.test(originalPath)) {
+            var cleanPath = originalPath.replace(/\.html$/i, '');
+            window.history.replaceState({ originalPath: originalPath }, '', cleanPath + window.location.search + window.location.hash);
+            window.addEventListener('keydown', function (e) {
+              if (e.key === 'F5' || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'r')) {
+                window.history.replaceState(null, '', originalPath + window.location.search + window.location.hash);
+              }
+            });
+          }
+        } catch (e) {}
+      }
+    })();
+
+    (function () {
       'use strict';
 
       var STORAGE_KEY = 'pragmatica-lang';
