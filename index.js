@@ -29,11 +29,11 @@ function initCleanUrlMask() {
     let cleanPath = pathname;
 
     if (/\/index\.html$/i.test(pathname)) {
-      cleanPath = pathname.replace(/\/index\.html$/i, '/inicio');
+      cleanPath = pathname.replace(/\/index\.html$/i, '/Inicio');
     } else if (/\/soluciones\.html$/i.test(pathname)) {
-      cleanPath = pathname.replace(/\/soluciones\.html$/i, '/servicios');
+      cleanPath = pathname.replace(/\/soluciones\.html$/i, '/Servicios');
     } else if (pathname.endsWith('/')) {
-      cleanPath = `${pathname}inicio`;
+      cleanPath = `${pathname}Inicio`;
     } else if (/\.html$/i.test(pathname)) {
       cleanPath = pathname.replace(/\.html$/i, '');
     }
