@@ -58,7 +58,7 @@ function initCleanUrlMask() {
    The initial theme is applied by an inline script in each page's <head>
    (to avoid a flash of the wrong theme). This injects the toggle buttons.
    ========================================================================== */
-const THEME_STORAGE_KEY = 'pragmatica-theme';
+const THEME_STORAGE_KEY = 'pragmatica-user-theme';
 
 function initThemeToggle() {
   const root = document.documentElement;
@@ -120,14 +120,6 @@ function initThemeToggle() {
       e.stopPropagation();
       applyTheme(getTheme() === 'dark' ? 'light' : 'dark');
     });
-  });
-
-  // Follow OS changes only while the user hasn't chosen a theme explicitly
-  const mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-  mq?.addEventListener?.('change', (e) => {
-    let stored = null;
-    try { stored = localStorage.getItem(THEME_STORAGE_KEY); } catch (err) { /* ignore */ }
-    if (!stored) applyTheme(e.matches ? 'dark' : 'light', false);
   });
 
   syncButtons();
