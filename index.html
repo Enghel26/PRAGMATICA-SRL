@@ -9,9 +9,10 @@
   <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
   <title>PRAGMÁTICA S.R.L. | Servicios Tecnológicos y Ciberseguridad</title>
 
-  <link rel="stylesheet" href="css/style.css" />
+  <script>(function(){try{var t=localStorage.getItem("pragmatica-theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <link rel="stylesheet" href="css/style.css?v=6" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="index.js" defer></script>
+  <script src="index.js?v=6" defer></script>
 </head>
 
 <body>
@@ -87,64 +88,52 @@
     <section class="hero">
       <!-- Fullscreen Carousel Slides -->
       <div class="hero__carousel">
-        <!-- 1. Servicios Tecnológicos -->
+        <!-- 1. Servicios Tecnológicos y Consultoría Especializada -->
         <div class="hero__carousel-slide active"
-          style="background-image: url('assets/carrusel/Servicios tecnologicos/88998.jpg');"
           data-badge="Infraestructura & Consultoría"
           data-title="Servicios Tecnológicos y<br><span>Consultoría Especializada</span>"
           data-desc="Transformamos el futuro digital de tu empresa con infraestructura de vanguardia y soporte experto de nivel corporativo.">
-        </div>
-        <div class="hero__carousel-slide"
-          style="background-image: url('assets/carrusel/Servicios tecnologicos/89677.jpg');"
-          data-badge="Infraestructura & Consultoría"
-          data-title="Servicios Tecnológicos y<br><span>Consultoría Especializada</span>"
-          data-desc="Transformamos el futuro digital de tu empresa con infraestructura de vanguardia y soporte experto de nivel corporativo.">
+          <video class="hero__carousel-video" src="assets/jpeg/Consultoria.mp4" autoplay loop muted playsinline preload="auto"></video>
         </div>
 
         <!-- 2. Ciberseguridad -->
-        <div class="hero__carousel-slide" style="background-image: url('assets/carrusel/CIberseguridad/124620.jpg');"
-          data-badge="Ciberseguridad Avanzada" data-title="Ciberseguridad<br><span>Integral & Proactiva</span>"
+        <div class="hero__carousel-slide"
+          data-badge="Ciberseguridad Avanzada"
+          data-title="Ciberseguridad<br><span>Integral & Proactiva</span>"
           data-desc="Protección avanzada de última generación para blindar los activos digitales más críticos de tu organización.">
-        </div>
-        <div class="hero__carousel-slide" style="background-image: url('assets/carrusel/CIberseguridad/396834.jpg');"
-          data-badge="Ciberseguridad Avanzada" data-title="Ciberseguridad<br><span>Integral & Proactiva</span>"
-          data-desc="Protección avanzada de última generación para blindar los activos digitales más críticos de tu organización.">
+          <video class="hero__carousel-video" src="assets/jpeg/ciberseguridad.mp4" loop muted playsinline preload="metadata"></video>
         </div>
 
-        <!-- 3. Servicios Gestionados -->
+        <!-- 3. Servicios Gestionados y Soporte -->
         <div class="hero__carousel-slide"
-          style="background-image: url('assets/carrusel/Servicios gestionados/125273.jpg');"
-          data-badge="Soporte & Continuidad TI" data-title="Servicios Gestionados y<br><span>Soporte Proactivo</span>"
+          data-badge="Soporte & Continuidad TI"
+          data-title="Servicios Gestionados y<br><span>Soporte Proactivo</span>"
           data-desc="Gestión proactiva, mantenimiento preventivo y soporte técnico continuo para garantizar la operatividad de tu negocio.">
-        </div>
-        <div class="hero__carousel-slide"
-          style="background-image: url('assets/carrusel/Servicios gestionados/2149370124.jpg');"
-          data-badge="Soporte & Continuidad TI" data-title="Servicios Gestionados y<br><span>Soporte Proactivo</span>"
-          data-desc="Gestión proactiva, mantenimiento preventivo y soporte técnico continuo para garantizar la operatividad de tu negocio.">
+          <video class="hero__carousel-video" src="assets/jpeg/soporte.mp4" loop muted playsinline preload="metadata"></video>
         </div>
 
-        <!-- 4. Licenciamiento -->
-        <div class="hero__carousel-slide" style="background-image: url('assets/carrusel/Licensamiento/2147626571.jpg');"
+        <!-- 4. Desarrollo de Software y Web -->
+        <div class="hero__carousel-slide"
+          data-badge="Desarrollo & Cloud"
+          data-title="Desarrollo de Software y<br><span>Páginas Web a Medida</span>"
+          data-desc="Diseño y construcción de plataformas web, aplicaciones móviles y sistemas corporativos escalables, modernos y seguros.">
+          <video class="hero__carousel-video" src="assets/jpeg/Desarrollo.mp4" loop muted playsinline preload="metadata"></video>
+        </div>
+
+        <!-- 5. Licenciamiento de Software -->
+        <div class="hero__carousel-slide"
           data-badge="Licenciamiento Corporativo"
           data-title="Licenciamiento de Software y<br><span>Cumplimiento Legal</span>"
           data-desc="Asesoría estratégica en licenciamiento corporativo Microsoft, Fortinet, Kaspersky y optimización de costes de TI.">
-        </div>
-        <div class="hero__carousel-slide" style="background-image: url('assets/carrusel/Licensamiento/2149325411.jpg');"
-          data-badge="Licenciamiento Corporativo"
-          data-title="Licenciamiento de Software y<br><span>Cumplimiento Legal</span>"
-          data-desc="Asesoría estratégica en licenciamiento corporativo Microsoft, Fortinet, Kaspersky y optimización de costes de TI.">
+          <video class="hero__carousel-video" src="assets/jpeg/licenciamiento.mp4" loop muted playsinline preload="metadata"></video>
         </div>
 
-        <!-- 5. Venta de Equipos -->
+        <!-- 6. Suministro de Equipos -->
         <div class="hero__carousel-slide"
-          style="background-image: url('assets/carrusel/Venta de equipos/2149233716.jpg');"
-          data-badge="Hardware & Servidores" data-title="Suministro de Hardware y<br><span>Equipos de Alta Gama</span>"
+          data-badge="Hardware & Servidores"
+          data-title="Suministro de Hardware y<br><span>Equipos de Alta Gama</span>"
           data-desc="Servidores, estaciones de trabajo y tecnología de conectividad de marcas globales líderes en el mercado.">
-        </div>
-        <div class="hero__carousel-slide"
-          style="background-image: url('assets/carrusel/Venta de equipos/dell-optiplex-micro.png');"
-          data-badge="Hardware & Servidores" data-title="Suministro de Hardware y<br><span>Equipos de Alta Gama</span>"
-          data-desc="Servidores, estaciones de trabajo y tecnología de conectividad de marcas globales líderes en el mercado.">
+          <video class="hero__carousel-video" src="assets/jpeg/sumunistro.mp4" loop muted playsinline preload="metadata"></video>
         </div>
 
         <div class="hero__overlay"></div>

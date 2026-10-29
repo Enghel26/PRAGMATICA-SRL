@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initHeader();
   initHeroCarousel();
   initScrollReveal();
@@ -13,6 +14,86 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceFilter();
   initClientFilter();
 });
+
+/* ==========================================================================
+   0. THEME TOGGLE (LIGHT / DARK MODE)
+   The initial theme is applied by an inline script in each page's <head>
+   (to avoid a flash of the wrong theme). This injects the toggle buttons.
+   ========================================================================== */
+const THEME_STORAGE_KEY = 'pragmatica-theme';
+
+function initThemeToggle() {
+  const root = document.documentElement;
+  const desktopActions = document.querySelector('.header__actions');
+  const hamMenu = document.querySelector('.header__ham-menu');
+
+  const getTheme = () => (root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+
+  const createButton = (extraClass = '') => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `theme-toggle ${extraClass}`.trim();
+    btn.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i><i class="fa fa-sun-o" aria-hidden="true"></i>';
+    return btn;
+  };
+
+  const buttons = [];
+
+  if (desktopActions) {
+    const btn = createButton();
+    btn.id = 'theme-toggle-desktop';
+    const divider = document.createElement('span');
+    divider.className = 'header__actions-divider';
+    divider.setAttribute('aria-hidden', 'true');
+    desktopActions.prepend(divider);
+    desktopActions.prepend(btn);
+    buttons.push(btn);
+  }
+
+  if (hamMenu && hamMenu.parentElement) {
+    const btn = createButton('theme-toggle--mobile');
+    btn.id = 'theme-toggle-mobile';
+    hamMenu.parentElement.insertBefore(btn, hamMenu);
+    buttons.push(btn);
+  }
+
+  const syncButtons = () => {
+    const isDark = getTheme() === 'dark';
+    const label = isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+    buttons.forEach((btn) => {
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
+      btn.setAttribute('aria-pressed', String(isDark));
+    });
+  };
+
+  const applyTheme = (theme, persist = true) => {
+    root.classList.add('theme-transition');
+    root.setAttribute('data-theme', theme);
+    if (persist) {
+      try { localStorage.setItem(THEME_STORAGE_KEY, theme); } catch (e) { /* storage unavailable */ }
+    }
+    syncButtons();
+    window.setTimeout(() => root.classList.remove('theme-transition'), 450);
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyTheme(getTheme() === 'dark' ? 'light' : 'dark');
+    });
+  });
+
+  // Follow OS changes only while the user hasn't chosen a theme explicitly
+  const mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  mq?.addEventListener?.('change', (e) => {
+    let stored = null;
+    try { stored = localStorage.getItem(THEME_STORAGE_KEY); } catch (err) { /* ignore */ }
+    if (!stored) applyTheme(e.matches ? 'dark' : 'light', false);
+  });
+
+  syncButtons();
+}
 
 /* ==========================================================================
    1. HEADER & MOBILE NAVIGATION
@@ -86,9 +167,8 @@ function initHeroCarousel() {
   if (!slides.length) return;
 
   let currentSlide = 0;
-  const slideDuration = 5500; // 5.5s
+  const slideDuration = 6000; // 6s por video
   let slideTimer = null;
-  let isPaused = false;
 
   function updateSlide(nextIndex) {
     if (nextIndex === currentSlide && slides[currentSlide].classList.contains('active')) return;
@@ -101,6 +181,15 @@ function initHeroCarousel() {
     // Slide Background Transition
     slides[currentSlide].classList.remove('active');
     slides[nextIndex].classList.add('active');
+
+    const prevVideo = slides[currentSlide].querySelector('video');
+    if (prevVideo) prevVideo.pause();
+
+    const nextVideo = slides[nextIndex].querySelector('video');
+    if (nextVideo) {
+      nextVideo.currentTime = 0;
+      nextVideo.play().catch(() => {});
+    }
 
     // Dynamic Text & Badge Transition
     if (textWrapper && dynamicTitle && dynamicDesc) {
@@ -115,8 +204,8 @@ function initHeroCarousel() {
       }
     }
 
-    // Update Dots & Counter (Grouped in 5 services: 0, 2, 4, 6, 8)
-    const activeServiceIndex = Math.floor(nextIndex / 2);
+    // Update Dots & Counter
+    const activeServiceIndex = nextIndex;
     if (currentCounter) {
       currentCounter.textContent = `0${activeServiceIndex + 1}`;
     }
@@ -141,9 +230,7 @@ function initHeroCarousel() {
   function resetTimer() {
     clearInterval(slideTimer);
     slideTimer = setInterval(() => {
-      if (!isPaused) {
-        nextSlide();
-      }
+      nextSlide();
     }, slideDuration);
   }
 
@@ -170,16 +257,6 @@ function initHeroCarousel() {
       e.stopPropagation();
       prevSlide();
       resetTimer();
-    });
-  }
-
-  // Pause on hover
-  if (heroSection) {
-    heroSection.addEventListener('mouseenter', () => {
-      isPaused = true;
-    });
-    heroSection.addEventListener('mouseleave', () => {
-      isPaused = false;
     });
   }
 
