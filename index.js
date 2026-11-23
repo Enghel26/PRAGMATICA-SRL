@@ -39,14 +39,24 @@ function initCleanUrlMask() {
     }
 
     if (cleanPath !== originalPath) {
+      const restoreOriginalUrl = () => {
+        try {
+          window.history.replaceState(null, '', `${originalPath}${window.location.search}${window.location.hash}`);
+        } catch (err) {
+          // Ignore
+        }
+      };
+
       window.history.replaceState({ originalPath }, '', `${cleanPath}${search}${hash}`);
 
-      // Restore original .html path right before keyboard reload (F5 / Ctrl+R) on static dev servers
+      // Restore original .html path before keyboard reload (F5 / Ctrl+R) or page unload on static dev servers
       window.addEventListener('keydown', (e) => {
         if (e.key === 'F5' || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'r')) {
-          window.history.replaceState(null, '', `${originalPath}${window.location.search}${window.location.hash}`);
+          restoreOriginalUrl();
         }
       });
+
+      window.addEventListener('beforeunload', restoreOriginalUrl);
     }
   } catch (e) {
     // Ignore history API restrictions if any
@@ -200,6 +210,24 @@ function initHeroCarousel() {
   const slideDuration = 6000; // 6s por video
   let slideTimer = null;
 
+  // Asegurar reproducción inline y precarga en navegadores móviles (iOS Safari / Android Chrome)
+  slides.forEach((slide, idx) => {
+    const video = slide.querySelector('video');
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+
+    if (idx === 0) {
+      video.play().catch(() => {});
+    } else {
+      video.load();
+    }
+  });
+
   function updateSlide(nextIndex) {
     if (nextIndex === currentSlide && slides[currentSlide].classList.contains('active')) return;
 
@@ -217,6 +245,7 @@ function initHeroCarousel() {
 
     const nextVideo = slides[nextIndex].querySelector('video');
     if (nextVideo) {
+      nextVideo.muted = true;
       nextVideo.currentTime = 0;
       nextVideo.play().catch(() => {});
     }
@@ -288,6 +317,33 @@ function initHeroCarousel() {
       prevSlide();
       resetTimer();
     });
+  }
+
+  // Soporte de swipe táctil en móviles
+  if (heroSection) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    heroSection.addEventListener('touchstart', (e) => {
+      if (!e.changedTouches?.length) return;
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+      if (!e.changedTouches?.length) return;
+      const deltaX = e.changedTouches[0].screenX - touchStartX;
+      const deltaY = e.changedTouches[0].screenY - touchStartY;
+
+      if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        resetTimer();
+      }
+    }, { passive: true });
   }
 
   // Start initially
@@ -432,13 +488,30 @@ function initCurrentYear() {
 }
 
 /* ==========================================================================
-   7. SERVICES CATEGORY FILTER (SOLUCIONES.HTML)
+   7. SERVICES CATEGORY FILTER (SOLUCIONES.HTML — ZERO-WHITESPACE BENTO GRID)
    ========================================================================== */
 function initServiceFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterBtns = document.querySelectorAll('.filter-btn:not(.client-filter-btn)');
   const serviceCards = document.querySelectorAll('.service-card-modern');
+  const bentoCtaCard = document.querySelector('.service-card-bento-cta');
 
   if (!filterBtns.length || !serviceCards.length) return;
+
+  const updateBentoSpan = (visibleCount) => {
+    if (!bentoCtaCard) return;
+    if (window.innerWidth <= 768) {
+      bentoCtaCard.style.gridColumn = 'span 1';
+      return;
+    }
+    const cols = window.innerWidth <= 900 ? 2 : 3;
+    const rem = visibleCount % cols;
+    const span = rem === 0 ? cols : cols - rem;
+    bentoCtaCard.style.gridColumn = `span ${span}`;
+    const innerGrid = bentoCtaCard.querySelector('.service-card-bento-cta__grid');
+    if (innerGrid) {
+      innerGrid.style.gridTemplateColumns = span === 1 ? '1fr' : 'repeat(2, 1fr)';
+    }
+  };
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -446,10 +519,12 @@ function initServiceFilter() {
       btn.classList.add('active');
 
       const filterValue = btn.getAttribute('data-filter');
+      let visibleCount = 0;
 
       serviceCards.forEach((card) => {
         const cardCategory = card.getAttribute('data-category');
         if (filterValue === 'all' || cardCategory === filterValue) {
+          visibleCount++;
           card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
@@ -463,18 +538,39 @@ function initServiceFilter() {
           }, 250);
         }
       });
+
+      setTimeout(() => updateBentoSpan(visibleCount), 260);
     });
   });
+
+  window.addEventListener('resize', () => {
+    const activeBtn = document.querySelector('.filter-btn:not(.client-filter-btn).active');
+    const filterValue = activeBtn?.getAttribute('data-filter') || 'all';
+    let count = 0;
+    serviceCards.forEach((c) => {
+      if (filterValue === 'all' || c.getAttribute('data-category') === filterValue) count++;
+    });
+    updateBentoSpan(count);
+  }, { passive: true });
 }
 
 /* ==========================================================================
-   8. CLIENTS SECTOR FILTER (SOCIOS.HTML)
+   8. CLIENTS SECTOR FILTER (SOCIOS.HTML — ZERO-WHITESPACE BENTO GRID)
    ========================================================================== */
 function initClientFilter() {
   const clientFilterBtns = document.querySelectorAll('.client-filter-btn');
-  const clientCards = document.querySelectorAll('.client-card-pro');
+  const clientCards = document.querySelectorAll('.client-card-pro:not(.client-card-pro--cta)');
+  const ctaCard = document.querySelector('.client-card-pro--cta');
 
   if (!clientFilterBtns.length || !clientCards.length) return;
+
+  const updateClientCtaSpan = (visibleCount) => {
+    if (!ctaCard) return;
+    const cols = window.innerWidth <= 768 ? 2 : window.innerWidth <= 1080 ? 3 : 4;
+    const rem = visibleCount % cols;
+    const span = rem === 0 ? cols : cols - rem;
+    ctaCard.style.gridColumn = `span ${span}`;
+  };
 
   clientFilterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -482,10 +578,12 @@ function initClientFilter() {
       btn.classList.add('active');
 
       const filterValue = btn.getAttribute('data-filter');
+      let visibleCount = 0;
 
       clientCards.forEach((card) => {
         const cardSector = card.getAttribute('data-sector');
         if (filterValue === 'all' || cardSector === filterValue) {
+          visibleCount++;
           card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
@@ -499,6 +597,18 @@ function initClientFilter() {
           }, 250);
         }
       });
+
+      setTimeout(() => updateClientCtaSpan(visibleCount), 260);
     });
   });
+
+  window.addEventListener('resize', () => {
+    const activeBtn = document.querySelector('.client-filter-btn.active');
+    const filterValue = activeBtn?.getAttribute('data-filter') || 'all';
+    let count = 0;
+    clientCards.forEach((c) => {
+      if (filterValue === 'all' || c.getAttribute('data-sector') === filterValue) count++;
+    });
+    updateClientCtaSpan(count);
+  }, { passive: true });
 }

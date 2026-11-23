@@ -9,9 +9,9 @@
   <title>Socios y Clientes | Pragmática S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
   <script>(function(){try{var t=localStorage.getItem("pragmatica-user-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="index.js?v=10" defer></script>
+  <script src="index.js?v=18" defer></script>
 </head>
 
 <body>
@@ -100,7 +100,9 @@
         <div class="text-center mb-xl reveal">
           <h2 class="heading-lg heading-center">Nuestros Aliados Estratégicos</h2>
           <p class="subtitle">Aliados y partners tecnológicos de primer nivel para brindar soluciones robustas, escalables y certificadas.</p>
-             <div class="partner-grid-pro">
+        </div>
+
+        <div class="partner-grid-pro">
           <!-- 1. Microsoft -->
           <div class="partner-card-pro reveal">
             <span class="partner-card-pro__badge">Cloud & Productividad</span>
@@ -321,9 +323,16 @@
             </div>
           </div>
 
-          <!-- Tu Empresa Aquí -->
-          <a href="Contacto.html" class="client-card-pro reveal delay-2" style="background-color: var(--primary-light); border: 2px dashed var(--primary-blue); text-decoration: none; cursor: pointer;">
-            <div class="client-card-pro__logo-wrap" style="flex-direction: column; height: auto;">
+          <!-- The Greek by Chef Alex (Comercio & Gastronomia) -->
+          <div class="client-card-pro reveal delay-2" data-sector="comercio">
+            <div class="client-card-pro__logo-wrap">
+              <img src="CLIENTES/logo.jpeg" alt="The Greek by Chef Alex" class="logo-compact" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <!-- Tu Empresa Aquí (16th Card: Completes 4x4 Grid Perfectly) -->
+          <a href="Contacto.html" class="client-card-pro client-card-pro--cta reveal delay-3">
+            <div class="client-card-pro__logo-wrap" style="flex-direction: column; height: auto; text-align: center;">
               <i class="fa fa-plus-circle text-primary" style="font-size: 3.4rem; margin-bottom: 0.6rem;"></i>
               <span style="font-weight: 800; color: var(--primary-dark); font-size: 1.6rem;">Tu Empresa Aquí</span>
               <span style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 600; margin-top: 0.4rem;">Comienza tu proyecto <i class="fa fa-arrow-right"></i></span>
@@ -338,7 +347,7 @@
       <div class="container">
         <div class="text-center mb-xl reveal">
           <h2 class="heading-lg heading-center">¿Por Qué Confiar en Pragmática?</h2>
-          <p class="subtitle">Pilares sólidos que fundamentan cada una de nuestras relaciones de negocio.</p>
+          <p class="subtitle">Convertimos la tecnología en una operación más segura, estable y eficiente para su empresa.</p>
         </div>
 
         <div class="trust-pillars-grid">
@@ -357,26 +366,26 @@
             <div class="trust-pillar-icon"><i class="fa fa-bolt"></i></div>
             <h3 class="trust-pillar-title">Soporte & Respuesta Oportuna</h3>
             <p class="trust-pillar-desc">
-              Atención proactiva y acompañamiento técnico continuo para asegurar que tu infraestructura opere sin fallas ni interrupciones.
+              Monitoreo preventivo y acompañamiento técnico continuo para fortalecer la estabilidad de su infraestructura y reducir tiempos de inactividad.
             </p>
-            <div class="trust-pillar-metric"><i class="fa fa-check-circle"></i> Disponibilidad Garantizada</div>
+            <div class="trust-pillar-metric"><i class="fa fa-check-circle"></i> Acompañamiento Técnico Continuo</div>
           </div>
 
           <!-- Pillar 3 -->
           <div class="trust-pillar-card reveal delay-2">
-            <div class="trust-pillar-icon"><i class="fa fa-handshake-o"></i></div>
-            <h3 class="trust-pillar-title">Alianzas de Largo Plazo</h3>
+            <div class="trust-pillar-icon"><i class="fa fa-sliders"></i></div>
+            <h3 class="trust-pillar-title">Soluciones Alineadas al Negocio</h3>
             <p class="trust-pillar-desc">
-              Más de 5 años construyendo relaciones duraderas basadas en transparencia, ética profesional y resultados tangibles.
+              Analizamos la realidad operativa de cada organización para diseñar e integrar arquitecturas de ciberseguridad, infraestructura y software óptimas.
             </p>
-            <div class="trust-pillar-metric"><i class="fa fa-check-circle"></i> +5 Años de Trayectoria</div>
+            <div class="trust-pillar-metric"><i class="fa fa-check-circle"></i> Arquitectura Adaptada a su Negocio</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section" style="padding-bottom: 8rem; background-color: var(--bg-slate);">
+    <section class="section" style="padding-bottom: 5.6rem; background-color: var(--bg-slate);">
       <div class="container">
         <div class="cta-banner reveal">
           <div class="text-center" style="position: relative; z-index: 2;">
@@ -405,7 +414,8 @@
         <div>
           <img src="logo/Logo.png" alt="Pragmática Logo" style="max-height: 4.8rem; filter: brightness(0) invert(1);" / loading="lazy" decoding="async">
           <p class="footer__brand-desc">
-            Transformamos tu futuro con soluciones tecnológicas de vanguardia.
+            Transformamos tu futuro con soluciones tecnológicas de vanguardia. Nos respaldamos en gigantes como
+            Fortinet, Microsoft y Kaspersky para impulsar la seguridad, rendimiento y escalabilidad de tu empresa.
           </p>
           <div class="footer__socials">
             <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="footer__social-btn"><i
@@ -466,12 +476,16 @@
                 <i class="fa fa-envelope text-cyan"></i> ventas@pragmatica.com.do
               </a>
             </li>
+            <li class="footer__link">
+              <i class="fa fa-clock-o text-cyan"></i> Lun - Vie: 8:00 AM - 6:00 PM
+            </li>
           </ul>
         </div>
       </div>
 
       <div class="footer__bottom">
         <div>&copy; <span id="year">2026</span> <strong>Pragmática S.R.L.</strong> Todos los derechos reservados.</div>
+        <div>Servicios Tecnológicos &amp; Consultoría Especializada</div>
       </div>
     </div>
   </footer>

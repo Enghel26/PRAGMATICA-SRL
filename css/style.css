@@ -84,17 +84,17 @@ button {
    2. UTILITY CLASSES & TYPOGRAPHY
    ========================================================================== */
 .container {
-  max-width: 124rem;
+  max-width: 168rem;
+  width: 94%;
   margin: 0 auto;
-  padding: 0 2.4rem;
-  width: 100%;
+  padding: 0 2rem;
 }
 
 .container-narrow {
-  max-width: 96rem;
+  max-width: 128rem;
+  width: 94%;
   margin: 0 auto;
-  padding: 0 2.4rem;
-  width: 100%;
+  padding: 0 2rem;
 }
 
 .section {
@@ -149,18 +149,18 @@ button {
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
-/* Spacing Utilities */
+/* Spacing Utilities (Calibrated for UI/UX Pro Max Density) */
 .mb-xs { margin-bottom: var(--spacing-xs); }
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mb-xl { margin-bottom: var(--spacing-xl); }
+.mb-lg { margin-bottom: 2.6rem; }
+.mb-xl { margin-bottom: 3.6rem; }
 
 .mt-xs { margin-top: var(--spacing-xs); }
 .mt-sm { margin-top: var(--spacing-sm); }
 .mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mt-xl { margin-top: var(--spacing-xl); }
+.mt-lg { margin-top: 2.6rem; }
+.mt-xl { margin-top: 3.4rem; }
 
 /* Headings */
 .heading-xl {
@@ -251,7 +251,7 @@ button {
 .subtitle {
   font-size: 1.8rem;
   color: var(--text-muted);
-  max-width: 65rem;
+  max-width: 78rem;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -816,6 +816,17 @@ button {
   pointer-events: none;
 }
 
+.hero__carousel-slide.active:has(.hero__carousel-video--suministro) ~ .hero__overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 13, 26, 0.48) 0%,
+      rgba(3, 13, 26, 0.28) 25%,
+      rgba(3, 13, 26, 0.28) 75%,
+      rgba(3, 13, 26, 0.45) 100%
+    );
+}
+
 .hero__overlay {
   position: absolute;
   top: 0;
@@ -994,23 +1005,26 @@ button {
   width: 4.8rem;
   height: 4.8rem;
   border-radius: 50%;
-  background-color: rgba(3, 13, 26, 0.35);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.65);
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   cursor: pointer;
   transition: all var(--transition-normal);
-  opacity: 0.7;
+  opacity: 0.8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 .hero__arrow:hover {
   opacity: 1;
   background-color: rgba(0, 98, 185, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-color: rgba(255, 255, 255, 0.35);
   color: #ffffff;
   transform: translateY(-50%) scale(1.08);
@@ -1026,13 +1040,56 @@ button {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: 86vh;
+    height: 86svh;
+    min-height: 54rem;
+    max-height: 74rem;
+  }
+
+  /* Encuadre focal personalizado para cada video horizontal (16:9) en pantallas verticales móviles */
+  .hero__carousel-video--consultoria {
+    object-position: 42% center;
+  }
+  .hero__carousel-video--ciberseguridad {
+    object-position: 32% center;
+  }
+  .hero__carousel-video--soporte {
+    object-position: 74% center;
+  }
+  .hero__carousel-video--desarrollo {
+    object-position: 30% center;
+  }
+  .hero__carousel-video--licenciamiento {
+    object-position: 36% center;
+  }
+  .hero__carousel-video--suministro {
+    object-position: 52% center;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 13, 26, 0.45) 0%,
+        rgba(3, 13, 26, 0.22) 25%,
+        rgba(3, 13, 26, 0.25) 75%,
+        rgba(3, 13, 26, 0.50) 100%
+      );
+  }
+
+  .hero__content {
+    padding: 0 5.2rem;
+    margin-top: 2rem;
+  }
+
   .hero__arrow {
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 3.6rem;
+    height: 3.6rem;
     font-size: 1.3rem;
   }
-  .hero__arrow--prev { left: 1.2rem; }
-  .hero__arrow--next { right: 1.2rem; }
+  .hero__arrow--prev { left: 1rem; }
+  .hero__arrow--next { right: 1rem; }
 }
 
 /* Mouse Scroll Animation */
@@ -1080,32 +1137,38 @@ button {
 }
 
 /* ==========================================================================
-   7. STATS & METRICS COUNTER SECTION (APPEARS ON SCROLL)
+   7. STATS & METRICS COUNTER SECTION (EXECUTIVE KPI BENTO STRIP)
    ========================================================================== */
 .stats-banner {
   margin-top: 0;
-  padding: 6rem 0 2rem;
+  padding: 3.6rem 0 2.4rem;
   background-color: var(--bg-slate);
   position: relative;
   z-index: 20;
+  border-bottom: 1px solid rgba(0, 98, 185, 0.08);
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 2.4rem;
 }
 
 .stat-card {
   background-color: var(--bg-white);
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-lg);
-  padding: 3rem 2.4rem;
-  text-align: center;
+  padding: 2.6rem 2.8rem;
+  text-align: left;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
 }
 
 .stat-card::before {
@@ -1114,14 +1177,14 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background-color: var(--primary-blue);
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
   opacity: 0;
   transition: opacity var(--transition-fast);
 }
 
 .stat-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary-blue);
 }
@@ -1131,34 +1194,50 @@ button {
 }
 
 .stat-icon {
-  font-size: 2.8rem;
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 14px;
+  background-color: var(--primary-light);
+  font-size: 2.4rem;
   color: var(--primary-blue);
-  margin-bottom: 1.2rem;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.stat-card:hover .stat-icon {
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  transform: scale(1.06);
 }
 
 .stat-number {
-  font-size: 4.2rem;
+  font-size: 3.8rem;
   font-weight: 800;
   color: var(--primary-dark);
-  line-height: 1;
-  margin-bottom: 0.8rem;
+  line-height: 1.05;
+  margin-bottom: 0.4rem;
   font-family: var(--font-main);
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.55rem;
+  font-weight: 700;
   color: var(--text-muted);
+  line-height: 1.3;
 }
 
 /* ==========================================================================
-   8. SERVICES SHOWCASE & CARDS
+   8. SERVICES SHOWCASE & CARDS (BENTO GRID & CAPABILITY CHIPS)
    ========================================================================== */
 .service-card {
   background-color: var(--bg-white);
   border-radius: var(--radius-lg);
-  padding: 3.5rem 3rem;
+  padding: 2.8rem 2.6rem;
   box-shadow: var(--shadow-sm);
   border: 1px solid #e2e8f0;
   transition: all var(--transition-normal);
@@ -1173,45 +1252,104 @@ button {
   border-color: var(--primary-blue);
 }
 
+.service-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.service-card__tag-top {
+  padding: 0.45rem 1.2rem;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-light);
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 98, 185, 0.15);
+}
+
 .service-icon-box {
-  width: 6.8rem;
-  height: 6.8rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: var(--radius-md);
   background-color: var(--primary-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: var(--text-white);
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 98, 185, 0.22);
   transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
 .service-card:hover .service-icon-box {
   transform: scale(1.08);
-  background-color: var(--primary-dark);
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--primary-blue) 100%);
 }
 
 .service-card h3 {
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--primary-dark);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .service-card p {
   color: var(--text-muted);
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   flex-grow: 1;
+}
+
+.service-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  background-color: var(--bg-light);
+  border: 1px solid #e2e8f0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.service-chip i {
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+}
+
+.service-card__actions {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .service-link {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: 1.5rem;
+  font-size: 1.48rem;
   font-weight: 700;
   color: var(--primary-blue);
   margin-top: auto;
@@ -1230,6 +1368,105 @@ button {
   transform: translateX(5px);
 }
 
+/* Bento Complementary Quick Solutions Strip (Homepage Zero-Whitespace) */
+.bento-quick-strip {
+  margin-top: 2.2rem;
+  background-color: var(--bg-slate);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-xl);
+  padding: 2.2rem 2.4rem;
+}
+
+.bento-quick-strip__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.bento-quick-strip__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.bento-quick-strip__title span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bento-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+}
+
+.bento-quick-card {
+  background-color: var(--bg-white);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.bento-quick-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.bento-quick-card__icon {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 10px;
+  background-color: var(--primary-light);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.bento-quick-card:hover .bento-quick-card__icon {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+.bento-quick-card__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 0.3rem;
+  line-height: 1.25;
+}
+
+.bento-quick-card__desc {
+  font-size: 1.28rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
 /* ==========================================================================
    8. SERVICES SHOWCASE & CARDS (MODERN REDESIGN)
    ========================================================================== */
@@ -1239,7 +1476,7 @@ button {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3.4rem;
 }
 
 .filter-btn {
@@ -1422,6 +1659,87 @@ button {
   border-top: 1px solid #e2e8f0;
 }
 
+/* Clean White Custom Solution Card (Soluciones.html — White in Light Mode, Minimalist) */
+.service-card-bento-cta {
+  grid-column: span 2;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-xl);
+  padding: 3.4rem 3.6rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.service-card-bento-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+}
+
+.service-card-bento-cta:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card-bento-cta__title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+}
+
+.service-card-bento-cta__desc {
+  font-size: 1.55rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 2.2rem;
+  max-width: 68rem;
+}
+
+.service-card-bento-cta__points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2.4rem;
+  margin-bottom: 2.6rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.service-card-bento-cta__points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.service-card-bento-cta__points i {
+  color: var(--primary-blue);
+  font-size: 1.6rem;
+}
+
+.service-card-bento-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 1.8rem;
+  border-top: 1px solid #e2e8f0;
+}
+
 /* Workflow Process Section */
 .process-grid {
   display: grid;
@@ -1500,7 +1818,7 @@ button {
   position: relative;
   overflow: hidden;
   background-color: var(--bg-slate);
-  padding: 8rem 0 8.5rem;
+  padding: 5.4rem 0 5.6rem;
 }
 
 .clients-section-home::before {
@@ -1521,10 +1839,11 @@ button {
   gap: 2.2rem;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding: 1.5rem 0;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
 }
 
 .marquee-track-forward {
@@ -1615,24 +1934,22 @@ button {
 
 /* Trust Highlights in Separate Independent Floating Pills */
 .clients-trust-pills {
-  margin-top: 5.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  margin-top: 3.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
 }
 
 .trust-pill-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding: 1.2rem 2.6rem;
+  padding: 1.3rem 1.8rem;
   background-color: var(--bg-white);
   border: 1px solid #e2e8f0;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-lg);
   box-shadow: 0 4px 18px rgba(3, 13, 26, 0.04);
-  font-size: 1.45rem;
+  font-size: 1.42rem;
   font-weight: 700;
   color: var(--primary-dark);
   transition: all var(--transition-normal);
@@ -1667,121 +1984,229 @@ button {
 }
 
 /* ==========================================================================
-   10. STRATEGIC PROVIDERS GRID (5-PROVIDER MODERN HOMEPAGE SHOWCASE)
+   10. STRATEGIC PROVIDERS GRID (5-PROVIDER MINIMALIST HOMEPAGE SHOWCASE)
    ========================================================================== */
 .providers-grid-home {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 2.2rem;
+  gap: 1.8rem;
 }
 
 .provider-card-home {
   background-color: var(--bg-white);
-  border-radius: var(--radius-xl);
-  padding: 3rem 2rem 2.4rem;
+  border-radius: 1.6rem;
+  padding: 2rem 2rem 1.8rem;
   border: 1px solid #e2e8f0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 10px rgba(3, 13, 26, 0.025);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all var(--transition-normal);
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
   position: relative;
   overflow: hidden;
 }
 
-.provider-card-home::before {
+.provider-card-home::after {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: var(--primary-blue);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .provider-card-home:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--primary-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px -10px rgba(3, 13, 26, 0.08);
+  border-color: rgba(0, 98, 185, 0.28);
 }
 
-.provider-card-home:hover::before {
-  opacity: 1;
+.provider-card-home:hover::after {
+  transform: scaleX(1);
+}
+
+.provider-card-home__top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
 }
 
 .provider-card-home__badge {
   display: inline-block;
-  padding: 0.35rem 1rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #64748b;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.3rem 0.9rem;
   border-radius: var(--radius-full);
-  background-color: var(--primary-light);
+  letter-spacing: 0.02em;
+  transition: all var(--transition-fast);
+}
+
+.provider-card-home:hover .provider-card-home__badge {
   color: var(--primary-blue);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 1.8rem;
+  background-color: var(--primary-light);
+  border-color: rgba(0, 98, 185, 0.18);
+}
+
+.provider-card-home__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.provider-card-home:hover .provider-card-home__dot {
+  background-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 98, 185, 0.15);
 }
 
 .provider-card-home__logo-wrap {
-  height: 8rem;
+  height: 7.4rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.6rem;
-  padding: 0 1rem;
+  margin: 1.1rem 0;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  transition: all var(--transition-fast);
+}
+
+.provider-card-home:hover .provider-card-home__logo-wrap {
+  background-color: #ffffff;
+  border-color: rgba(0, 98, 185, 0.18);
 }
 
 .provider-card-home__logo {
-  max-height: 6.8rem;
-  max-width: 90%;
+  max-height: 3.8rem;
+  max-width: 84%;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  transition: transform var(--transition-normal);
+  filter: grayscale(0%) opacity(0.95);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+}
+
+/* Balance óptico por marca según el margen interno de cada archivo */
+.provider-card-home__logo.logo-microsoft {
+  max-height: 3rem;
+  max-width: 80%;
+}
+
+.provider-card-home__logo.logo-fortinet {
+  max-height: 2.2rem;
+  max-width: 78%;
+}
+
+.provider-card-home__logo.logo-kaspersky {
+  max-height: 5.2rem;
+  max-width: 92%;
+}
+
+.provider-card-home__logo.logo-sonicwall {
+  max-height: 3.5rem;
+  max-width: 84%;
+}
+
+.provider-card-home__logo.logo-netelip {
+  max-height: 5.4rem;
+  max-width: 86%;
 }
 
 .provider-card-home:hover .provider-card-home__logo {
-  transform: scale(1.08);
-}
-
-.provider-card-home__title {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--primary-dark);
-  margin-bottom: 0.6rem;
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.06);
 }
 
 .provider-card-home__desc {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: var(--text-muted);
   line-height: 1.5;
-  margin-bottom: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #f1f5f9;
+  margin-bottom: 1rem;
+  width: 100%;
   flex-grow: 1;
+}
+
+.provider-card-home__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+}
+
+.provider-card-home__tag {
+  font-size: 1.08rem;
+  font-weight: 700;
+  padding: 0.22rem 0.75rem;
+  border-radius: 6px;
+  background-color: var(--primary-light);
+  color: var(--primary-blue);
 }
 
 .provider-card-home__status {
   margin-top: auto;
+  font-size: 1.12rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #16a34a;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #16a34a;
-  padding-top: 1.2rem;
-  border-top: 1px solid #f1f5f9;
-  width: 100%;
-  justify-content: center;
+  gap: 0.5rem;
+  transition: color var(--transition-fast);
 }
 
 .provider-card-home__status::before {
   content: '';
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+.providers-bottom-bar {
+  margin-top: 2.2rem;
+  background-color: var(--bg-slate);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.providers-bottom-bar__info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.48rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.providers-bottom-bar__info i {
+  color: var(--primary-blue);
+  font-size: 1.8rem;
 }
 
 /* Allies Showcase Grid (Professional Redesign for Socios.html) */
@@ -2045,36 +2470,40 @@ button {
 }
 
 /* ==========================================================================
-   10. VALUE PROPOSITION & WHY CHOOSE US
+   10. VALUE PROPOSITION & WHY CHOOSE US (WIDE HORIZONTAL CARDS)
    ========================================================================== */
 .why-card {
   background-color: var(--bg-white);
   border-radius: var(--radius-lg);
-  padding: 3.5rem 2.8rem;
-  border-left: 4px solid var(--primary-blue);
+  padding: 3.2rem 3.4rem;
   box-shadow: var(--shadow-sm);
   border: 1px solid #e2e8f0;
   border-left: 4px solid var(--primary-blue);
   transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2.4rem;
 }
 
 .why-card:hover {
-  transform: translateX(6px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-left-color: var(--accent-cyan);
 }
 
 .why-icon {
-  width: 5.5rem;
-  height: 5.5rem;
-  border-radius: var(--radius-sm);
+  width: 6rem;
+  height: 6rem;
+  border-radius: var(--radius-md);
   background-color: var(--primary-light);
   color: var(--primary-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
-  margin-bottom: 1.8rem;
+  font-size: 2.4rem;
+  margin-bottom: 0;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -2084,16 +2513,99 @@ button {
 }
 
 /* ==========================================================================
-   11. CTA SECTION BANNER (SOLID NAVY BACKGROUND WITH WHITE TEXT)
+   11. CTA SECTION BANNER (WIDE SPLIT ENTERPRISE BANNER)
    ========================================================================== */
 .cta-banner {
-  background-color: var(--primary-navy);
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #092342 60%, #05325e 100%);
   border-radius: var(--radius-xl);
-  padding: 6rem 4rem;
+  padding: 5.2rem 5.6rem;
   color: #ffffff !important;
   position: relative;
   box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 198, 255, 0.2);
+  overflow: hidden;
+}
+
+.cta-banner__split {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  text-align: left;
+}
+
+.cta-banner__split .subtitle {
+  margin: 0;
+  max-width: 76rem;
+}
+
+.cta-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1080px) {
+  .cta-banner__split {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.6rem;
+  }
+  .cta-banner__split .subtitle {
+    margin: 0 auto;
+  }
+  .cta-banner__actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-card {
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2.4rem 2.2rem;
+  }
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 45rem;
+  height: 45rem;
+  background: radial-gradient(circle, rgba(0, 198, 255, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner__badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.cta-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.3rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1.28rem;
+  font-weight: 600;
+}
+
+.cta-banner__badge i {
+  color: var(--accent-bright);
 }
 
 .cta-banner h2,
@@ -2104,6 +2616,194 @@ button {
 .cta-banner p,
 .cta-banner .subtitle {
   color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Client Card CTA (Socios.html — 16th Card in 4x4 Grid) */
+.client-card-pro--cta {
+  grid-column: span 1;
+  background-color: var(--primary-light) !important;
+  border: 2px dashed var(--primary-blue) !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Contact Office Showcase (Contacto.html Form-Free Split Bento Card) */
+.contact-office-showcase {
+  background-color: var(--bg-white);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  overflow: hidden;
+}
+
+.contact-office-showcase__info {
+  padding: 3.6rem 3.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-office-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-office-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.contact-office-item__icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 12px;
+  background-color: var(--primary-light);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.contact-office-item strong {
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.25rem;
+}
+
+.contact-office-item span {
+  display: block;
+  font-size: 1.45rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.contact-office-showcase__map {
+  min-height: 38rem;
+  height: 100%;
+  border-left: 1px solid #e2e8f0;
+}
+
+@media (max-width: 900px) {
+  .contact-office-showcase {
+    grid-template-columns: 1fr;
+  }
+  .contact-office-showcase__map {
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+    min-height: 32rem;
+  }
+}
+
+/* Compact Numbered Bento Value Cards (Empresa.html) */
+.value-bento-card {
+  background-color: var(--bg-white);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 2.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  position: relative;
+}
+
+.value-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-blue);
+}
+
+.value-bento-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+
+.value-bento-card__num {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  background-color: var(--primary-light);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-full);
+}
+
+/* Balanced Contact Bento Grid (Contacto.html) */
+.contact-channels-bento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.contact-channel-card {
+  background-color: var(--bg-white);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.contact-channel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-blue);
+}
+
+.contact-location-bento {
+  background-color: var(--bg-white);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-location-bento__head {
+  padding: 1.8rem 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.form-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.form-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.form-trust-item i {
+  color: #10b981;
+  font-size: 1.4rem;
 }
 
 /* ==========================================================================
@@ -2409,6 +3109,8 @@ textarea.form-control {
 @media (max-width: 1080px) {
   html { font-size: 58%; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-quick-grid { grid-template-columns: repeat(2, 1fr); }
+  .clients-trust-pills { grid-template-columns: repeat(2, 1fr); }
   .providers-grid-home { grid-template-columns: repeat(3, 1fr); }
   .partner-grid-pro { grid-template-columns: repeat(2, 1fr); }
   .client-grid-pro { grid-template-columns: repeat(3, 1fr); }
@@ -2421,6 +3123,7 @@ textarea.form-control {
   html { font-size: 55%; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .service-card-bento-cta { grid-column: span 2; }
   .providers-grid-home { grid-template-columns: repeat(2, 1fr); }
   .allies-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2452,12 +3155,23 @@ textarea.form-control {
   
   .hero__title { font-size: 3.6rem; }
   .hero__desc { font-size: 1.65rem; }
-  .page-hero { min-height: 28rem; padding: 11rem 0 4.5rem; }
+  .hero__controls-floating {
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .page-hero { min-height: 26rem; padding: 10.5rem 0 4rem; }
   .page-hero .heading-xl { font-size: 3rem; }
   .heading-xl { font-size: 3.6rem; }
   .heading-lg { font-size: 3rem; }
   
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .service-card-bento-cta { grid-column: span 1 !important; padding: 2.6rem 2.2rem; }
+  .client-card-pro--cta { grid-column: span 1 !important; }
+  .bento-quick-grid { grid-template-columns: 1fr; }
+  .clients-trust-pills { grid-template-columns: 1fr; }
+  .contact-channels-bento { grid-template-columns: 1fr; }
+  .form-trust-strip { grid-template-columns: 1fr; }
   .providers-grid-home { grid-template-columns: 1fr; }
   .allies-grid { grid-template-columns: repeat(2, 1fr); }
   .partner-grid-pro { grid-template-columns: 1fr; }
@@ -2468,7 +3182,7 @@ textarea.form-control {
   
   .footer__grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 3.2rem;
   }
   .footer__grid > div:last-child { grid-column: span 1; }
   .footer__bottom {
@@ -2476,8 +3190,8 @@ textarea.form-control {
     text-align: center;
   }
   
-  .stats-banner { margin-top: 0; padding: 4rem 0 2rem; }
-  .cta-banner { padding: 4rem 2.5rem; }
+  .stats-banner { margin-top: 0; padding: 3rem 0 2rem; }
+  .cta-banner { padding: 3.5rem 2.2rem; }
 }
 
 /* ==========================================================================
@@ -2557,9 +3271,15 @@ textarea.form-control {
 
 [data-theme="dark"] .service-card-modern__footer,
 [data-theme="dark"] .service-card-modern__features,
-[data-theme="dark"] .provider-card-home__status,
+[data-theme="dark"] .provider-card-home__desc,
 [data-theme="dark"] .partner-card-pro__features {
   border-top-color: var(--border-dark);
+}
+
+[data-theme="dark"] .provider-card-home__badge {
+  background-color: rgba(148, 178, 214, 0.08);
+  border-color: var(--border-dark);
+  color: var(--text-muted);
 }
 
 [data-theme="dark"] .process-number { color: rgba(148, 178, 214, 0.14); }
@@ -2591,8 +3311,10 @@ textarea.form-control {
 }
 
 [data-theme="dark"] .provider-card-home__logo-wrap,
+[data-theme="dark"] .provider-card-home:hover .provider-card-home__logo-wrap,
 [data-theme="dark"] .partner-card-pro__logo-wrap {
   background-color: #eef2f7;
+  border-color: rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
 }
 
@@ -2612,3 +3334,58 @@ textarea.form-control {
 [data-theme="dark"] [style*="#e2e8f0"] { border-color: var(--border-dark) !important; }
 [data-theme="dark"] [style*="background: #fff"] { background: var(--bg-white) !important; }
 [data-theme="dark"] [style*="border-color: #cbd5e1"] { border-color: rgba(148, 178, 214, 0.3) !important; }
+
+/* Dark Mode for UI/UX Pro Max Bento Components */
+[data-theme="dark"] .service-card-bento-cta,
+[data-theme="dark"] .contact-office-showcase {
+  background-color: var(--bg-white);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .service-card-bento-cta__points,
+[data-theme="dark"] .service-card-bento-cta__actions,
+[data-theme="dark"] .contact-office-showcase__map {
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .bento-quick-strip__header,
+[data-theme="dark"] .service-chips,
+[data-theme="dark"] .service-card__actions,
+[data-theme="dark"] .why-card__pills,
+[data-theme="dark"] .contact-location-bento__head,
+[data-theme="dark"] .form-trust-strip {
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .bento-quick-card,
+[data-theme="dark"] .value-bento-card,
+[data-theme="dark"] .contact-channel-card,
+[data-theme="dark"] .contact-location-bento {
+  background-color: var(--bg-white);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .service-chip,
+[data-theme="dark"] .why-card__pill,
+[data-theme="dark"] .why-card__badge {
+  background-color: rgba(148, 178, 214, 0.08);
+  border-color: var(--border-dark);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .client-card-pro--cta {
+  background: linear-gradient(135deg, rgba(0, 198, 255, 0.14) 0%, #0f2036 100%) !important;
+  border-color: var(--accent-cyan) !important;
+}
+
+/* Reduced Motion Compliance (UI/UX Pro Max Accessibility Checklist) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

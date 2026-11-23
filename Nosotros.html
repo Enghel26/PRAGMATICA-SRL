@@ -8,9 +8,9 @@
   <title>Nosotros | Pragmática S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/png/whiteIcon.png">
   <script>(function(){try{var t=localStorage.getItem("pragmatica-user-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="index.js?v=10" defer></script>
+  <script src="index.js?v=18" defer></script>
 </head>
 
 <body>
@@ -108,12 +108,29 @@
             <p class="mb-lg text-muted" style="font-size: 1.65rem; line-height: 1.7;">
               Nuestro equipo de profesionales altamente calificado está listo para ofrecerle soluciones integradas en ciberseguridad, licenciamiento, servicios gestionados e infraestructura segura.
             </p>
-            <a href="Contacto.html" class="btn btn--primary">Contáctanos Hoy</a>
+            <div class="d-flex gap-sm flex-wrap mb-lg">
+              <div class="stat-card" style="padding: 1.4rem 1.8rem; flex: 1; min-width: 13rem;">
+                <div class="stat-number" data-target="100" data-suffix="%">0%</div>
+                <div class="stat-label">Satisfacción</div>
+              </div>
+              <div class="stat-card" style="padding: 1.4rem 1.8rem; flex: 1; min-width: 13rem;">
+                <div class="stat-number" data-target="100" data-prefix="+">+0</div>
+                <div class="stat-label">Implementaciones</div>
+              </div>
+              <div class="stat-card" style="padding: 1.4rem 1.8rem; flex: 1; min-width: 13rem;">
+                <div class="stat-number" data-target="24" data-suffix="/7">0/7</div>
+                <div class="stat-label">Soporte Proactivo</div>
+              </div>
+            </div>
+            <div class="d-flex gap-sm flex-wrap">
+              <a href="Contacto.html" class="btn btn--primary">Contáctanos Hoy <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="Soluciones.html" class="btn btn--outline">Explorar Servicios</a>
+            </div>
           </div>
           <div class="reveal-right">
             <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl);">
               <img src="assets/jpeg/empresario-inicia-sesion-su-tableta.jpg" alt="Innovación Tecnológica"
-                style="width: 100%; height: 38rem; object-fit: cover;" loading="lazy" decoding="async">
+                style="width: 100%; height: 42rem; object-fit: cover;" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -125,30 +142,34 @@
       <div class="container">
         <div class="text-center mb-xl reveal">
           <h2 class="heading-lg heading-center">Ecosistema Tecnológico</h2>
+          <p class="subtitle">Arquitecturas diseñadas para la continuidad, seguridad y escalabilidad corporativa.</p>
         </div>
 
         <div class="grid grid-3">
-          <div class="card reveal delay-1" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0;">
+          <div class="card reveal delay-1" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
             <img src="assets/jpeg/mano-tocando-tablet.jpg" alt="Ciberseguridad" style="width: 100%; height: 22rem; object-fit: cover;" loading="lazy" decoding="async">
-            <div style="padding: 2rem;">
-              <h3 class="heading-sm" style="color: var(--primary-dark);">Seguridad & Monitoreo</h3>
-              <p class="text-muted" style="font-size: 1.45rem;">Protección y control en tiempo real de recursos críticos.</p>
+            <div style="padding: 2.4rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 class="heading-sm" style="color: var(--primary-dark); margin-bottom: 0.8rem;">Seguridad &amp; Monitoreo</h3>
+              <p class="text-muted" style="font-size: 1.45rem; margin-bottom: 1.6rem;">Protección perimetral NGFW, control de endpoints EDR y vigilancia en tiempo real de recursos críticos.</p>
+              <a href="Soluciones.html" class="service-link">Explorar Ciberseguridad <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
-          <div class="card reveal delay-2" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0;">
+          <div class="card reveal delay-2" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
             <img src="assets/jpeg/ServicioGestionado.jpg" alt="Servicios Gestionados" style="width: 100%; height: 22rem; object-fit: cover;" loading="lazy" decoding="async">
-            <div style="padding: 2rem;">
-              <h3 class="heading-sm" style="color: var(--primary-dark);">Gestión de Infraestructura</h3>
-              <p class="text-muted" style="font-size: 1.45rem;">Soporte preventivo y alta disponibilidad de servidores.</p>
+            <div style="padding: 2.4rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 class="heading-sm" style="color: var(--primary-dark); margin-bottom: 0.8rem;">Gestión de Infraestructura</h3>
+              <p class="text-muted" style="font-size: 1.45rem; margin-bottom: 1.6rem;">Soporte preventivo, administración de redes empresariales y alta disponibilidad de servidores.</p>
+              <a href="Soluciones.html" class="service-link">Ver Servicios Gestionados <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
-          <div class="card reveal delay-3" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0;">
+          <div class="card reveal delay-3" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); background: #fff; border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
             <img src="assets/jpeg/Gestion-de-Proyectos.jpg" alt="Gestión de Proyectos" style="width: 100%; height: 22rem; object-fit: cover;" loading="lazy" decoding="async">
-            <div style="padding: 2rem;">
-              <h3 class="heading-sm" style="color: var(--primary-dark);">Liderazgo & Consultoría</h3>
-              <p class="text-muted" style="font-size: 1.45rem;">Ejecución estratégica de proyectos tecnológicos de alto impacto.</p>
+            <div style="padding: 2.4rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 class="heading-sm" style="color: var(--primary-dark); margin-bottom: 0.8rem;">Liderazgo &amp; Consultoría</h3>
+              <p class="text-muted" style="font-size: 1.45rem; margin-bottom: 1.6rem;">Ejecución estratégica de proyectos tecnológicos, desarrollo web y transformación digital.</p>
+              <a href="Soluciones.html" class="service-link">Conocer Portafolio <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -156,10 +177,15 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section" style="padding-bottom: 8rem;">
+    <section class="section" style="padding-bottom: 5.6rem;">
       <div class="container">
         <div class="cta-banner reveal">
           <div class="text-center" style="position: relative; z-index: 2;">
+            <div class="cta-banner__badges">
+              <span class="cta-banner__badge"><i class="fa fa-check-circle" aria-hidden="true"></i> Diagnóstico Preliminar</span>
+              <span class="cta-banner__badge"><i class="fa fa-shield" aria-hidden="true"></i> Ciberseguridad &amp; Cloud</span>
+              <span class="cta-banner__badge"><i class="fa fa-bolt" aria-hidden="true"></i> Atención Inmediata</span>
+            </div>
             <h2 class="heading-lg text-white mb-md">Llevemos Tu Negocio al Siguiente Nivel</h2>
             <p class="subtitle text-light mb-lg">
               Contacta con nuestro equipo para diseñar la arquitectura IT que tu empresa necesita.
@@ -180,7 +206,8 @@
         <div>
           <img src="logo/Logo.png" alt="Pragmática Logo" style="max-height: 4.8rem; filter: brightness(0) invert(1);" / loading="lazy" decoding="async">
           <p class="footer__brand-desc">
-            Transformamos tu futuro con soluciones tecnológicas de vanguardia.
+            Transformamos tu futuro con soluciones tecnológicas de vanguardia. Nos respaldamos en gigantes como
+            Fortinet, Microsoft y Kaspersky para impulsar la seguridad, rendimiento y escalabilidad de tu empresa.
           </p>
           <div class="footer__socials">
             <a href="https://www.linkedin.com/company/pragmaticado/" target="_blank" class="footer__social-btn"><i
@@ -241,12 +268,16 @@
                 <i class="fa fa-envelope text-cyan"></i> ventas@pragmatica.com.do
               </a>
             </li>
+            <li class="footer__link">
+              <i class="fa fa-clock-o text-cyan"></i> Lun - Vie: 8:00 AM - 6:00 PM
+            </li>
           </ul>
         </div>
       </div>
 
       <div class="footer__bottom">
         <div>&copy; <span id="year">2026</span> <strong>Pragmática S.R.L.</strong> Todos los derechos reservados.</div>
+        <div>Servicios Tecnológicos &amp; Consultoría Especializada</div>
       </div>
     </div>
   </footer>

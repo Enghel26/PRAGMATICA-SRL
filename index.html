@@ -10,9 +10,9 @@
   <title>PRAGMÁTICA S.R.L. | Servicios Tecnológicos y Ciberseguridad</title>
 
   <script>(function(){try{var t=localStorage.getItem("pragmatica-user-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="index.js?v=10" defer></script>
+  <script src="index.js?v=18" defer></script>
 </head>
 
 <body>
@@ -93,7 +93,7 @@
           data-badge="Infraestructura & Consultoría"
           data-title="Servicios Tecnológicos y<br><span>Consultoría Especializada</span>"
           data-desc="Transformamos el futuro digital de tu empresa con infraestructura de vanguardia y soporte experto de nivel corporativo.">
-          <video class="hero__carousel-video" src="assets/jpeg/Consultoria.mp4" autoplay loop muted playsinline preload="auto"></video>
+          <video class="hero__carousel-video hero__carousel-video--consultoria" src="assets/jpeg/Consultoria.mp4" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto"></video>
         </div>
 
         <!-- 2. Ciberseguridad -->
@@ -101,7 +101,7 @@
           data-badge="Ciberseguridad Avanzada"
           data-title="Ciberseguridad<br><span>Integral & Proactiva</span>"
           data-desc="Protección avanzada de última generación para blindar los activos digitales más críticos de tu organización.">
-          <video class="hero__carousel-video" src="assets/jpeg/ciberseguridad.mp4" loop muted playsinline preload="metadata"></video>
+          <video class="hero__carousel-video hero__carousel-video--ciberseguridad" src="assets/jpeg/ciberseguridad.mp4" loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto"></video>
         </div>
 
         <!-- 3. Servicios Gestionados y Soporte -->
@@ -109,7 +109,7 @@
           data-badge="Soporte & Continuidad TI"
           data-title="Servicios Gestionados y<br><span>Soporte Proactivo</span>"
           data-desc="Gestión proactiva, mantenimiento preventivo y soporte técnico continuo para garantizar la operatividad de tu negocio.">
-          <video class="hero__carousel-video" src="assets/jpeg/soporte.mp4" loop muted playsinline preload="metadata"></video>
+          <video class="hero__carousel-video hero__carousel-video--soporte" src="assets/jpeg/soporte.mp4" loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto"></video>
         </div>
 
         <!-- 4. Desarrollo de Software y Web -->
@@ -117,7 +117,7 @@
           data-badge="Desarrollo & Cloud"
           data-title="Desarrollo de Software y<br><span>Páginas Web a Medida</span>"
           data-desc="Diseño y construcción de plataformas web, aplicaciones móviles y sistemas corporativos escalables, modernos y seguros.">
-          <video class="hero__carousel-video" src="assets/jpeg/Desarrollo.mp4" loop muted playsinline preload="metadata"></video>
+          <video class="hero__carousel-video hero__carousel-video--desarrollo" src="assets/jpeg/Desarrollo.mp4" loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto"></video>
         </div>
 
         <!-- 5. Licenciamiento de Software -->
@@ -125,7 +125,7 @@
           data-badge="Licenciamiento Corporativo"
           data-title="Licenciamiento de Software y<br><span>Cumplimiento Legal</span>"
           data-desc="Asesoría estratégica en licenciamiento corporativo Microsoft, Fortinet, Kaspersky y optimización de costes de TI.">
-          <video class="hero__carousel-video" src="assets/jpeg/licenciamiento.mp4" loop muted playsinline preload="metadata"></video>
+          <video class="hero__carousel-video hero__carousel-video--licenciamiento" src="assets/jpeg/licenciamiento.mp4" loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto"></video>
         </div>
 
         <!-- 6. Suministro de Equipos -->
@@ -133,7 +133,7 @@
           data-badge="Hardware & Servidores"
           data-title="Suministro de Hardware y<br><span>Equipos de Alta Gama</span>"
           data-desc="Servidores, estaciones de trabajo y tecnología de conectividad de marcas globales líderes en el mercado.">
-          <video class="hero__carousel-video" src="assets/jpeg/sumunistro.mp4" loop muted playsinline preload="metadata"></video>
+          <video class="hero__carousel-video hero__carousel-video--suministro" src="assets/jpeg/sumunistro.mp4" loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto"></video>
         </div>
 
         <div class="hero__overlay"></div>
@@ -153,21 +153,38 @@
 
         <div class="hero__btns">
           <a href="Soluciones.html" class="btn btn--glow">
-            Explorar Servicios <i class="fa fa-arrow-right"></i>
+            Explorar Servicios <i class="fa fa-arrow-right" aria-hidden="true"></i>
           </a>
           <a href="Contacto.html" class="btn btn--glass">
-            <i class="fa fa-comments-o"></i> Agendar Consulta
+            <i class="fa fa-comments-o" aria-hidden="true"></i> Agendar Consulta
           </a>
         </div>
       </div>
 
       <!-- Subtle Navigation Arrows -->
       <button type="button" class="hero__arrow hero__arrow--prev" aria-label="Slide anterior">
-        <i class="fa fa-chevron-left"></i>
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
       </button>
       <button type="button" class="hero__arrow hero__arrow--next" aria-label="Siguiente slide">
-        <i class="fa fa-chevron-right"></i>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </button>
+
+      <!-- Floating Glassmorphic Hero Controls -->
+      <div class="hero__controls-floating" aria-label="Indicadores de diapositivas">
+        <div class="hero__counter">
+          <span class="hero__counter-current">01</span>
+          <span>/</span>
+          <span>06</span>
+        </div>
+        <div class="hero__dots">
+          <button type="button" class="hero__dot active" data-index="0" aria-label="Ir al slide 1"></button>
+          <button type="button" class="hero__dot" data-index="1" aria-label="Ir al slide 2"></button>
+          <button type="button" class="hero__dot" data-index="2" aria-label="Ir al slide 3"></button>
+          <button type="button" class="hero__dot" data-index="3" aria-label="Ir al slide 4"></button>
+          <button type="button" class="hero__dot" data-index="4" aria-label="Ir al slide 5"></button>
+          <button type="button" class="hero__dot" data-index="5" aria-label="Ir al slide 6"></button>
+        </div>
+      </div>
 
       <!-- Subtle Mouse Scroll Indicator -->
       <div class="home-hero__mouse-scroll-cont">
@@ -181,30 +198,41 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card reveal">
-            <div class="stat-icon"><i class="fa fa-calendar-check-o"></i></div>
-            <div class="stat-number" data-target="5" data-prefix="+">+0</div>
-            <div class="stat-label">Años de Trayectoria</div>
+            <div class="stat-icon"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
+            <div>
+              <div class="stat-number" data-target="100" data-suffix="%">0%</div>
+              <div class="stat-label">Satisfacción Garantizada</div>
+            </div>
           </div>
+
           <div class="stat-card reveal delay-1">
-            <div class="stat-icon"><i class="fa fa-handshake-o"></i></div>
-            <div class="stat-number" data-target="100" data-suffix="%">0%</div>
-            <div class="stat-label">Satisfacción Garantizada</div>
+            <div class="stat-icon"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+            <div>
+              <div class="stat-number" data-target="100" data-prefix="+">+0</div>
+              <div class="stat-label">Servicios Implementados</div>
+            </div>
           </div>
+
           <div class="stat-card reveal delay-2">
-            <div class="stat-icon"><i class="fa fa-cogs"></i></div>
-            <div class="stat-number" data-target="100" data-prefix="+">+0</div>
-            <div class="stat-label">Servicios Implementados</div>
+            <div class="stat-icon"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+            <div>
+              <div class="stat-number" data-target="5" data-prefix="+" data-suffix=" Top">+0 Top</div>
+              <div class="stat-label">Aliados Internacionales</div>
+            </div>
           </div>
+
           <div class="stat-card reveal delay-3">
-            <div class="stat-icon"><i class="fa fa-certificate"></i></div>
-            <div class="stat-number" data-target="5" data-prefix="+" data-suffix=" Top">+0 Top</div>
-            <div class="stat-label">Aliados Internacionales</div>
+            <div class="stat-icon"><i class="fa fa-shield" aria-hidden="true"></i></div>
+            <div>
+              <div class="stat-number" data-target="24" data-suffix="/7">0/7</div>
+              <div class="stat-label">Monitoreo &amp; Soporte TI</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Overview Section (TOP 3 HIGH-DEMAND SERVICES) -->
+    <!-- Services Overview Section (Clean & Balanced 3 Core Services) -->
     <section class="section">
       <div class="container">
         <div class="text-center mb-xl reveal">
@@ -219,51 +247,49 @@
           <!-- Card 1: Ciberseguridad -->
           <div class="service-card reveal delay-1">
             <div class="service-icon-box">
-              <i class="fa fa-shield"></i>
+              <i class="fa fa-shield" aria-hidden="true"></i>
             </div>
             <h3>Ciberseguridad</h3>
             <p>
               Protección perimetral avanzada, firewalls de nueva generación (NGFW), endpoint security y mitigación de
-              amenazas
-              para blindar la información crítica de tu organización.
+              amenazas para blindar la información crítica de tu organización.
             </p>
             <a href="Soluciones.html" class="service-link">
-              Conocer más <i class="fa fa-arrow-right"></i>
+              Conocer más <i class="fa fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
 
           <!-- Card 2: Servicios Gestionados -->
           <div class="service-card reveal delay-2">
             <div class="service-icon-box">
-              <i class="fa fa-cogs"></i>
+              <i class="fa fa-cogs" aria-hidden="true"></i>
             </div>
             <h3>Servicios Gestionados IT</h3>
             <p>
               Monitoreo preventivo continuo, administración integral de infraestructura de redes y servidores, y soporte
-              técnico
-              especializado para asegurar la continuidad operativa.
+              técnico especializado para asegurar la continuidad operativa.
             </p>
             <a href="Soluciones.html" class="service-link">
-              Conocer más <i class="fa fa-arrow-right"></i>
+              Conocer más <i class="fa fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
 
           <!-- Card 3: Desarrollo de Software -->
           <div class="service-card reveal delay-3">
             <div class="service-icon-box">
-              <i class="fa fa-code"></i>
+              <i class="fa fa-code" aria-hidden="true"></i>
             </div>
             <h3>Desarrollo de Software</h3>
             <p>
               Diseño y construcción de software, plataformas web y aplicaciones móviles robustas con arquitecturas
               modernas, escalables y seguras.
             </p>
-            <div class="service-card__actions" style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+            <div class="service-card__actions" style="border-top: none; padding-top: 0;">
               <a href="Soluciones.html" class="service-link" style="margin-top: 0;">
-                Conocer más <i class="fa fa-arrow-right"></i>
+                Conocer más <i class="fa fa-arrow-right" aria-hidden="true"></i>
               </a>
               <a href="Planes%20Desarrollo%20Web/planes-web.html" class="btn btn--primary btn--sm" style="padding: 0.7rem 1.4rem; font-size: 1.3rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
-                Ver Planes Web <i class="fa fa-globe"></i>
+                Ver Planes Web <i class="fa fa-globe" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -271,7 +297,7 @@
 
         <div class="text-center mt-xl reveal">
           <a href="Soluciones.html" class="btn btn--primary">
-            Ver Portafolio Completo <i class="fa fa-arrow-right"></i>
+            Ver Portafolio Completo <i class="fa fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -283,52 +309,59 @@
         <div class="text-center mb-xl reveal">
           <h2 class="heading-lg heading-center">¿Por Qué Elegir Pragmática?</h2>
           <p class="subtitle">
-            Años impulsando la continuidad, seguridad y eficiencia de organizaciones líderes en el país.
+            Convertimos la tecnología en una operación más segura, estable y eficiente para su empresa.
           </p>
         </div>
 
         <div class="grid grid-2">
           <div class="why-card reveal-left">
-            <div class="why-icon"><i class="fa fa-lock"></i></div>
-            <h3 class="heading-md">Ciberseguridad Proactiva</h3>
-            <p class="text-muted">
-              Implementamos protocolos defensivos robustos y capas de seguridad multinivel para salvaguardar tu
-              información antes de que ocurra cualquier incidente.
-            </p>
+            <div class="why-icon"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+            <div>
+              <h3 class="heading-md">Servicios Gestionados</h3>
+              <p class="text-muted">
+                Monitoreo preventivo, administración continua de infraestructura y soporte técnico oportuno para respaldar
+                la estabilidad y continuidad de sus operaciones.
+              </p>
+            </div>
           </div>
 
           <div class="why-card reveal-right">
-            <div class="why-icon"><i class="fa fa-users"></i></div>
-            <h3 class="heading-md">Equipo Certificado y Experto</h3>
-            <p class="text-muted">
-              Ingenieros y especialistas altamente calificados en soluciones Microsoft Cloud, redes Fortinet y
-              arquitecturas
-              empresariales.
-            </p>
+            <div class="why-icon"><i class="fa fa-shield" aria-hidden="true"></i></div>
+            <div>
+              <h3 class="heading-md">Ciberseguridad Integral</h3>
+              <p class="text-muted">
+                Implementamos protocolos defensivos robustos y capas de protección multinivel para resguardar la
+                información crítica de su empresa y reducir los riesgos operativos.
+              </p>
+            </div>
           </div>
 
           <div class="why-card reveal-left delay-1">
-            <div class="why-icon"><i class="fa fa-rocket"></i></div>
-            <h3 class="heading-md">Disponibilidad & Soporte Ágil</h3>
-            <p class="text-muted">
-              Respuesta técnica rápida y cercana para resolver incidencias y asegurar que tus operaciones nunca se
-              detengan.
-            </p>
+            <div class="why-icon"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+            <div>
+              <h3 class="heading-md">Especialización Tecnológica</h3>
+              <p class="text-muted">
+                Ingenieros y especialistas altamente calificados en soluciones Microsoft Cloud, redes Fortinet y
+                arquitecturas empresariales de alto desempeño.
+              </p>
+            </div>
           </div>
 
           <div class="why-card reveal-right delay-1">
-            <div class="why-icon"><i class="fa fa-sliders"></i></div>
-            <h3 class="heading-md">Soluciones a Medida</h3>
-            <p class="text-muted">
-              No ofrecemos paquetes genéricos; analizamos la realidad de tu empresa para entregar la solución óptima y
-              rentable.
-            </p>
+            <div class="why-icon"><i class="fa fa-sliders" aria-hidden="true"></i></div>
+            <div>
+              <h3 class="heading-md">Soluciones Alineadas al Negocio</h3>
+              <p class="text-muted">
+                No ofrecemos paquetes genéricos; analizamos la realidad operativa de su empresa para diseñar e implementar
+                la solución tecnológica óptima y rentable.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Strategic Allies Section (5 Global Allies) -->
+    <!-- Strategic Allies Section (5 Global Allies - Clean Minimalist Design) -->
     <section class="section">
       <div class="container">
         <div class="text-center mb-xl reveal">
@@ -341,67 +374,72 @@
         <div class="providers-grid-home">
           <!-- 1. Microsoft -->
           <div class="provider-card-home reveal">
-            <span class="provider-card-home__badge">Cloud & Productividad</span>
+            <div class="provider-card-home__top">
+              <span class="provider-card-home__badge">Cloud &amp; Productividad</span>
+              <span class="provider-card-home__dot" title="Cloud Solutions Partner"></span>
+            </div>
             <div class="provider-card-home__logo-wrap">
-              <img src="assets/aliados/microsoft.svg" alt="Microsoft" class="provider-card-home__logo logo-compact"
+              <img src="assets/aliados/microsoft.svg" alt="Microsoft" class="provider-card-home__logo logo-microsoft"
                 loading="lazy" decoding="async">
             </div>
-            <h3 class="provider-card-home__title">Microsoft</h3>
-            <p class="provider-card-home__desc">Licenciamiento de Windows, soluciones Microsoft 365, Azure Cloud y
-              productividad corporativa.</p>
-            <div class="provider-card-home__status">Cloud Solutions Partner</div>
+            <p class="provider-card-home__desc">Windows, Microsoft 365 y nube corporativa Azure.</p>
+            <span class="provider-card-home__status">Cloud Solutions Partner</span>
           </div>
 
           <!-- 2. Fortinet -->
           <div class="provider-card-home reveal delay-1">
-            <span class="provider-card-home__badge">Ciberseguridad Líder</span>
+            <div class="provider-card-home__top">
+              <span class="provider-card-home__badge">Ciberseguridad</span>
+              <span class="provider-card-home__dot" title="Partner Autorizado"></span>
+            </div>
             <div class="provider-card-home__logo-wrap">
-              <img src="assets/aliados/FTNT_BIG.png" alt="Fortinet" class="provider-card-home__logo logo-wide"
+              <img src="assets/aliados/FTNT_BIG.png" alt="Fortinet" class="provider-card-home__logo logo-fortinet"
                 loading="lazy" decoding="async">
             </div>
-            <h3 class="provider-card-home__title">Fortinet</h3>
-            <p class="provider-card-home__desc">Firewalls NGFW de nueva generación, SD-WAN y protección perimetral
-              integral.</p>
-            <div class="provider-card-home__status">Partner Autorizado</div>
+            <p class="provider-card-home__desc">Firewalls NGFW, SD-WAN y seguridad perimetral.</p>
+            <span class="provider-card-home__status">Partner Autorizado</span>
           </div>
 
           <!-- 3. Kaspersky -->
           <div class="provider-card-home reveal delay-2">
-            <span class="provider-card-home__badge">Endpoint EDR</span>
+            <div class="provider-card-home__top">
+              <span class="provider-card-home__badge">Endpoint EDR</span>
+              <span class="provider-card-home__dot" title="Partner Especialista"></span>
+            </div>
             <div class="provider-card-home__logo-wrap">
               <img src="assets/aliados/kaspersky-logotype-green.png" alt="Kaspersky"
-                class="provider-card-home__logo logo-compact" loading="lazy" decoding="async">
+                class="provider-card-home__logo logo-kaspersky" loading="lazy" decoding="async">
             </div>
-            <h3 class="provider-card-home__title">Kaspersky</h3>
-            <p class="provider-card-home__desc">Protección contra ransomware, seguridad de endpoints y gestión
-              centralizada.</p>
-            <div class="provider-card-home__status">Partner Especialista</div>
+            <p class="provider-card-home__desc">Prevención antirransomware y protección de endpoints.</p>
+            <span class="provider-card-home__status">Partner Especialista</span>
           </div>
 
           <!-- 4. SonicWall -->
           <div class="provider-card-home reveal delay-3">
-            <span class="provider-card-home__badge">Seguridad de Redes</span>
+            <div class="provider-card-home__top">
+              <span class="provider-card-home__badge">Seguridad de Red</span>
+              <span class="provider-card-home__dot" title="Partner Certificado"></span>
+            </div>
             <div class="provider-card-home__logo-wrap">
-              <img src="assets/aliados/sonicwall.svg" alt="SonicWall" class="provider-card-home__logo logo-compact"
+              <img src="assets/aliados/sonicwall.svg" alt="SonicWall" class="provider-card-home__logo logo-sonicwall"
                 loading="lazy" decoding="async">
             </div>
-            <h3 class="provider-card-home__title">SonicWall</h3>
-            <p class="provider-card-home__desc">Seguridad y protección de red, prevención avanzada de amenazas
-              cibernéticas y VPN.</p>
-            <div class="provider-card-home__status">Partner Certificado</div>
+            <p class="provider-card-home__desc">Protección de red, control de amenazas y VPN segura.</p>
+            <span class="provider-card-home__status">Partner Certificado</span>
           </div>
 
           <!-- 5. Netelip -->
           <div class="provider-card-home reveal delay-4">
-            <span class="provider-card-home__badge">Telefonía IP</span>
+            <div class="provider-card-home__top">
+              <span class="provider-card-home__badge">Telefonía Cloud</span>
+              <span class="provider-card-home__dot" title="Aliado Homologado"></span>
+            </div>
             <div class="provider-card-home__logo-wrap">
-              <img src="assets/aliados/netelip.png" alt="Netelip" class="provider-card-home__logo logo-compact"
+              <img src="assets/aliados/netelip.png" alt="Netelip" class="provider-card-home__logo logo-netelip"
                 loading="lazy" decoding="async">
             </div>
-            <h3 class="provider-card-home__title">Netelip</h3>
-            <p class="provider-card-home__desc">Centrales virtuales en la nube, telefonía IP y comunicaciones
-              unificadas.</p>
-            <div class="provider-card-home__status">Aliado Homologado</div>
+            <p class="provider-card-home__desc">Centrales telefónicas virtuales y telefonía IP.</p>
+            <span class="provider-card-home__status">Aliado Homologado</span>
           </div>
         </div>
       </div>
@@ -433,6 +471,8 @@
             <div class="client-logo-card"><img src="CLIENTES/DataHope.jpeg" alt="DataHope" loading="lazy"
                 decoding="async"></div>
             <div class="client-logo-card"><img src="CLIENTES/Duma.jpg" alt="Duma" loading="lazy" decoding="async"></div>
+            <div class="client-logo-card"><img src="CLIENTES/logo.jpeg" alt="The Greek by Chef Alex" loading="lazy"
+                decoding="async"></div>
 
             <!-- Row 1 Clones for seamless infinite loop -->
             <div class="client-logo-card"><img src="CLIENTES/CAMIONERO.png" alt="Camionero" loading="lazy"
@@ -448,6 +488,8 @@
             <div class="client-logo-card"><img src="CLIENTES/DataHope.jpeg" alt="DataHope" loading="lazy"
                 decoding="async"></div>
             <div class="client-logo-card"><img src="CLIENTES/Duma.jpg" alt="Duma" loading="lazy" decoding="async"></div>
+            <div class="client-logo-card"><img src="CLIENTES/logo.jpeg" alt="The Greek by Chef Alex" loading="lazy"
+                decoding="async"></div>
           </div>
 
           <!-- Row 2: Rightward Smooth Glide (Opposing Flow) -->
@@ -477,40 +519,46 @@
           </div>
         </div>
 
-        <!-- Trust Highlights in Separate Modern Floating Pills -->
+        <!-- Trust Highlights in 4-Column Balanced Strip -->
         <div class="clients-trust-pills reveal">
           <div class="trust-pill-item">
-            <div class="trust-pill-icon"><i class="fa fa-shield"></i></div>
-            <span>Continuidad Operativa Garantizada</span>
+            <div class="trust-pill-icon"><i class="fa fa-shield" aria-hidden="true"></i></div>
+            <span>Enfoque en Continuidad Operativa</span>
           </div>
           <div class="trust-pill-item">
-            <div class="trust-pill-icon"><i class="fa fa-users"></i></div>
+            <div class="trust-pill-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
             <span>Soporte Técnico Especializado</span>
           </div>
           <div class="trust-pill-item">
-            <div class="trust-pill-icon"><i class="fa fa-star text-accent"></i></div>
-            <span>Relaciones Sólidas y Duraderas</span>
+            <div class="trust-pill-icon"><i class="fa fa-sliders" aria-hidden="true"></i></div>
+            <span>Soluciones Adaptadas a su Negocio</span>
+          </div>
+          <div class="trust-pill-item">
+            <div class="trust-pill-icon"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+            <span>Respaldo de Fabricantes Globales</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Impact CTA Section -->
-    <section class="section" style="padding-bottom: 8rem;">
+    <section class="section" style="padding-bottom: 5.6rem;">
       <div class="container">
         <div class="cta-banner reveal">
-          <div class="text-center" style="position: relative; z-index: 2;">
-            <h2 class="heading-lg text-white mb-md">¿Listo para Blindar y Optimizar la Tecnología de tu Negocio?</h2>
-            <p class="subtitle text-light mb-lg" style="max-width: 65rem;">
-              Conversa con nuestros especialistas hoy mismo y recibe un diagnóstico preliminar para tu infraestructura
-              y ciberseguridad.
-            </p>
-            <div class="d-flex justify-center gap-md flex-wrap">
+          <div class="cta-banner__split">
+            <div>
+              <h2 class="heading-lg text-white mb-sm">¿Listo para Blindar y Optimizar la Tecnología de tu Negocio?</h2>
+              <p class="subtitle text-light">
+                Conversa con nuestros especialistas hoy mismo y recibe un diagnóstico preliminar para tu infraestructura
+                y ciberseguridad.
+              </p>
+            </div>
+            <div class="cta-banner__actions">
               <a href="https://wa.me/18499367087" target="_blank" class="btn btn--glow">
-                <i class="fa fa-whatsapp"></i> Chatear por WhatsApp
+                <i class="fa fa-whatsapp" aria-hidden="true"></i> Chatear por WhatsApp
               </a>
               <a href="Contacto.html" class="btn btn--glass">
-                <i class="fa fa-envelope-o"></i> Formulario de Contacto
+                <i class="fa fa-envelope-o" aria-hidden="true"></i> Canales de Contacto
               </a>
             </div>
           </div>
